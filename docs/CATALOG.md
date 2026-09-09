@@ -55,6 +55,6 @@ All selected configuration must live in the generated file. Do not introduce `./
 
 External-input adapters may use `inputs`, supplied via `specialArgs`. Ordinary bits should prefer `{ config, lib, pkgs, ... }`. Inputs are static top-level declarations: do not try to add flake inputs from a module's `config` or make `imports` depend on the module fixpoint.
 
-Source catalogs are trusted code. The loader checks IDs, references and file paths; it is not a Nix sandbox or a full static dependency analyzer. Generated syntax is parsed before writing. Input fetching and module evaluation occur with --lock or --build.
+Source catalogs are trusted code. The loader checks IDs, references and file paths; it is not a Nix sandbox or a full static dependency analyzer. Generated source is saved before syntax checks, so validation failures do not prevent export. Input fetching and module evaluation occur with --lock or --build.
 
 The user-input menu can declare a source and consume exported overlays/modules/packages without authoring a bit. Add a catalog adapter when a service also needs enable flags, user settings, dependencies or compatibility constraints.

@@ -10,7 +10,7 @@
     in {
       default = pkgs.buildGoModule {
         pname = "flakebuilder";
-        version = "0.1.0";
+        version = "0.1.1";
         src = self;
         vendorHash = "sha256-uwBJAqN4sIepiiJf9lCDumLqfKJEowQO2tOiSWD3Fig=";
         env.CGO_ENABLED = 0;

@@ -68,7 +68,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 		if m.preview != "" {
 			switch key {
-			case "y":
+			case "y", "g", "enter":
 				m.Config = m.Selection()
 				m.Confirmed = true
 				return m, tea.Quit
@@ -149,7 +149,7 @@ func (m Model) View() string {
 		return m.inputView()
 	}
 	if m.Confirmed {
-		return "Selection confirmed. Validating generated flake…\n"
+		return "Selection confirmed. Saving generated flake…\n"
 	}
 	header := fmt.Sprintf("Flakebuilder — %s · %s · nixpkgs %s\n", m.Config.Host, m.Config.System, m.Config.Track)
 	if m.preview != "" {
@@ -159,7 +159,7 @@ func (m Model) View() string {
 			lines[1] = "# Saved selection metadata (embedded in the file)"
 		}
 		end := min(len(lines), m.offset+max(1, m.height-6))
-		return header + "\n" + strings.Join(lines[m.offset:end], "\n") + "\n\n↑/↓ PgUp/PgDn: scroll · y: generate this flake · n: edit · Ctrl+C: cancel\n"
+		return header + "\n" + strings.Join(lines[m.offset:end], "\n") + "\n\n↑/↓ PgUp/PgDn: scroll · Enter/g/y: generate this flake · n: edit · Ctrl+C: cancel\n"
 	}
 	plan, err := m.Catalog.Resolve(m.Selection())
 	auto := map[string]bool{}

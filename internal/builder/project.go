@@ -120,20 +120,23 @@ func Parse(ctx context.Context, source string) error {
 	return nil
 }
 
-// Write validates in a staging directory. It never activates a configuration.
-// Only flake.nix and (when locking/building) flake.lock are published.
+// ValidationError means generation succeeded, but a subsequent check did not.
+// Callers should report the saved file before reporting this error.
+type ValidationError struct {
+	Path string
+	Err  error
+}
+
+func (e *ValidationError) Error() string {
+	return fmt.Sprintf("flake saved at %s; validation failed: %v", e.Path, e.Err)
+}
+func (e *ValidationError) Unwrap() error { return e.Err }
+
+// Write saves the generated source before running checks. Failed parsing,
+// locking, evaluation or building never discards the generated flake.
 func Write(ctx context.Context, source string, cfg Config, opt WriteOptions) (string, error) {
 	if opt.Log == nil {
 		opt.Log = io.Discard
-	}
-	if opt.Build && strings.TrimSpace(cfg.Hardware) == "" {
-		return "", fmt.Errorf("building requires embedded hardware; supply --hardware")
-	}
-	if err := CheckHardware(cfg.Hardware); err != nil {
-		return "", err
-	}
-	if err := Parse(ctx, source); err != nil {
-		return "", err
 	}
 	dir, err := filepath.Abs(opt.Directory)
 	if err != nil {
@@ -142,44 +145,70 @@ func Write(ctx context.Context, source string, cfg Config, opt WriteOptions) (st
 	if err = os.MkdirAll(dir, 0755); err != nil {
 		return "", err
 	}
-	target := filepath.Join(dir, "flake.nix")
-	if _, err = os.Lstat(target); err == nil && !opt.Force {
-		return "", fmt.Errorf("%s exists; use --force after reviewing the preview", target)
-	} else if err != nil && !os.IsNotExist(err) {
-		return "", err
-	}
 	stage, err := os.MkdirTemp(dir, ".flakebuilder-stage-")
 	if err != nil {
 		return "", err
 	}
 	defer os.RemoveAll(stage)
-	if err = os.WriteFile(filepath.Join(stage, "flake.nix"), []byte(source), 0644); err != nil {
+	stagedSource := filepath.Join(stage, "flake.nix")
+	if err = os.WriteFile(stagedSource, []byte(source), 0644); err != nil {
 		return "", err
 	}
-	names := []string{"flake.nix"}
-	if opt.Lock || opt.Build {
-		old, err := os.ReadFile(filepath.Join(dir, "flake.lock"))
-		if err == nil {
-			if err = os.WriteFile(filepath.Join(stage, "flake.lock"), old, 0644); err != nil {
-				return "", err
-			}
-		} else if !os.IsNotExist(err) {
-			return "", err
-		}
-		common := []string{"--extra-experimental-features", "nix-command flakes"}
-		if err = run(ctx, opt.Log, "nix", append(common, "flake", "lock", "path:"+stage)...); err != nil {
-			return "", err
-		}
-		if err = run(ctx, opt.Log, "nix", append(common, "flake", "check", "--no-build", "--no-write-lock-file", "path:"+stage)...); err != nil {
-			return "", err
-		}
-		if opt.Build {
-			if err = run(ctx, opt.Log, "nix", append(common, "build", "--no-link", "--no-write-lock-file", "path:"+stage+"#nixosConfigurations."+cfg.Host+".config.system.build.toplevel")...); err != nil {
-				return "", err
-			}
-		}
-		names = []string{"flake.lock", "flake.nix"}
+	backup, err := publishFiles(stage, dir, []string{"flake.nix"}, opt.Force)
+	if err != nil {
+		return backup, err
 	}
+	target := filepath.Join(dir, "flake.nix")
+	fmt.Fprintf(opt.Log, "Saved %s. Running checks…\n", target)
+	failed := func(err error) (string, error) { return backup, &ValidationError{Path: target, Err: err} }
+	if err = CheckHardware(cfg.Hardware); err != nil {
+		return failed(err)
+	}
+	if err = Parse(ctx, source); err != nil {
+		return failed(err)
+	}
+	if opt.Build && strings.TrimSpace(cfg.Hardware) == "" {
+		return failed(fmt.Errorf("building requires embedded hardware; supply --hardware"))
+	}
+	if !opt.Lock && !opt.Build {
+		return backup, nil
+	}
+	// Keep input resolution and tests isolated, while the generated source remains
+	// available in the output directory even if a command fails or is interrupted.
+	if err = os.WriteFile(stagedSource, []byte(source), 0644); err != nil {
+		return failed(err)
+	}
+	oldLock, err := os.ReadFile(filepath.Join(dir, "flake.lock"))
+	if err == nil {
+		if err = os.WriteFile(filepath.Join(stage, "flake.lock"), oldLock, 0644); err != nil {
+			return failed(err)
+		}
+	} else if !os.IsNotExist(err) {
+		return failed(err)
+	}
+	common := []string{"--extra-experimental-features", "nix-command flakes"}
+	if err = run(ctx, opt.Log, "nix", append(common, "flake", "lock", "path:"+stage)...); err != nil {
+		return failed(err)
+	}
+	if err = run(ctx, opt.Log, "nix", append(common, "flake", "check", "--no-build", "--no-write-lock-file", "path:"+stage)...); err != nil {
+		return failed(err)
+	}
+	if opt.Build {
+		if err = run(ctx, opt.Log, "nix", append(common, "build", "--no-link", "--no-write-lock-file", "path:"+stage+"#nixosConfigurations."+cfg.Host+".config.system.build.toplevel")...); err != nil {
+			return failed(err)
+		}
+	}
+	lockBackup, err := publishFiles(stage, dir, []string{"flake.lock"}, opt.Force)
+	if err != nil {
+		return failed(err)
+	}
+	if lockBackup != "" {
+		fmt.Fprintf(opt.Log, "Previous lock file backed up to %s\n", lockBackup)
+	}
+	return backup, nil
+}
+
+func publishFiles(stage, dir string, names []string, force bool) (string, error) {
 	// Snapshot all destinations before changing either file. Keep a durable backup
 	// when replacing existing files; restore those bytes if publication fails.
 	old := map[string][]byte{}
@@ -193,6 +222,9 @@ func Write(ctx context.Context, source string, cfg Config, opt WriteOptions) (st
 		if e != nil {
 			return "", e
 		}
+		if !force {
+			return "", fmt.Errorf("%s exists; use --force after reviewing the preview", path)
+		}
 		if !st.Mode().IsRegular() {
 			return "", fmt.Errorf("refusing to replace non-regular file %s", path)
 		}
@@ -204,6 +236,7 @@ func Write(ctx context.Context, source string, cfg Config, opt WriteOptions) (st
 		modes[name] = st.Mode().Perm()
 	}
 	backup := ""
+	var err error
 	if len(old) > 0 {
 		backup, err = os.MkdirTemp(dir, "flakebuilder-backup-")
 		if err != nil {

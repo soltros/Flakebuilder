@@ -4,6 +4,7 @@ package main
 
 import (
 	"context"
+	"errors"
 	"flag"
 	"fmt"
 	"os"
@@ -31,7 +32,7 @@ func run() error {
 	flag.Var(&uses, "input-use", "Use NAME=overlay:ATTRIBUTE, NAME=module:ATTRIBUTE, or NAME=package:ATTRIBUTE (repeatable)")
 	flag.Var(&follows, "input-follows", "Make NAME.inputs.nixpkgs follow root nixpkgs (repeatable)")
 	flag.Var(&remove, "remove-input", "Remove a custom input loaded with --from (repeatable)")
-	flag.StringVar(&dir, "dir", ".", "Output directory")
+	flag.StringVar(&dir, "dir", defaultOutputDirectory, "Output directory (the default keeps backups when generating again)")
 	flag.StringVar(&from, "from", "", "Load choices and embedded hardware from a generated flake")
 	flag.StringVar(&catalogDir, "catalog", "", "Use a trusted local directory containing catalog.json and bit templates")
 	flag.StringVar(&preset, "preset", "", "Start with a preset (see --list)")
@@ -54,8 +55,8 @@ func run() error {
 	flag.BoolVar(&yes, "yes", false, "Generate noninteractively from the supplied selections")
 	flag.BoolVar(&stdout, "stdout", false, "Print generated flake without writing files or running Nix")
 	flag.BoolVar(&force, "force", false, "Allow replacing generated files, with backups")
-	flag.BoolVar(&lock, "lock", false, "Resolve inputs and evaluate the flake before writing; emits flake.lock")
-	flag.BoolVar(&build, "build", false, "Lock, evaluate and build the system before writing; never activate")
+	flag.BoolVar(&lock, "lock", false, "Save the flake, then resolve inputs and evaluate; emits flake.lock on success")
+	flag.BoolVar(&build, "build", false, "Save the flake, then lock, evaluate and build; never activate")
 	flag.Parse()
 	if flag.NArg() != 0 {
 		return fmt.Errorf("unexpected arguments: %s", strings.Join(flag.Args(), " "))
@@ -82,6 +83,12 @@ func run() error {
 		}
 		return nil
 	}
+	var automaticBackup bool
+	dir, automaticBackup, err = outputDirectory(dir)
+	if err != nil {
+		return err
+	}
+	force = force || automaticBackup
 	seen := map[string]bool{}
 	flag.Visit(func(f *flag.Flag) { seen[f.Name] = true })
 	overrides := cfg
@@ -135,14 +142,8 @@ func run() error {
 	if err = cfg.Validate(); err != nil {
 		return err
 	}
-	if err = builder.CheckHardware(cfg.Hardware); err != nil {
-		return err
-	}
 	if stdout && (build || lock) {
 		return fmt.Errorf("--stdout cannot be combined with --lock or --build")
-	}
-	if build && cfg.Hardware == "" {
-		return fmt.Errorf("--build requires --hardware or hardware restored with --from")
 	}
 	if !yes && !stdout {
 		fmt.Fprintf(os.Stderr, "Output: %s/flake.nix (build: %t, replace existing: %t)\n", dir, build, force)
@@ -168,12 +169,16 @@ func run() error {
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer cancel()
 	backup, err := builder.Write(ctx, source, cfg, builder.WriteOptions{Directory: dir, Force: force, Lock: lock, Build: build, Log: os.Stderr})
-	if err != nil {
+	var validation *builder.ValidationError
+	if err != nil && !errors.As(err, &validation) {
 		return err
 	}
 	fmt.Printf("Generated %s/flake.nix: %d bits, %d external inputs.\n", dir, len(plan.Bits), len(plan.Inputs))
 	if backup != "" {
 		fmt.Println("Previous files backed up to", backup)
+	}
+	if err != nil {
+		return err
 	}
 	if build {
 		fmt.Println("System build passed. No activation was performed.")

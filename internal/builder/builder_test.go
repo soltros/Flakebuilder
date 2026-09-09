@@ -2,6 +2,7 @@ package builder
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"os"
 	"os/exec"
@@ -176,7 +177,7 @@ func TestWriteProtectsExisting(t *testing.T) {
 		t.Fatal("wrong source written")
 	}
 }
-func TestFailedBuildDoesNotPublish(t *testing.T) {
+func TestFailedLockKeepsGeneratedFlake(t *testing.T) {
 	dir := t.TempDir()
 	tools := t.TempDir()
 	shell, e := exec.LookPath("sh")
@@ -196,14 +197,20 @@ func TestFailedBuildDoesNotPublish(t *testing.T) {
 	target := filepath.Join(dir, "flake.nix")
 	os.WriteFile(target, []byte("old"), 0644)
 	os.WriteFile(filepath.Join(dir, "flake.lock"), []byte("old-lock"), 0644)
-	if _, e := Write(context.Background(), "{}", cfg, WriteOptions{Directory: dir, Force: true, Build: true}); e == nil {
-		t.Fatal("failure not propagated")
+	backup, err := Write(context.Background(), "{}", cfg, WriteOptions{Directory: dir, Force: true, Build: true})
+	var validation *ValidationError
+	if !errors.As(err, &validation) || validation.Path != target {
+		t.Fatalf("expected saved-file validation error, got %v", err)
+	}
+	original, err := os.ReadFile(filepath.Join(backup, "flake.nix"))
+	if err != nil || string(original) != "old" {
+		t.Fatalf("old source was not backed up: %s %v", original, err)
 	}
 	commands, e := os.ReadFile(commandLog)
 	if e != nil || !strings.Contains(string(commands), "lock") {
 		t.Fatalf("Nix locking was not reached: %s %v", commands, e)
 	}
-	for n, want := range map[string]string{"flake.nix": "old", "flake.lock": "old-lock"} {
+	for n, want := range map[string]string{"flake.nix": "{}", "flake.lock": "old-lock"} {
 		b, _ := os.ReadFile(filepath.Join(dir, n))
 		if string(b) != want {
 			t.Fatal("changed", n)
@@ -293,7 +300,10 @@ func TestBuildSequenceAndFailure(t *testing.T) {
 			} else {
 				t.Setenv("FLAKEBUILDER_TEST_FAIL", "no")
 			}
-			script := `printf '%s\n' "$*" >> "$FLAKEBUILDER_TEST_LOG"
+			t.Setenv("FLAKEBUILDER_TEST_TARGET", filepath.Join(dir, "flake.nix"))
+			script := `IFS= read -r saved < "$FLAKEBUILDER_TEST_TARGET"
+if [ "$saved" != "{ }" ]; then exit 92; fi
+printf '%s\n' "$*" >> "$FLAKEBUILDER_TEST_LOG"
 if [ "$3" = flake ] && [ "$4" = lock ]; then
  printf '{}\n' > "${5#path:}/flake.lock"
 fi
@@ -329,11 +339,56 @@ exit 0
 				t.Fatal(e)
 			}
 			want := "{ }"
-			if fail {
-				want = "old"
-			}
 			if string(data) != want {
 				t.Fatalf("got %s want %s", data, want)
+			}
+		})
+	}
+}
+
+func TestGenerationSurvivesValidationFailure(t *testing.T) {
+	for _, stage := range []string{"parser-missing", "parse", "hardware", "lock", "check", "build", "missing-hardware"} {
+		t.Run(stage, func(t *testing.T) {
+			dir, tools := t.TempDir(), t.TempDir()
+			shell, err := exec.LookPath("sh")
+			if err != nil {
+				t.Fatal(err)
+			}
+			t.Setenv("FLAKEBUILDER_TEST_STAGE", stage)
+			if stage != "parser-missing" {
+				scripts := map[string]string{
+					"nix-instantiate": "[ \"$FLAKEBUILDER_TEST_STAGE\" != parse ]\n",
+					"nix": `
+if [ "$3" = flake ] && [ "$4" = "$FLAKEBUILDER_TEST_STAGE" ]; then exit 1; fi
+if [ "$3" = build ] && [ "$FLAKEBUILDER_TEST_STAGE" = build ]; then exit 1; fi
+if [ "$3" = flake ] && [ "$4" = lock ]; then printf '{}\n' > "${5#path:}/flake.lock"; fi
+exit 0
+`,
+				}
+				for name, script := range scripts {
+					if err = os.WriteFile(filepath.Join(tools, name), []byte("#!"+shell+"\n"+script), 0755); err != nil {
+						t.Fatal(err)
+					}
+				}
+			}
+			t.Setenv("PATH", tools)
+			cfg := config()
+			cfg.Hardware = "{}"
+			if stage == "hardware" {
+				cfg.Hardware = "{ imports = [ ./missing.nix ]; }"
+			}
+			if stage == "missing-hardware" {
+				cfg.Hardware = ""
+			}
+			source := "{ description = \"still generated\"; }"
+			_, err = Write(context.Background(), source, cfg, WriteOptions{Directory: dir, Build: true})
+			var failure *ValidationError
+			if !errors.As(err, &failure) {
+				t.Fatalf("expected validation failure, got %v", err)
+			}
+			b, err := os.ReadFile(filepath.Join(dir, "flake.nix"))
+			if err != nil || string(b) != source {
+				t.Fatalf("generated source lost after %s: %s %v", stage, b, err)
 			}
 		})
 	}

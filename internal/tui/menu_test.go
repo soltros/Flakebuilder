@@ -47,3 +47,23 @@ func TestCancelAndEmptySearch(t *testing.T) {
 		t.Fatal("quit confirmed output")
 	}
 }
+
+func TestGenerateFromPreview(t *testing.T) {
+	for _, confirm := range []string{"enter", "g", "y"} {
+		t.Run(confirm, func(t *testing.T) {
+			m := key(model(t), "g")
+			if m.preview == "" {
+				t.Fatal("preview unavailable")
+			}
+			if confirm == "enter" {
+				v, _ := m.Update(tea.KeyMsg{Type: tea.KeyEnter})
+				m = v.(Model)
+			} else {
+				m = key(m, confirm)
+			}
+			if !m.Confirmed {
+				t.Fatal("generate key did not confirm output")
+			}
+		})
+	}
+}

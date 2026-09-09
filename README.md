@@ -14,7 +14,7 @@ With Go 1.24 or newer and Nix installed:
 CGO_ENABLED=0 go build -o flakebuilder .
 ./flakebuilder --list
 ./flakebuilder --state-version 26.05 --host workstation --user alice \
-  --hardware /etc/nixos/hardware-configuration.nix --dir ./generated
+  --hardware /etc/nixos/hardware-configuration.nix
 ```
 
 Or from this checkout:
@@ -23,6 +23,8 @@ Or from this checkout:
 nix run . -- --list
 ```
 
+Output defaults to `~/generated_flakes/flake.nix`. Generating again in this directory automatically backs up and replaces the previous file. Use `--dir` for another location; existing files outside the default directory still require `--force`.
+
 Use the installation's **original** `system.stateVersion`; selecting a newer nixpkgs track does not mean changing that value. Hostname, user, locale, timezone, keyboard and personal paths are CLI settings. Defaults use a generic user and UTC. Hardware comes from your own generated hardware configuration, never from a preset's original machine.
 
 Menu controls:
@@ -30,7 +32,7 @@ Menu controls:
 - Arrow keys / j / k: navigate; Space: select a bit.
 - `/`: search by name, category or ID; Esc: clear search.
 - `i`: add an external input or remove a custom input by name.
-- Enter: preview the single generated file; y: generate; n: return to editing.
+- Enter: preview the single generated file; Enter / g / y: generate; n: return to editing.
 - q / Ctrl+C: cancel without changing output files.
 
 `[+]` means a bit is needed by another selected bit. Dependency selections are calculated automatically. Remove the dependent selection to remove an automatically selected bit. Conflicting desktop, shell, bootloader, kernel or power choices must be resolved before generation.
@@ -55,7 +57,7 @@ The same functionality is available without the menu:
   --input soltros_nixpkgs=github:soltros/soltros_nixpkgs \
   --input-follows soltros_nixpkgs \
   --input-use soltros_nixpkgs=overlay:default \
-  --hardware /etc/nixos/hardware-configuration.nix --dir ./generated --yes
+  --hardware /etc/nixos/hardware-configuration.nix --yes
 ```
 
 Built-in integrations already wire their input, follows policy and settings:
@@ -63,7 +65,7 @@ Built-in integrations already wire their input, follows policy and settings:
 ```sh
 ./flakebuilder --state-version 26.05 --host workstation --user alice \
   --bits nix-settings,networkmanager,localization,user,boot-systemd,desktop-plasma,waterfox,voxtype,hermes \
-  --hardware /etc/nixos/hardware-configuration.nix --dir ./generated --yes
+  --hardware /etc/nixos/hardware-configuration.nix --yes
 ```
 
 For another source, repeat `--input NAME=URL`, `--input-use NAME=package:ATTRIBUTE` / `NAME=module:ATTRIBUTE` / `NAME=overlay:ATTRIBUTE`, and optionally `--input-follows NAME`. `--input-use` can also refer to a known catalog input without redeclaring its URL. Output attributes may be dotted paths. Local input paths are excluded so generated output does not depend on a source checkout.
@@ -85,18 +87,18 @@ Preserve required follows mappings when overriding catalog inputs. Changing an i
 ./flakebuilder --preset laptop_plasma --state-version 26.05 --stdout
 
 # Reopen a generated file's saved selections, including embedded hardware.
-./flakebuilder --from ./generated/flake.nix --dir ./generated --force
+./flakebuilder --from ~/generated_flakes/flake.nix
 
-# Lock inputs and evaluate in a temporary staging directory, then write output.
-./flakebuilder --from ./generated/flake.nix --dir ./generated --yes --force --lock
+# Save the flake, then lock inputs and evaluate in a staging directory.
+./flakebuilder --from ~/generated_flakes/flake.nix --yes --lock
 
-# Build the selected system before replacing the generated files.
-./flakebuilder --from ./generated/flake.nix --dir ./generated --yes --force --build
+# Save the flake, then build the selected system.
+./flakebuilder --from ~/generated_flakes/flake.nix --yes --build
 ```
 
-Normal generation checks Nix syntax. `--lock` additionally locks inputs and runs `nix flake check --no-build`. `--build` also runs a non-activating `nix build` of the system toplevel. **Flakebuilder never runs switch, boot or nixos-install.** Build failures leave existing generated files unchanged. Successful replacements keep backups. Existing lock pins are reused when applicable; changing selections may add or remove inputs.
+Generation saves `flake.nix` first, then checks Nix syntax. `--lock` additionally locks inputs and runs `nix flake check --no-build`. `--build` also runs a non-activating `nix build` of the system toplevel. **Flakebuilder never runs switch, boot or nixos-install.** Parser, locking, evaluation and build failures are reported but leave the newly generated flake available to inspect, edit or reopen. Failed checks return a nonzero exit status, with the saved path in the error message. Replacements keep backups. A new lock file is published only when the requested checks succeed; a previous lock file remains unchanged on failure. Existing lock pins are reused when applicable; changing selections may add or remove inputs.
 
-`--from` reads selection metadata, not arbitrary hand edits to the Nix body. Hand edits remain usable by Nix, but reopening and regenerating produces code from the saved selections. Backups preserve the old file. No output is overwritten without `--force`. Generation can omit hardware for previews; building requires it. Standard hardware files using `modulesPath` are supported; local file imports must first be inlined.
+`--from` reads selection metadata, not arbitrary hand edits to the Nix body. Hand edits remain usable by Nix, but reopening and regenerating produces code from the saved selections. Backups preserve the old file. The default `~/generated_flakes` directory automatically backs up repeated generations; other output directories require `--force` to replace files. Generation can omit hardware; a build attempt without hardware reports an error after saving the flake. Standard hardware files using `modulesPath` are supported; local file imports must first be inlined.
 
 ## Add more bits
 
