@@ -1,0 +1,1404 @@
+{
+  "version": 1,
+  "inputs": {
+    "soltros-nixpkgs": {
+      "url": "github:soltros/soltros_nixpkgs",
+      "follows": {
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "unity-on-nix": {
+      "url": "github:soltros/unity-on-nix",
+      "follows": {
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "hermes-agent": {
+      "url": "github:NousResearch/hermes-agent"
+    },
+    "antigravity-nix": {
+      "url": "github:jacopone/antigravity-nix",
+      "follows": {
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "voxtype": {
+      "url": "github:peteonrails/voxtype/v0.7.5",
+      "follows": {
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "bits": [
+    {
+      "id": "nix-settings",
+      "label": "Nix commands and flakes",
+      "category": "System",
+      "description": "Nix commands and flakes",
+      "file": "bits/nix-settings.nix"
+    },
+    {
+      "id": "networkmanager",
+      "label": "NetworkManager",
+      "category": "Networking",
+      "description": "NetworkManager",
+      "file": "bits/networkmanager.nix"
+    },
+    {
+      "id": "localization",
+      "label": "Timezone, locale and keyboard",
+      "category": "System",
+      "description": "Timezone, locale and keyboard",
+      "file": "bits/localization.nix"
+    },
+    {
+      "id": "user",
+      "label": "User account",
+      "category": "System",
+      "description": "User account",
+      "file": "bits/user.nix"
+    },
+    {
+      "id": "boot-systemd",
+      "label": "systemd-boot (UEFI)",
+      "category": "Boot",
+      "description": "systemd-boot (UEFI)",
+      "file": "bits/boot-systemd.nix",
+      "group": "bootloader"
+    },
+    {
+      "id": "boot-grub-efi",
+      "label": "GRUB (UEFI)",
+      "category": "Boot",
+      "description": "GRUB (UEFI)",
+      "file": "bits/boot-grub-efi.nix",
+      "group": "bootloader"
+    },
+    {
+      "id": "kernel-latest",
+      "label": "Latest kernel",
+      "category": "Boot",
+      "description": "Latest kernel",
+      "file": "bits/kernel-latest.nix",
+      "group": "kernel"
+    },
+    {
+      "id": "kernel-default",
+      "label": "Distribution default kernel",
+      "category": "Boot",
+      "description": "Distribution default kernel",
+      "file": "bits/kernel-default.nix",
+      "group": "kernel"
+    },
+    {
+      "id": "power-desktop",
+      "label": "Desktop performance power policy",
+      "category": "Power",
+      "description": "Desktop performance power policy",
+      "file": "bits/power-desktop.nix",
+      "group": "power"
+    },
+    {
+      "id": "power-laptop",
+      "label": "Laptop power policy",
+      "category": "Power",
+      "description": "Laptop power policy",
+      "file": "bits/power-laptop.nix",
+      "group": "power"
+    },
+    {
+      "id": "usb-stability",
+      "label": "Desktop USB/PCI stability workaround",
+      "category": "Power",
+      "description": "Desktop USB/PCI stability workaround",
+      "file": "bits/usb-stability.nix"
+    },
+    {
+      "id": "no-suspend",
+      "label": "Disable suspend and hibernation",
+      "category": "Power",
+      "description": "Disable suspend and hibernation",
+      "file": "bits/no-suspend.nix"
+    },
+    {
+      "id": "zram",
+      "label": "ZRAM and systemd-oomd",
+      "category": "Storage",
+      "description": "ZRAM and systemd-oomd",
+      "file": "bits/zram.nix"
+    },
+    {
+      "id": "memory-tuning",
+      "label": "Lower swappiness and cache pressure",
+      "category": "Storage",
+      "description": "Lower swappiness and cache pressure",
+      "file": "bits/memory-tuning.nix"
+    },
+    {
+      "id": "btrfs-scrub",
+      "label": "Weekly Btrfs scrub",
+      "category": "Storage",
+      "description": "Weekly Btrfs scrub",
+      "file": "bits/btrfs-scrub.nix"
+    },
+    {
+      "id": "trim",
+      "label": "SSD trim",
+      "category": "Storage",
+      "description": "SSD trim",
+      "file": "bits/trim.nix"
+    },
+    {
+      "id": "intel-cpu",
+      "label": "Intel microcode",
+      "category": "Hardware",
+      "description": "Intel microcode",
+      "file": "bits/intel-cpu.nix",
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "amd-cpu",
+      "label": "AMD microcode and active P-state",
+      "category": "Hardware",
+      "description": "AMD microcode and active P-state",
+      "file": "bits/amd-cpu.nix",
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "intel-sof",
+      "label": "Intel SOF audio firmware",
+      "category": "Hardware",
+      "description": "Intel SOF audio firmware",
+      "file": "bits/intel-sof.nix",
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "gpu-amd",
+      "label": "AMD graphics",
+      "category": "Hardware",
+      "description": "AMD graphics",
+      "file": "bits/gpu-amd.nix"
+    },
+    {
+      "id": "amd-legacy",
+      "label": "AMD SI/CIK and pre-Vega OpenCL",
+      "category": "Hardware",
+      "description": "AMD SI/CIK and pre-Vega OpenCL",
+      "file": "bits/amd-legacy.nix",
+      "requires": [
+        "gpu-amd"
+      ],
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "gpu-intel",
+      "label": "Intel graphics and media acceleration",
+      "category": "Hardware",
+      "description": "Intel graphics and media acceleration",
+      "file": "bits/gpu-intel.nix",
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "intel-panel-power",
+      "label": "Intel laptop panel power tuning",
+      "category": "Hardware",
+      "description": "Intel laptop panel power tuning",
+      "file": "bits/intel-panel-power.nix",
+      "requires": [
+        "gpu-intel"
+      ]
+    },
+    {
+      "id": "bluetooth",
+      "label": "Bluetooth",
+      "category": "Hardware",
+      "description": "Bluetooth",
+      "file": "bits/bluetooth.nix"
+    },
+    {
+      "id": "pipewire",
+      "label": "PipeWire audio",
+      "category": "Services",
+      "description": "PipeWire audio",
+      "file": "bits/pipewire.nix"
+    },
+    {
+      "id": "printing",
+      "label": "Printing",
+      "category": "Services",
+      "description": "Printing",
+      "file": "bits/printing.nix"
+    },
+    {
+      "id": "flatpak",
+      "label": "Flatpak",
+      "category": "Applications",
+      "description": "Flatpak",
+      "file": "bits/flatpak.nix"
+    },
+    {
+      "id": "portal-gtk",
+      "label": "GTK desktop portal",
+      "category": "Desktop integrations",
+      "description": "GTK desktop portal",
+      "file": "bits/portal-gtk.nix"
+    },
+    {
+      "id": "desktop-pantheon",
+      "label": "Pantheon",
+      "category": "Desktop",
+      "description": "Pantheon",
+      "file": "bits/desktop-pantheon.nix",
+      "group": "desktop"
+    },
+    {
+      "id": "desktop-plasma",
+      "label": "Plasma",
+      "category": "Desktop",
+      "description": "Plasma",
+      "file": "bits/desktop-plasma.nix",
+      "group": "desktop"
+    },
+    {
+      "id": "desktop-cosmic",
+      "label": "COSMIC",
+      "category": "Desktop",
+      "description": "COSMIC",
+      "file": "bits/desktop-cosmic.nix",
+      "group": "desktop"
+    },
+    {
+      "id": "desktop-lomiri",
+      "label": "Lomiri",
+      "category": "Desktop",
+      "description": "Lomiri",
+      "file": "bits/desktop-lomiri.nix",
+      "requires": [
+        "portal-gtk"
+      ],
+      "group": "desktop"
+    },
+    {
+      "id": "desktop-unity",
+      "label": "Unity",
+      "category": "Desktop",
+      "description": "Unity",
+      "file": "bits/desktop-unity.nix",
+      "requires": [
+        "portal-gtk"
+      ],
+      "group": "desktop",
+      "inputs": [
+        "unity-on-nix"
+      ],
+      "tracks": [
+        "26.05"
+      ]
+    },
+    {
+      "id": "fonts",
+      "label": "Desktop fonts",
+      "category": "Appearance",
+      "description": "Desktop fonts",
+      "file": "bits/fonts.nix"
+    },
+    {
+      "id": "icons",
+      "label": "Papirus icons",
+      "category": "Appearance",
+      "description": "Papirus icons",
+      "file": "bits/icons.nix"
+    },
+    {
+      "id": "plymouth",
+      "label": "Catppuccin Plymouth boot theme",
+      "category": "Appearance",
+      "description": "Catppuccin Plymouth boot theme",
+      "file": "bits/plymouth.nix"
+    },
+    {
+      "id": "cosmic-theme",
+      "label": "Catppuccin COSMIC theme assets",
+      "category": "Appearance",
+      "description": "Catppuccin COSMIC theme assets",
+      "file": "bits/cosmic-theme.nix",
+      "requires": [
+        "desktop-cosmic"
+      ]
+    },
+    {
+      "id": "plasma-theme",
+      "label": "Plasma dark appearance and fonts",
+      "category": "Appearance",
+      "description": "Plasma dark appearance and fonts",
+      "file": "bits/plasma-theme.nix",
+      "requires": [
+        "desktop-plasma",
+        "fonts",
+        "icons"
+      ]
+    },
+    {
+      "id": "plasma-voxtype",
+      "label": "Plasma Voxtype shortcut",
+      "category": "Desktop integrations",
+      "description": "Plasma Voxtype shortcut",
+      "file": "bits/plasma-voxtype.nix",
+      "requires": [
+        "desktop-plasma",
+        "voxtype"
+      ]
+    },
+    {
+      "id": "zsh",
+      "label": "Zsh shell",
+      "category": "Shell",
+      "description": "Zsh shell",
+      "file": "bits/zsh.nix",
+      "requires": [
+        "user"
+      ],
+      "group": "shell"
+    },
+    {
+      "id": "fish",
+      "label": "Fish shell",
+      "category": "Shell",
+      "description": "Fish shell",
+      "file": "bits/fish.nix",
+      "requires": [
+        "user"
+      ],
+      "group": "shell"
+    },
+    {
+      "id": "starship",
+      "label": "Starship prompt",
+      "category": "Shell",
+      "description": "Starship prompt",
+      "file": "bits/starship.nix"
+    },
+    {
+      "id": "cli-tools",
+      "label": "Modern CLI tools",
+      "category": "Applications",
+      "description": "Modern CLI tools",
+      "file": "bits/cli-tools.nix"
+    },
+    {
+      "id": "cli-aliases",
+      "label": "Modern CLI aliases for Zsh",
+      "category": "Shell",
+      "description": "Modern CLI aliases for Zsh",
+      "file": "bits/cli-aliases.nix",
+      "requires": [
+        "zsh",
+        "cli-tools"
+      ]
+    },
+    {
+      "id": "rebuild-helpers",
+      "label": "Flake rebuild helpers",
+      "category": "Shell",
+      "description": "Flake rebuild helpers",
+      "file": "bits/rebuild-helpers.nix",
+      "requires": [
+        "zsh",
+        "nix-settings"
+      ]
+    },
+    {
+      "id": "unfree",
+      "label": "Allow unfree packages",
+      "category": "Package policy",
+      "description": "Allow unfree packages",
+      "file": "bits/unfree.nix"
+    },
+    {
+      "id": "insecure-exceptions",
+      "label": "Insecure package exception list (empty)",
+      "category": "Package policy",
+      "description": "Insecure package exception list (empty)",
+      "file": "bits/insecure-exceptions.nix"
+    },
+    {
+      "id": "no-package-docs",
+      "label": "Disable package documentation",
+      "category": "System",
+      "description": "Disable package documentation",
+      "file": "bits/no-package-docs.nix",
+      "group": "documentation"
+    },
+    {
+      "id": "no-docs",
+      "label": "Disable all documentation",
+      "category": "System",
+      "description": "Disable all documentation",
+      "file": "bits/no-docs.nix",
+      "group": "documentation"
+    },
+    {
+      "id": "soltros-packages",
+      "label": "Soltros package overlay",
+      "category": "Package sources",
+      "description": "Soltros package overlay",
+      "file": "bits/soltros-packages.nix",
+      "inputs": [
+        "soltros-nixpkgs"
+      ]
+    },
+    {
+      "id": "chatgpt",
+      "label": "ChatGPT",
+      "category": "Applications",
+      "description": "ChatGPT",
+      "file": "bits/chatgpt.nix",
+      "requires": [
+        "soltros-packages",
+        "unfree"
+      ],
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "waterfox",
+      "label": "Waterfox",
+      "category": "Applications",
+      "description": "Waterfox",
+      "file": "bits/waterfox.nix",
+      "requires": [
+        "soltros-packages",
+        "unfree"
+      ],
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "termsmith",
+      "label": "Termsmith",
+      "category": "Applications",
+      "description": "Termsmith",
+      "file": "bits/termsmith.nix",
+      "requires": [
+        "soltros-packages",
+        "unfree"
+      ],
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "antigravity",
+      "label": "Antigravity applications",
+      "category": "Applications",
+      "description": "Antigravity applications",
+      "file": "bits/antigravity.nix",
+      "inputs": [
+        "antigravity-nix"
+      ],
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "typing-tools",
+      "label": "Input emulation and typing tools",
+      "category": "Desktop integrations",
+      "description": "Input emulation and typing tools",
+      "file": "bits/typing-tools.nix",
+      "requires": [
+        "user"
+      ]
+    },
+    {
+      "id": "voxtype",
+      "label": "Voxtype Vulkan dictation and GTK OSD",
+      "category": "Applications",
+      "description": "Voxtype Vulkan dictation and GTK OSD",
+      "file": "bits/voxtype.nix",
+      "requires": [
+        "typing-tools"
+      ],
+      "inputs": [
+        "voxtype"
+      ],
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "hermes",
+      "label": "Hermes Agent service",
+      "category": "AI tools",
+      "description": "Hermes Agent service",
+      "file": "bits/hermes.nix",
+      "inputs": [
+        "hermes-agent"
+      ]
+    },
+    {
+      "id": "hermes-shared",
+      "label": "Shared Hermes CLI workspace",
+      "category": "AI tools",
+      "description": "Shared Hermes CLI workspace",
+      "file": "bits/hermes-shared.nix",
+      "requires": [
+        "hermes",
+        "user"
+      ]
+    },
+    {
+      "id": "hermes-runtime",
+      "label": "Hermes runtime compatibility patch",
+      "category": "AI tools",
+      "description": "Branch-derived Python 3.12 workaround and nix-ld libraries; needs validation against the selected Hermes revision",
+      "file": "bits/hermes-runtime.nix",
+      "requires": [
+        "hermes"
+      ]
+    },
+    {
+      "id": "hermes-profiles",
+      "label": "Hermes support, architect, builder and review profiles",
+      "category": "AI tools",
+      "description": "Hermes support, architect, builder and review profiles",
+      "file": "bits/hermes-profiles.nix",
+      "requires": [
+        "hermes",
+        "hermes-shared"
+      ]
+    },
+    {
+      "id": "durandal",
+      "label": "Derrik\u2019s Durandal persona and skin",
+      "category": "AI tools",
+      "description": "Optional personal persona from nixos-config; retains its original text and paths",
+      "file": "bits/durandal.nix",
+      "requires": [
+        "hermes",
+        "hermes-shared"
+      ]
+    },
+    {
+      "id": "muse",
+      "label": "Muse Code runtime updater",
+      "category": "AI tools",
+      "description": "Downloads the upstream installer at runtime; this bit does not pin Muse itself",
+      "file": "bits/muse.nix",
+      "requires": [
+        "user"
+      ]
+    },
+    {
+      "id": "steam",
+      "label": "Steam and Remote Play",
+      "category": "Gaming",
+      "description": "Steam and Remote Play",
+      "file": "bits/steam.nix",
+      "requires": [
+        "unfree"
+      ],
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "gamemode",
+      "label": "GameMode",
+      "category": "Gaming",
+      "description": "GameMode",
+      "file": "bits/gamemode.nix"
+    },
+    {
+      "id": "gamemode-tuning",
+      "label": "Desktop GameMode priority tuning",
+      "category": "Gaming",
+      "description": "Desktop GameMode priority tuning",
+      "file": "bits/gamemode-tuning.nix",
+      "requires": [
+        "gamemode"
+      ]
+    },
+    {
+      "id": "virtualbox",
+      "label": "VirtualBox host",
+      "category": "Virtualization",
+      "description": "VirtualBox host",
+      "file": "bits/virtualbox.nix",
+      "requires": [
+        "user"
+      ],
+      "systems": [
+        "x86_64-linux"
+      ]
+    },
+    {
+      "id": "libvirt",
+      "label": "Libvirt and virt-manager",
+      "category": "Virtualization",
+      "description": "Libvirt and virt-manager",
+      "file": "bits/libvirt.nix"
+    },
+    {
+      "id": "podman",
+      "label": "Podman containers",
+      "category": "Virtualization",
+      "description": "Podman containers",
+      "file": "bits/podman.nix"
+    },
+    {
+      "id": "ssh",
+      "label": "OpenSSH server",
+      "category": "Networking",
+      "description": "OpenSSH server",
+      "file": "bits/ssh.nix"
+    },
+    {
+      "id": "gpg-agent",
+      "label": "GnuPG SSH agent",
+      "category": "Shell",
+      "description": "GnuPG SSH agent",
+      "file": "bits/gpg-agent.nix"
+    },
+    {
+      "id": "tailscale",
+      "label": "Tailscale",
+      "category": "Networking",
+      "description": "Tailscale",
+      "file": "bits/tailscale.nix"
+    },
+    {
+      "id": "jackett",
+      "label": "Jackett",
+      "category": "Services",
+      "description": "Jackett",
+      "file": "bits/jackett.nix"
+    },
+    {
+      "id": "jellyfin",
+      "label": "Jellyfin media server",
+      "category": "Services",
+      "description": "Jellyfin media server",
+      "file": "bits/jellyfin.nix"
+    },
+    {
+      "id": "syncthing",
+      "label": "Syncthing",
+      "category": "Services",
+      "description": "Syncthing",
+      "file": "bits/syncthing.nix",
+      "requires": [
+        "user"
+      ]
+    },
+    {
+      "id": "pipx-workaround",
+      "label": "Stable pipx test workaround",
+      "category": "Compatibility",
+      "description": "Stable pipx test workaround",
+      "file": "bits/pipx-workaround.nix",
+      "tracks": [
+        "26.05"
+      ]
+    },
+    {
+      "id": "apps-development",
+      "label": "Development tools",
+      "category": "Application bundles",
+      "description": "Development tools",
+      "file": "bits/apps-development.nix"
+    },
+    {
+      "id": "apps-office",
+      "label": "Office applications",
+      "category": "Application bundles",
+      "description": "Office applications",
+      "file": "bits/apps-office.nix"
+    },
+    {
+      "id": "apps-media",
+      "label": "Media and graphics",
+      "category": "Application bundles",
+      "description": "Media and graphics",
+      "file": "bits/apps-media.nix"
+    },
+    {
+      "id": "apps-communication",
+      "label": "Communication apps",
+      "category": "Application bundles",
+      "description": "Communication apps",
+      "file": "bits/apps-communication.nix",
+      "requires": [
+        "unfree"
+      ]
+    },
+    {
+      "id": "apps-backup",
+      "label": "Backup and storage tools",
+      "category": "Application bundles",
+      "description": "Backup and storage tools",
+      "file": "bits/apps-backup.nix"
+    },
+    {
+      "id": "apps-terminals",
+      "label": "Kitty and Alacritty",
+      "category": "Application bundles",
+      "description": "Kitty and Alacritty",
+      "file": "bits/apps-terminals.nix"
+    },
+    {
+      "id": "apps-personal",
+      "label": "Additional personal applications",
+      "category": "Application bundles",
+      "description": "Additional personal applications",
+      "file": "bits/apps-personal.nix",
+      "requires": [
+        "unfree"
+      ]
+    },
+    {
+      "id": "plasma-hermes",
+      "label": "Plasma Durandal launcher and shortcut",
+      "category": "Desktop integrations",
+      "description": "Personal Hermes launcher, Kitty appearance and keyboard shortcut",
+      "file": "bits/plasma-hermes.nix",
+      "requires": [
+        "desktop-plasma",
+        "hermes-shared",
+        "durandal",
+        "fonts",
+        "apps-terminals"
+      ]
+    }
+  ],
+  "presets": {
+    "minimal": {
+      "label": "Minimal system (supply your hardware)",
+      "track": "unstable",
+      "bits": [
+        "nix-settings",
+        "networkmanager",
+        "localization",
+        "user",
+        "boot-systemd"
+      ]
+    },
+    "server": {
+      "label": "Basic server",
+      "track": "unstable",
+      "bits": [
+        "nix-settings",
+        "networkmanager",
+        "localization",
+        "user",
+        "boot-systemd",
+        "ssh"
+      ]
+    },
+    "master": {
+      "label": "master inspired preset (hardware supplied separately)",
+      "track": "unstable",
+      "bits": [
+        "amd-cpu",
+        "amd-legacy",
+        "antigravity",
+        "apps-backup",
+        "apps-communication",
+        "apps-development",
+        "apps-media",
+        "apps-office",
+        "apps-personal",
+        "apps-terminals",
+        "boot-systemd",
+        "btrfs-scrub",
+        "chatgpt",
+        "cli-aliases",
+        "desktop-pantheon",
+        "durandal",
+        "flatpak",
+        "fonts",
+        "gamemode",
+        "gamemode-tuning",
+        "gpg-agent",
+        "gpu-amd",
+        "hermes",
+        "hermes-profiles",
+        "hermes-runtime",
+        "hermes-shared",
+        "icons",
+        "insecure-exceptions",
+        "kernel-latest",
+        "libvirt",
+        "localization",
+        "memory-tuning",
+        "muse",
+        "networkmanager",
+        "nix-settings",
+        "no-package-docs",
+        "pipewire",
+        "plymouth",
+        "power-desktop",
+        "printing",
+        "rebuild-helpers",
+        "ssh",
+        "starship",
+        "steam",
+        "tailscale",
+        "typing-tools",
+        "unfree",
+        "usb-stability",
+        "user",
+        "virtualbox",
+        "voxtype",
+        "waterfox",
+        "zsh"
+      ]
+    },
+    "desktop_pantheon": {
+      "label": "desktop_pantheon inspired preset (hardware supplied separately)",
+      "track": "26.05",
+      "bits": [
+        "amd-cpu",
+        "amd-legacy",
+        "antigravity",
+        "apps-backup",
+        "apps-communication",
+        "apps-development",
+        "apps-media",
+        "apps-office",
+        "apps-personal",
+        "apps-terminals",
+        "boot-systemd",
+        "btrfs-scrub",
+        "chatgpt",
+        "cli-aliases",
+        "desktop-pantheon",
+        "durandal",
+        "flatpak",
+        "fonts",
+        "gamemode",
+        "gamemode-tuning",
+        "gpg-agent",
+        "gpu-amd",
+        "hermes",
+        "hermes-profiles",
+        "hermes-runtime",
+        "hermes-shared",
+        "icons",
+        "insecure-exceptions",
+        "kernel-latest",
+        "libvirt",
+        "localization",
+        "memory-tuning",
+        "muse",
+        "networkmanager",
+        "nix-settings",
+        "no-package-docs",
+        "pipewire",
+        "plymouth",
+        "power-desktop",
+        "printing",
+        "rebuild-helpers",
+        "ssh",
+        "starship",
+        "steam",
+        "tailscale",
+        "typing-tools",
+        "unfree",
+        "usb-stability",
+        "user",
+        "virtualbox",
+        "voxtype",
+        "waterfox",
+        "zsh"
+      ]
+    },
+    "desktop_plasma": {
+      "label": "desktop_plasma inspired preset (hardware supplied separately)",
+      "track": "unstable",
+      "bits": [
+        "amd-cpu",
+        "amd-legacy",
+        "antigravity",
+        "apps-backup",
+        "apps-communication",
+        "apps-development",
+        "apps-media",
+        "apps-office",
+        "apps-personal",
+        "apps-terminals",
+        "boot-systemd",
+        "btrfs-scrub",
+        "chatgpt",
+        "cli-aliases",
+        "desktop-plasma",
+        "durandal",
+        "flatpak",
+        "fonts",
+        "gamemode",
+        "gamemode-tuning",
+        "gpg-agent",
+        "gpu-amd",
+        "hermes",
+        "hermes-profiles",
+        "hermes-runtime",
+        "hermes-shared",
+        "icons",
+        "insecure-exceptions",
+        "kernel-latest",
+        "libvirt",
+        "localization",
+        "memory-tuning",
+        "muse",
+        "networkmanager",
+        "nix-settings",
+        "no-package-docs",
+        "no-suspend",
+        "pipewire",
+        "plasma-theme",
+        "plasma-voxtype",
+        "power-desktop",
+        "printing",
+        "rebuild-helpers",
+        "ssh",
+        "starship",
+        "steam",
+        "tailscale",
+        "typing-tools",
+        "unfree",
+        "usb-stability",
+        "user",
+        "virtualbox",
+        "voxtype",
+        "waterfox",
+        "zsh",
+        "plasma-hermes"
+      ]
+    },
+    "desktop_lomiri": {
+      "label": "desktop_lomiri inspired preset (hardware supplied separately)",
+      "track": "unstable",
+      "bits": [
+        "amd-cpu",
+        "amd-legacy",
+        "antigravity",
+        "apps-backup",
+        "apps-communication",
+        "apps-development",
+        "apps-media",
+        "apps-office",
+        "apps-personal",
+        "apps-terminals",
+        "boot-systemd",
+        "btrfs-scrub",
+        "chatgpt",
+        "cli-aliases",
+        "desktop-lomiri",
+        "durandal",
+        "flatpak",
+        "fonts",
+        "gamemode",
+        "gamemode-tuning",
+        "gpg-agent",
+        "gpu-amd",
+        "hermes",
+        "hermes-profiles",
+        "hermes-runtime",
+        "hermes-shared",
+        "icons",
+        "insecure-exceptions",
+        "kernel-latest",
+        "libvirt",
+        "localization",
+        "memory-tuning",
+        "muse",
+        "networkmanager",
+        "nix-settings",
+        "no-package-docs",
+        "pipewire",
+        "plymouth",
+        "power-desktop",
+        "printing",
+        "rebuild-helpers",
+        "ssh",
+        "starship",
+        "steam",
+        "tailscale",
+        "typing-tools",
+        "unfree",
+        "usb-stability",
+        "user",
+        "virtualbox",
+        "voxtype",
+        "waterfox",
+        "zsh"
+      ]
+    },
+    "desktop_unity_testing": {
+      "label": "desktop_unity_testing inspired preset (hardware supplied separately)",
+      "track": "26.05",
+      "bits": [
+        "amd-cpu",
+        "amd-legacy",
+        "antigravity",
+        "apps-backup",
+        "apps-communication",
+        "apps-development",
+        "apps-media",
+        "apps-office",
+        "apps-personal",
+        "apps-terminals",
+        "boot-systemd",
+        "btrfs-scrub",
+        "chatgpt",
+        "cli-aliases",
+        "desktop-unity",
+        "durandal",
+        "flatpak",
+        "fonts",
+        "gamemode",
+        "gamemode-tuning",
+        "gpg-agent",
+        "gpu-amd",
+        "hermes",
+        "hermes-profiles",
+        "hermes-runtime",
+        "hermes-shared",
+        "icons",
+        "insecure-exceptions",
+        "kernel-latest",
+        "libvirt",
+        "localization",
+        "memory-tuning",
+        "muse",
+        "networkmanager",
+        "nix-settings",
+        "no-package-docs",
+        "pipewire",
+        "pipx-workaround",
+        "plymouth",
+        "power-desktop",
+        "printing",
+        "rebuild-helpers",
+        "ssh",
+        "starship",
+        "steam",
+        "tailscale",
+        "typing-tools",
+        "unfree",
+        "usb-stability",
+        "user",
+        "virtualbox",
+        "waterfox",
+        "zsh"
+      ]
+    },
+    "laptop": {
+      "label": "laptop inspired preset (hardware supplied separately)",
+      "track": "unstable",
+      "bits": [
+        "antigravity",
+        "apps-backup",
+        "apps-communication",
+        "apps-development",
+        "apps-media",
+        "apps-office",
+        "apps-personal",
+        "apps-terminals",
+        "boot-systemd",
+        "btrfs-scrub",
+        "chatgpt",
+        "cli-aliases",
+        "cosmic-theme",
+        "desktop-cosmic",
+        "durandal",
+        "flatpak",
+        "fonts",
+        "gamemode",
+        "gpg-agent",
+        "gpu-intel",
+        "hermes",
+        "hermes-shared",
+        "icons",
+        "insecure-exceptions",
+        "intel-cpu",
+        "intel-panel-power",
+        "intel-sof",
+        "jackett",
+        "kernel-latest",
+        "libvirt",
+        "localization",
+        "memory-tuning",
+        "muse",
+        "networkmanager",
+        "nix-settings",
+        "no-docs",
+        "pipewire",
+        "plymouth",
+        "power-laptop",
+        "printing",
+        "rebuild-helpers",
+        "ssh",
+        "starship",
+        "steam",
+        "tailscale",
+        "typing-tools",
+        "unfree",
+        "user",
+        "virtualbox",
+        "voxtype",
+        "waterfox",
+        "zram",
+        "zsh"
+      ]
+    },
+    "laptop_pantheon": {
+      "label": "laptop_pantheon inspired preset (hardware supplied separately)",
+      "track": "unstable",
+      "bits": [
+        "antigravity",
+        "apps-backup",
+        "apps-communication",
+        "apps-development",
+        "apps-media",
+        "apps-office",
+        "apps-personal",
+        "apps-terminals",
+        "boot-systemd",
+        "btrfs-scrub",
+        "chatgpt",
+        "cli-aliases",
+        "desktop-pantheon",
+        "durandal",
+        "flatpak",
+        "fonts",
+        "gamemode",
+        "gpg-agent",
+        "gpu-intel",
+        "hermes",
+        "hermes-shared",
+        "icons",
+        "insecure-exceptions",
+        "intel-cpu",
+        "intel-panel-power",
+        "intel-sof",
+        "jackett",
+        "kernel-latest",
+        "libvirt",
+        "localization",
+        "memory-tuning",
+        "muse",
+        "networkmanager",
+        "nix-settings",
+        "no-docs",
+        "pipewire",
+        "plymouth",
+        "power-laptop",
+        "printing",
+        "rebuild-helpers",
+        "ssh",
+        "starship",
+        "steam",
+        "tailscale",
+        "termsmith",
+        "typing-tools",
+        "unfree",
+        "user",
+        "virtualbox",
+        "voxtype",
+        "waterfox",
+        "zram",
+        "zsh"
+      ]
+    },
+    "laptop_plasma": {
+      "label": "laptop_plasma inspired preset (hardware supplied separately)",
+      "track": "unstable",
+      "bits": [
+        "antigravity",
+        "apps-backup",
+        "apps-communication",
+        "apps-development",
+        "apps-media",
+        "apps-office",
+        "apps-personal",
+        "apps-terminals",
+        "boot-systemd",
+        "btrfs-scrub",
+        "chatgpt",
+        "cli-aliases",
+        "desktop-plasma",
+        "durandal",
+        "flatpak",
+        "fonts",
+        "gamemode",
+        "gpg-agent",
+        "gpu-intel",
+        "hermes",
+        "hermes-shared",
+        "icons",
+        "insecure-exceptions",
+        "intel-cpu",
+        "intel-panel-power",
+        "intel-sof",
+        "jackett",
+        "kernel-latest",
+        "libvirt",
+        "localization",
+        "memory-tuning",
+        "muse",
+        "networkmanager",
+        "nix-settings",
+        "no-docs",
+        "pipewire",
+        "plasma-theme",
+        "plasma-voxtype",
+        "power-laptop",
+        "printing",
+        "rebuild-helpers",
+        "ssh",
+        "starship",
+        "steam",
+        "tailscale",
+        "typing-tools",
+        "unfree",
+        "user",
+        "virtualbox",
+        "voxtype",
+        "waterfox",
+        "zram",
+        "zsh",
+        "plasma-hermes"
+      ]
+    },
+    "laptop_unity_testing": {
+      "label": "laptop_unity_testing inspired preset (hardware supplied separately)",
+      "track": "26.05",
+      "bits": [
+        "antigravity",
+        "apps-backup",
+        "apps-communication",
+        "apps-development",
+        "apps-media",
+        "apps-office",
+        "apps-personal",
+        "apps-terminals",
+        "boot-systemd",
+        "btrfs-scrub",
+        "chatgpt",
+        "cli-aliases",
+        "desktop-unity",
+        "durandal",
+        "flatpak",
+        "fonts",
+        "gamemode",
+        "gpg-agent",
+        "gpu-intel",
+        "hermes",
+        "hermes-shared",
+        "icons",
+        "insecure-exceptions",
+        "intel-cpu",
+        "intel-panel-power",
+        "intel-sof",
+        "jackett",
+        "kernel-latest",
+        "libvirt",
+        "localization",
+        "memory-tuning",
+        "muse",
+        "networkmanager",
+        "nix-settings",
+        "no-docs",
+        "pipewire",
+        "pipx-workaround",
+        "power-laptop",
+        "printing",
+        "rebuild-helpers",
+        "ssh",
+        "starship",
+        "steam",
+        "tailscale",
+        "typing-tools",
+        "unfree",
+        "user",
+        "virtualbox",
+        "waterfox",
+        "zram",
+        "zsh"
+      ]
+    },
+    "mediacenter_plasma": {
+      "label": "mediacenter_plasma inspired preset (hardware supplied separately)",
+      "track": "unstable",
+      "bits": [
+        "antigravity",
+        "apps-backup",
+        "apps-communication",
+        "apps-development",
+        "apps-media",
+        "apps-office",
+        "apps-personal",
+        "apps-terminals",
+        "boot-systemd",
+        "btrfs-scrub",
+        "chatgpt",
+        "cli-aliases",
+        "desktop-plasma",
+        "durandal",
+        "flatpak",
+        "fonts",
+        "gamemode",
+        "gpg-agent",
+        "gpu-intel",
+        "hermes",
+        "hermes-shared",
+        "icons",
+        "insecure-exceptions",
+        "intel-cpu",
+        "intel-panel-power",
+        "intel-sof",
+        "jackett",
+        "kernel-latest",
+        "libvirt",
+        "localization",
+        "memory-tuning",
+        "muse",
+        "networkmanager",
+        "nix-settings",
+        "no-docs",
+        "pipewire",
+        "plasma-theme",
+        "plasma-voxtype",
+        "power-laptop",
+        "printing",
+        "rebuild-helpers",
+        "ssh",
+        "starship",
+        "steam",
+        "tailscale",
+        "typing-tools",
+        "unfree",
+        "user",
+        "virtualbox",
+        "voxtype",
+        "waterfox",
+        "zram",
+        "zsh",
+        "plasma-hermes"
+      ]
+    }
+  }
+}

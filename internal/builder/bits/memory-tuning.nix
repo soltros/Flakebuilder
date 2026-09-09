@@ -1,0 +1,3 @@
+{ config, lib, pkgs, ... }: {
+boot.kernel.sysctl = { "vm.vfs_cache_pressure" = 50; "vm.swappiness" = 10; };
+}
