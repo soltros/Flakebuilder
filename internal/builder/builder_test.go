@@ -142,6 +142,26 @@ func TestAllBitsAndPresetsParse(t *testing.T) {
 		})
 	}
 }
+
+func TestNURRepositorySubscription(t *testing.T) {
+	c, err := Load()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(c.NURRepos) == 0 {
+		t.Fatal("NUR repository index was not loaded")
+	}
+	cfg := DefaultConfig()
+	cfg.StateVersion = "26.05"
+	cfg.NURRepos = []string{c.NURRepos[0].Name}
+	src, plan, err := c.Render(cfg)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, ok := plan.Inputs["nur"]; !ok || !strings.Contains(src, "inputs.nur.overlay") {
+		t.Fatal("NUR subscription was not rendered")
+	}
+}
 func TestWriteProtectsExisting(t *testing.T) {
 	if _, e := exec.LookPath("nix-instantiate"); e != nil {
 		t.Skip("Nix parser unavailable")
