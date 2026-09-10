@@ -11,10 +11,16 @@ The catalog contains **239 bits and 12 presets**, covering desktops, hardware, p
 The quickest installation on a Nix-enabled system is:
 
 ```sh
-nix run github:soltros/soltros_nixpkgs#flakebuilder
+nix run github:soltros/soltros_nixpkgs#flakebuilder -- --state-version 26.05
 ```
 
-This runs the packaged release directly from `soltros_nixpkgs`. You can also build from source as described below.
+This runs the packaged release directly from `soltros_nixpkgs`. `--state-version` must match the installation's original NixOS release. For an existing system, find it with:
+
+```sh
+grep system.stateVersion /etc/nixos/configuration.nix
+```
+
+Additional Flakebuilder options go after the `--` separator. You can also build from source as described below.
 
 With Go 1.24 or newer and Nix installed:
 
