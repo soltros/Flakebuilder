@@ -1,0 +1,1 @@
+{ pkgs, config, ... }: { programs.jq.enable = true; }
