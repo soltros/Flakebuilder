@@ -6,7 +6,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SCRAPE = Path('/home/derrik/nixos_wiki_rag')
 articles = json.loads((SCRAPE/'nixos_wiki_articles.json').read_text())
-chunks = (SCRAPE/'nixos_wiki_chunks.jsonl').read_bytes().splitlines()
+chunks = [json.loads(line) for line in (SCRAPE/'nixos_wiki_chunks.jsonl').read_text().splitlines() if line.strip()]
+if not all({'chunk_id', 'title', 'content'} <= set(chunk) for chunk in chunks):
+    raise ValueError('every wiki chunk must contain chunk_id, title, and content')
 catalog_path = ROOT/'internal/builder/catalog.json'
 bits_dir = ROOT/'internal/builder/bits'
 catalog = json.loads(catalog_path.read_text())
