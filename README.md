@@ -8,6 +8,14 @@ The catalog contains **239 bits and 12 presets**, covering desktops, hardware, p
 
 ## Run
 
+The quickest installation on a Nix-enabled system is:
+
+```sh
+nix run github:soltros/soltros_nixpkgs#flakebuilder
+```
+
+This runs the packaged release directly from `soltros_nixpkgs`. You can also build from source as described below.
+
 With Go 1.24 or newer and Nix installed:
 
 ```sh
@@ -29,7 +37,8 @@ Use the installation's **original** `system.stateVersion`; selecting a newer nix
 
 Menu controls:
 
-- Arrow keys / j / k: navigate; Space: select a bit.
+- Arrow keys / j / k: navigate categories and bits; Enter opens a category; Space selects a bit.
+- Backspace / Esc: return from a bit category to the category list.
 - `/`: search by name, category or ID; Esc: clear search.
 - `i`: add an external input or remove a custom input by name.
 - Enter: preview the single generated file; Enter / g / y: generate; n: return to editing.
