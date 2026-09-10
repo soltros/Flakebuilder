@@ -34,6 +34,7 @@ type Bit struct {
 	Inputs      []string `json:"inputs,omitempty"`
 	Tracks      []string `json:"tracks,omitempty"`
 	Systems     []string `json:"systems,omitempty"`
+	Wiki        []string `json:"wiki,omitempty"`
 }
 type Preset struct {
 	Label string   `json:"label"`

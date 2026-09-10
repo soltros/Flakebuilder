@@ -582,7 +582,7 @@
     },
     {
       "id": "durandal",
-      "label": "Derrik\u2019s Durandal persona and skin",
+      "label": "Derrik’s Durandal persona and skin",
       "category": "AI tools",
       "description": "Optional personal persona from nixos-config; retains its original text and paths",
       "file": "bits/durandal.nix",
@@ -780,6 +780,1566 @@
         "durandal",
         "fonts",
         "apps-terminals"
+      ]
+    },
+    {
+      "id": "zfs",
+      "label": "ZFS filesystem support",
+      "category": "Storage",
+      "description": "Wiki-backed ZFS filesystem support setting",
+      "file": "bits/zfs.nix",
+      "wiki": [
+        "ZFS"
+      ]
+    },
+    {
+      "id": "lvm",
+      "label": "LVM2 tools and device mapper",
+      "category": "Storage",
+      "description": "Wiki-backed LVM2 tools and device mapper setting",
+      "file": "bits/lvm.nix",
+      "wiki": [
+        "LVM"
+      ]
+    },
+    {
+      "id": "ext4",
+      "label": "Ext4 filesystem tools",
+      "category": "Storage",
+      "description": "Wiki-backed Ext4 filesystem tools setting",
+      "file": "bits/ext4.nix",
+      "wiki": [
+        "Ext4"
+      ]
+    },
+    {
+      "id": "encrypted-root",
+      "label": "Initrd encrypted root support",
+      "category": "Storage",
+      "description": "Wiki-backed Initrd encrypted root support setting",
+      "file": "bits/encrypted-root.nix",
+      "wiki": [
+        "Full Disk Encryption"
+      ]
+    },
+    {
+      "id": "auto-gc",
+      "label": "Automatic Nix store garbage collection",
+      "category": "Nix",
+      "description": "Wiki-backed Automatic Nix store garbage collection setting",
+      "file": "bits/auto-gc.nix",
+      "wiki": [
+        "Storage optimization"
+      ]
+    },
+    {
+      "id": "auto-upgrade",
+      "label": "Automatic NixOS upgrades",
+      "category": "Nix",
+      "description": "Wiki-backed Automatic NixOS upgrades setting",
+      "file": "bits/auto-upgrade.nix",
+      "wiki": [
+        "Automatic system upgrades"
+      ]
+    },
+    {
+      "id": "binary-cache",
+      "label": "Nix substituter cache",
+      "category": "Nix",
+      "description": "Wiki-backed Nix substituter cache setting",
+      "file": "bits/binary-cache.nix",
+      "wiki": [
+        "Binary Cache"
+      ]
+    },
+    {
+      "id": "nix-sandbox",
+      "label": "Nix sandbox",
+      "category": "Nix",
+      "description": "Wiki-backed Nix sandbox setting",
+      "file": "bits/nix-sandbox.nix",
+      "wiki": [
+        "FAQ"
+      ]
+    },
+    {
+      "id": "sudo",
+      "label": "Sudo administration",
+      "category": "Security",
+      "description": "Wiki-backed Sudo administration setting",
+      "file": "bits/sudo.nix",
+      "wiki": [
+        "Sudo"
+      ]
+    },
+    {
+      "id": "sudo-passwordless-wheel",
+      "label": "Passwordless wheel sudo",
+      "category": "Security",
+      "description": "Wiki-backed Passwordless wheel sudo setting",
+      "file": "bits/sudo-passwordless-wheel.nix",
+      "wiki": [
+        "Sudo"
+      ]
+    },
+    {
+      "id": "doas",
+      "label": "Doas administration",
+      "category": "Security",
+      "description": "Wiki-backed Doas administration setting",
+      "file": "bits/doas.nix",
+      "wiki": [
+        "Doas"
+      ]
+    },
+    {
+      "id": "polkit",
+      "label": "Polkit authorization",
+      "category": "Security",
+      "description": "Wiki-backed Polkit authorization setting",
+      "file": "bits/polkit.nix",
+      "wiki": [
+        "Polkit"
+      ]
+    },
+    {
+      "id": "tpm2",
+      "label": "TPM2 support",
+      "category": "Security",
+      "description": "Wiki-backed TPM2 support setting",
+      "file": "bits/tpm2.nix",
+      "wiki": [
+        "TPM"
+      ]
+    },
+    {
+      "id": "fail2ban",
+      "label": "Fail2ban intrusion protection",
+      "category": "Security",
+      "description": "Wiki-backed Fail2ban intrusion protection setting",
+      "file": "bits/fail2ban.nix",
+      "wiki": [
+        "Fail2ban"
+      ]
+    },
+    {
+      "id": "nixos-hardened",
+      "label": "NixOS hardened profile",
+      "category": "Security",
+      "description": "Wiki-backed NixOS hardened profile setting",
+      "file": "bits/nixos-hardened.nix",
+      "wiki": [
+        "NixOS Hardening"
+      ]
+    },
+    {
+      "id": "firewall-base",
+      "label": "Stateful firewall",
+      "category": "Networking",
+      "description": "Wiki-backed Stateful firewall setting",
+      "file": "bits/firewall-base.nix",
+      "wiki": [
+        "Firewall"
+      ]
+    },
+    {
+      "id": "firewall-ping",
+      "label": "Allow ICMP ping",
+      "category": "Networking",
+      "description": "Wiki-backed Allow ICMP ping setting",
+      "file": "bits/firewall-ping.nix",
+      "wiki": [
+        "Firewall"
+      ]
+    },
+    {
+      "id": "ipv6",
+      "label": "IPv6 networking",
+      "category": "Networking",
+      "description": "Wiki-backed IPv6 networking setting",
+      "file": "bits/ipv6.nix",
+      "wiki": [
+        "Networking"
+      ]
+    },
+    {
+      "id": "iwd",
+      "label": "IWD wireless backend",
+      "category": "Networking",
+      "description": "Wiki-backed IWD wireless backend setting",
+      "file": "bits/iwd.nix",
+      "wiki": [
+        "Iwd"
+      ]
+    },
+    {
+      "id": "wireguard",
+      "label": "WireGuard tools",
+      "category": "Networking",
+      "description": "Wiki-backed WireGuard tools setting",
+      "file": "bits/wireguard.nix",
+      "wiki": [
+        "WireGuard"
+      ]
+    },
+    {
+      "id": "openvpn",
+      "label": "OpenVPN client tools",
+      "category": "Networking",
+      "description": "Wiki-backed OpenVPN client tools setting",
+      "file": "bits/openvpn.nix",
+      "wiki": [
+        "OpenVPN"
+      ]
+    },
+    {
+      "id": "avahi",
+      "label": "Avahi service discovery",
+      "category": "Networking",
+      "description": "Wiki-backed Avahi service discovery setting",
+      "file": "bits/avahi.nix",
+      "wiki": [
+        "Printing"
+      ]
+    },
+    {
+      "id": "ntp",
+      "label": "NTP time synchronization",
+      "category": "Networking",
+      "description": "Wiki-backed NTP time synchronization setting",
+      "file": "bits/ntp.nix",
+      "wiki": [
+        "NTP"
+      ]
+    },
+    {
+      "id": "chrony",
+      "label": "Chrony time synchronization",
+      "category": "Networking",
+      "description": "Wiki-backed Chrony time synchronization setting",
+      "file": "bits/chrony.nix",
+      "wiki": [
+        "Chrony"
+      ]
+    },
+    {
+      "id": "networkd-dispatcher",
+      "label": "Networkd dispatcher",
+      "category": "Networking",
+      "description": "Wiki-backed Networkd dispatcher setting",
+      "file": "bits/networkd-dispatcher.nix",
+      "wiki": [
+        "Systemd/networkd/dispatcher"
+      ]
+    },
+    {
+      "id": "resolved",
+      "label": "systemd-resolved DNS",
+      "category": "Networking",
+      "description": "Wiki-backed systemd-resolved DNS setting",
+      "file": "bits/resolved.nix",
+      "wiki": [
+        "Systemd/resolved"
+      ]
+    },
+    {
+      "id": "nfs-server",
+      "label": "NFS server",
+      "category": "Servers",
+      "description": "Wiki-backed NFS server setting",
+      "file": "bits/nfs-server.nix",
+      "wiki": [
+        "NFS"
+      ]
+    },
+    {
+      "id": "samba",
+      "label": "Samba file server",
+      "category": "Servers",
+      "description": "Wiki-backed Samba file server setting",
+      "file": "bits/samba.nix",
+      "wiki": [
+        "Samba"
+      ]
+    },
+    {
+      "id": "docker",
+      "label": "Docker engine",
+      "category": "Virtualization",
+      "description": "Wiki-backed Docker engine setting",
+      "file": "bits/docker.nix",
+      "wiki": [
+        "Docker"
+      ]
+    },
+    {
+      "id": "qemu",
+      "label": "QEMU guest tools",
+      "category": "Virtualization",
+      "description": "Wiki-backed QEMU guest tools setting",
+      "file": "bits/qemu.nix",
+      "wiki": [
+        "QEMU"
+      ]
+    },
+    {
+      "id": "kvm",
+      "label": "KVM virtualization modules",
+      "category": "Virtualization",
+      "description": "Wiki-backed KVM virtualization modules setting",
+      "file": "bits/kvm.nix",
+      "wiki": [
+        "NixOps/Virtualization"
+      ]
+    },
+    {
+      "id": "pci-passthrough",
+      "label": "PCI passthrough support",
+      "category": "Virtualization",
+      "description": "Wiki-backed PCI passthrough support setting",
+      "file": "bits/pci-passthrough.nix",
+      "wiki": [
+        "PCI passthrough"
+      ]
+    },
+    {
+      "id": "virtiofs",
+      "label": "VirtioFS support",
+      "category": "Virtualization",
+      "description": "Wiki-backed VirtioFS support setting",
+      "file": "bits/virtiofs.nix",
+      "wiki": [
+        "VirtioFS"
+      ]
+    },
+    {
+      "id": "nvidia",
+      "label": "NVIDIA graphics",
+      "category": "Hardware",
+      "description": "Wiki-backed NVIDIA graphics setting",
+      "file": "bits/nvidia.nix",
+      "wiki": [
+        "NVIDIA"
+      ]
+    },
+    {
+      "id": "opengl",
+      "label": "OpenGL graphics stack",
+      "category": "Hardware",
+      "description": "Wiki-backed OpenGL graphics stack setting",
+      "file": "bits/opengl.nix",
+      "wiki": [
+        "OpenGL"
+      ]
+    },
+    {
+      "id": "mesa",
+      "label": "Mesa OpenGL drivers",
+      "category": "Hardware",
+      "description": "Wiki-backed Mesa OpenGL drivers setting",
+      "file": "bits/mesa.nix",
+      "wiki": [
+        "Mesa"
+      ]
+    },
+    {
+      "id": "thunderbolt",
+      "label": "Thunderbolt authorization",
+      "category": "Hardware",
+      "description": "Wiki-backed Thunderbolt authorization setting",
+      "file": "bits/thunderbolt.nix",
+      "wiki": [
+        "Thunderbolt"
+      ]
+    },
+    {
+      "id": "fwupd",
+      "label": "Firmware update service",
+      "category": "Hardware",
+      "description": "Wiki-backed Firmware update service setting",
+      "file": "bits/fwupd.nix",
+      "wiki": [
+        "Fwupd"
+      ]
+    },
+    {
+      "id": "smartd",
+      "label": "SMART disk monitoring",
+      "category": "Hardware",
+      "description": "Wiki-backed SMART disk monitoring setting",
+      "file": "bits/smartd.nix",
+      "wiki": [
+        "Smartmontools"
+      ]
+    },
+    {
+      "id": "sane",
+      "label": "Scanner support",
+      "category": "Hardware",
+      "description": "Wiki-backed Scanner support setting",
+      "file": "bits/sane.nix",
+      "wiki": [
+        "Scanners"
+      ]
+    },
+    {
+      "id": "pcscd",
+      "label": "PC/SC smart card daemon",
+      "category": "Hardware",
+      "description": "Wiki-backed PC/SC smart card daemon setting",
+      "file": "bits/pcscd.nix",
+      "wiki": [
+        "Web eID"
+      ]
+    },
+    {
+      "id": "logitech",
+      "label": "Logitech device support",
+      "category": "Hardware",
+      "description": "Wiki-backed Logitech device support setting",
+      "file": "bits/logitech.nix",
+      "wiki": [
+        "Logitech Unifying Receiver"
+      ]
+    },
+    {
+      "id": "touchpad",
+      "label": "Libinput touchpad support",
+      "category": "Hardware",
+      "description": "Wiki-backed Libinput touchpad support setting",
+      "file": "bits/touchpad.nix",
+      "wiki": [
+        "Touchpad"
+      ]
+    },
+    {
+      "id": "touchpad-flat",
+      "label": "Disable touchpad acceleration",
+      "category": "Hardware",
+      "description": "Wiki-backed Disable touchpad acceleration setting",
+      "file": "bits/touchpad-flat.nix",
+      "wiki": [
+        "Xorg"
+      ]
+    },
+    {
+      "id": "backlight",
+      "label": "Backlight control",
+      "category": "Hardware",
+      "description": "Wiki-backed Backlight control setting",
+      "file": "bits/backlight.nix",
+      "wiki": [
+        "Backlight"
+      ]
+    },
+    {
+      "id": "zsa-keyboards",
+      "label": "ZSA keyboard udev rules",
+      "category": "Hardware",
+      "description": "Wiki-backed ZSA keyboard udev rules setting",
+      "file": "bits/zsa-keyboards.nix",
+      "wiki": [
+        "ZSA Keyboards"
+      ]
+    },
+    {
+      "id": "drawing-tablet",
+      "label": "Drawing tablet support",
+      "category": "Hardware",
+      "description": "Wiki-backed Drawing tablet support setting",
+      "file": "bits/drawing-tablet.nix",
+      "wiki": [
+        "Drawing Tablet"
+      ]
+    },
+    {
+      "id": "gnome-keyring",
+      "label": "GNOME keyring",
+      "category": "Desktop integrations",
+      "description": "Wiki-backed GNOME keyring setting",
+      "file": "bits/gnome-keyring.nix",
+      "wiki": [
+        "GNOME"
+      ]
+    },
+    {
+      "id": "dconf",
+      "label": "Dconf settings database",
+      "category": "Desktop integrations",
+      "description": "Wiki-backed Dconf settings database setting",
+      "file": "bits/dconf.nix",
+      "wiki": [
+        "GNOME/Calendar"
+      ]
+    },
+    {
+      "id": "gdm",
+      "label": "GDM display manager",
+      "category": "Desktop",
+      "description": "Wiki-backed GDM display manager setting",
+      "file": "bits/gdm.nix",
+      "wiki": [
+        "GDM"
+      ]
+    },
+    {
+      "id": "sddm",
+      "label": "SDDM display manager",
+      "category": "Desktop",
+      "description": "Wiki-backed SDDM display manager setting",
+      "file": "bits/sddm.nix",
+      "wiki": [
+        "SDDM"
+      ]
+    },
+    {
+      "id": "lightdm",
+      "label": "LightDM display manager",
+      "category": "Desktop",
+      "description": "Wiki-backed LightDM display manager setting",
+      "file": "bits/lightdm.nix",
+      "wiki": [
+        "LightDM"
+      ]
+    },
+    {
+      "id": "greetd",
+      "label": "Greetd login manager",
+      "category": "Desktop",
+      "description": "Wiki-backed Greetd login manager setting",
+      "file": "bits/greetd.nix",
+      "wiki": [
+        "Greetd"
+      ]
+    },
+    {
+      "id": "desktop-gnome",
+      "label": "GNOME desktop",
+      "category": "Desktop",
+      "description": "Wiki-backed GNOME desktop setting",
+      "file": "bits/desktop-gnome.nix",
+      "wiki": [
+        "GNOME"
+      ]
+    },
+    {
+      "id": "desktop-xfce",
+      "label": "XFCE desktop",
+      "category": "Desktop",
+      "description": "Wiki-backed XFCE desktop setting",
+      "file": "bits/desktop-xfce.nix",
+      "wiki": [
+        "Xfce"
+      ]
+    },
+    {
+      "id": "desktop-cinnamon",
+      "label": "Cinnamon desktop",
+      "category": "Desktop",
+      "description": "Wiki-backed Cinnamon desktop setting",
+      "file": "bits/desktop-cinnamon.nix",
+      "wiki": [
+        "Cinnamon"
+      ]
+    },
+    {
+      "id": "desktop-budgie",
+      "label": "Budgie desktop",
+      "category": "Desktop",
+      "description": "Wiki-backed Budgie desktop setting",
+      "file": "bits/desktop-budgie.nix",
+      "wiki": [
+        "Budgie Desktop"
+      ]
+    },
+    {
+      "id": "desktop-mate",
+      "label": "MATE desktop",
+      "category": "Desktop",
+      "description": "Wiki-backed MATE desktop setting",
+      "file": "bits/desktop-mate.nix",
+      "wiki": [
+        "NixOS as a desktop"
+      ]
+    },
+    {
+      "id": "desktop-lxqt",
+      "label": "LXQt desktop",
+      "category": "Desktop",
+      "description": "Wiki-backed LXQt desktop setting",
+      "file": "bits/desktop-lxqt.nix",
+      "wiki": [
+        "NixOS as a desktop"
+      ]
+    },
+    {
+      "id": "desktop-i3",
+      "label": "i3 window manager",
+      "category": "Desktop",
+      "description": "Wiki-backed i3 window manager setting",
+      "file": "bits/desktop-i3.nix",
+      "wiki": [
+        "I3"
+      ]
+    },
+    {
+      "id": "desktop-sway",
+      "label": "Sway Wayland compositor",
+      "category": "Desktop",
+      "description": "Wiki-backed Sway Wayland compositor setting",
+      "file": "bits/desktop-sway.nix",
+      "wiki": [
+        "Sway"
+      ]
+    },
+    {
+      "id": "desktop-hyprland",
+      "label": "Hyprland Wayland compositor",
+      "category": "Desktop",
+      "description": "Wiki-backed Hyprland Wayland compositor setting",
+      "file": "bits/desktop-hyprland.nix",
+      "wiki": [
+        "Hyprland"
+      ]
+    },
+    {
+      "id": "desktop-niri",
+      "label": "Niri Wayland compositor",
+      "category": "Desktop",
+      "description": "Wiki-backed Niri Wayland compositor setting",
+      "file": "bits/desktop-niri.nix",
+      "wiki": [
+        "Niri/en"
+      ]
+    },
+    {
+      "id": "desktop-awesome",
+      "label": "Awesome window manager",
+      "category": "Desktop",
+      "description": "Wiki-backed Awesome window manager setting",
+      "file": "bits/desktop-awesome.nix",
+      "wiki": [
+        "Awesome"
+      ]
+    },
+    {
+      "id": "desktop-dwm",
+      "label": "Dwm window manager",
+      "category": "Desktop",
+      "description": "Wiki-backed Dwm window manager setting",
+      "file": "bits/desktop-dwm.nix",
+      "wiki": [
+        "Dwm"
+      ]
+    },
+    {
+      "id": "desktop-qtile",
+      "label": "Qtile window manager",
+      "category": "Desktop",
+      "description": "Wiki-backed Qtile window manager setting",
+      "file": "bits/desktop-qtile.nix",
+      "wiki": [
+        "Qtile"
+      ]
+    },
+    {
+      "id": "desktop-xmonad",
+      "label": "XMonad window manager",
+      "category": "Desktop",
+      "description": "Wiki-backed XMonad window manager setting",
+      "file": "bits/desktop-xmonad.nix",
+      "wiki": [
+        "XMonad"
+      ]
+    },
+    {
+      "id": "waybar",
+      "label": "Waybar status bar",
+      "category": "Desktop integrations",
+      "description": "Wiki-backed Waybar status bar setting",
+      "file": "bits/waybar.nix",
+      "wiki": [
+        "Waybar"
+      ]
+    },
+    {
+      "id": "swaylock",
+      "label": "Swaylock screen locker",
+      "category": "Desktop integrations",
+      "description": "Wiki-backed Swaylock screen locker setting",
+      "file": "bits/swaylock.nix",
+      "wiki": [
+        "Swaylock"
+      ]
+    },
+    {
+      "id": "swayidle",
+      "label": "Swayidle idle daemon",
+      "category": "Desktop integrations",
+      "description": "Wiki-backed Swayidle idle daemon setting",
+      "file": "bits/swayidle.nix",
+      "wiki": [
+        "Swayidle"
+      ]
+    },
+    {
+      "id": "fuzzel",
+      "label": "Fuzzel application launcher",
+      "category": "Desktop integrations",
+      "description": "Wiki-backed Fuzzel application launcher setting",
+      "file": "bits/fuzzel.nix",
+      "wiki": [
+        "Fuzzel"
+      ]
+    },
+    {
+      "id": "rofi",
+      "label": "Rofi application launcher",
+      "category": "Desktop integrations",
+      "description": "Wiki-backed Rofi application launcher setting",
+      "file": "bits/rofi.nix",
+      "wiki": [
+        "Rofi"
+      ]
+    },
+    {
+      "id": "picom",
+      "label": "Picom compositor",
+      "category": "Desktop integrations",
+      "description": "Wiki-backed Picom compositor setting",
+      "file": "bits/picom.nix",
+      "wiki": [
+        "Picom"
+      ]
+    },
+    {
+      "id": "redshift",
+      "label": "Redshift color temperature",
+      "category": "Desktop integrations",
+      "description": "Wiki-backed Redshift color temperature setting",
+      "file": "bits/redshift.nix",
+      "wiki": [
+        "Redshift"
+      ]
+    },
+    {
+      "id": "nix-index",
+      "label": "Nix package index",
+      "category": "Applications",
+      "description": "Wiki-backed Nix package index setting",
+      "file": "bits/nix-index.nix",
+      "wiki": [
+        "NixOS search"
+      ]
+    },
+    {
+      "id": "vim",
+      "label": "Vim editor",
+      "category": "Applications",
+      "description": "Wiki-backed Vim editor setting",
+      "file": "bits/vim.nix",
+      "wiki": [
+        "Vim/en"
+      ]
+    },
+    {
+      "id": "neovim",
+      "label": "Neovim editor",
+      "category": "Applications",
+      "description": "Wiki-backed Neovim editor setting",
+      "file": "bits/neovim.nix",
+      "wiki": [
+        "Neovim/en"
+      ]
+    },
+    {
+      "id": "emacs",
+      "label": "Emacs editor",
+      "category": "Applications",
+      "description": "Wiki-backed Emacs editor setting",
+      "file": "bits/emacs.nix",
+      "wiki": [
+        "Emacs"
+      ]
+    },
+    {
+      "id": "vscode",
+      "label": "Visual Studio Code",
+      "category": "Applications",
+      "description": "Wiki-backed Visual Studio Code setting",
+      "file": "bits/vscode.nix",
+      "wiki": [
+        "Visual Studio Code/en"
+      ]
+    },
+    {
+      "id": "vscodium",
+      "label": "VSCodium editor",
+      "category": "Applications",
+      "description": "Wiki-backed VSCodium editor setting",
+      "file": "bits/vscodium.nix",
+      "wiki": [
+        "VSCodium"
+      ]
+    },
+    {
+      "id": "firefox",
+      "label": "Firefox browser",
+      "category": "Applications",
+      "description": "Wiki-backed Firefox browser setting",
+      "file": "bits/firefox.nix",
+      "wiki": [
+        "Firefox/en"
+      ]
+    },
+    {
+      "id": "chromium",
+      "label": "Chromium browser",
+      "category": "Applications",
+      "description": "Wiki-backed Chromium browser setting",
+      "file": "bits/chromium.nix",
+      "wiki": [
+        "Chromium/en"
+      ]
+    },
+    {
+      "id": "qutebrowser",
+      "label": "Qutebrowser",
+      "category": "Applications",
+      "description": "Wiki-backed Qutebrowser setting",
+      "file": "bits/qutebrowser.nix",
+      "wiki": [
+        "Qutebrowser"
+      ]
+    },
+    {
+      "id": "kitty",
+      "label": "Kitty terminal",
+      "category": "Applications",
+      "description": "Wiki-backed Kitty terminal setting",
+      "file": "bits/kitty.nix",
+      "wiki": [
+        "Kitty/en"
+      ]
+    },
+    {
+      "id": "tmux",
+      "label": "Tmux terminal multiplexer",
+      "category": "Applications",
+      "description": "Wiki-backed Tmux terminal multiplexer setting",
+      "file": "bits/tmux.nix",
+      "wiki": [
+        "Tmux"
+      ]
+    },
+    {
+      "id": "zellij",
+      "label": "Zellij terminal multiplexer",
+      "category": "Applications",
+      "description": "Wiki-backed Zellij terminal multiplexer setting",
+      "file": "bits/zellij.nix",
+      "wiki": [
+        "Zellij"
+      ]
+    },
+    {
+      "id": "zoxide",
+      "label": "Zoxide directory jumper",
+      "category": "Applications",
+      "description": "Wiki-backed Zoxide directory jumper setting",
+      "file": "bits/zoxide.nix",
+      "wiki": [
+        "Zoxide"
+      ]
+    },
+    {
+      "id": "atuin",
+      "label": "Atuin shell history",
+      "category": "Applications",
+      "description": "Wiki-backed Atuin shell history setting",
+      "file": "bits/atuin.nix",
+      "wiki": [
+        "Atuin"
+      ]
+    },
+    {
+      "id": "fzf",
+      "label": "Fzf fuzzy finder",
+      "category": "Applications",
+      "description": "Wiki-backed Fzf fuzzy finder setting",
+      "file": "bits/fzf.nix",
+      "wiki": [
+        "Fzf"
+      ]
+    },
+    {
+      "id": "yazi",
+      "label": "Yazi terminal file manager",
+      "category": "Applications",
+      "description": "Wiki-backed Yazi terminal file manager setting",
+      "file": "bits/yazi.nix",
+      "wiki": [
+        "Yazi"
+      ]
+    },
+    {
+      "id": "ranger",
+      "label": "Ranger terminal file manager",
+      "category": "Applications",
+      "description": "Wiki-backed Ranger terminal file manager setting",
+      "file": "bits/ranger.nix",
+      "wiki": [
+        "Ranger"
+      ]
+    },
+    {
+      "id": "helix",
+      "label": "Helix editor",
+      "category": "Applications",
+      "description": "Wiki-backed Helix editor setting",
+      "file": "bits/helix.nix",
+      "wiki": [
+        "Helix"
+      ]
+    },
+    {
+      "id": "git",
+      "label": "Git version control",
+      "category": "Applications",
+      "description": "Wiki-backed Git version control setting",
+      "file": "bits/git.nix",
+      "wiki": [
+        "Git"
+      ]
+    },
+    {
+      "id": "direnv",
+      "label": "Direnv development environments",
+      "category": "Development",
+      "description": "Wiki-backed Direnv development environments setting",
+      "file": "bits/direnv.nix",
+      "wiki": [
+        "Direnv"
+      ]
+    },
+    {
+      "id": "devenv",
+      "label": "Devenv project environments",
+      "category": "Development",
+      "description": "Wiki-backed Devenv project environments setting",
+      "file": "bits/devenv.nix",
+      "wiki": [
+        "Devenv"
+      ]
+    },
+    {
+      "id": "gcc",
+      "label": "GCC compiler toolchain",
+      "category": "Development",
+      "description": "Wiki-backed GCC compiler toolchain setting",
+      "file": "bits/gcc.nix",
+      "wiki": [
+        "C"
+      ]
+    },
+    {
+      "id": "clang",
+      "label": "Clang compiler toolchain",
+      "category": "Development",
+      "description": "Wiki-backed Clang compiler toolchain setting",
+      "file": "bits/clang.nix",
+      "wiki": [
+        "Using Clang instead of GCC"
+      ]
+    },
+    {
+      "id": "go",
+      "label": "Go toolchain",
+      "category": "Development",
+      "description": "Wiki-backed Go toolchain setting",
+      "file": "bits/go.nix",
+      "wiki": [
+        "Go"
+      ]
+    },
+    {
+      "id": "rust",
+      "label": "Rust toolchain",
+      "category": "Development",
+      "description": "Wiki-backed Rust toolchain setting",
+      "file": "bits/rust.nix",
+      "wiki": [
+        "Rust"
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python toolchain",
+      "category": "Development",
+      "description": "Wiki-backed Python toolchain setting",
+      "file": "bits/python.nix",
+      "wiki": [
+        "Python"
+      ]
+    },
+    {
+      "id": "nodejs",
+      "label": "Node.js toolchain",
+      "category": "Development",
+      "description": "Wiki-backed Node.js toolchain setting",
+      "file": "bits/nodejs.nix",
+      "wiki": [
+        "Node.js"
+      ]
+    },
+    {
+      "id": "postgresql",
+      "label": "PostgreSQL server",
+      "category": "Servers",
+      "description": "Wiki-backed PostgreSQL server setting",
+      "file": "bits/postgresql.nix",
+      "wiki": [
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": "mysql",
+      "label": "MySQL server",
+      "category": "Servers",
+      "description": "Wiki-backed MySQL server setting",
+      "file": "bits/mysql.nix",
+      "wiki": [
+        "Mysql"
+      ]
+    },
+    {
+      "id": "redis",
+      "label": "Redis server",
+      "category": "Servers",
+      "description": "Wiki-backed Redis server setting",
+      "file": "bits/redis.nix",
+      "wiki": [
+        "NixOS as a server"
+      ]
+    },
+    {
+      "id": "nginx",
+      "label": "Nginx web server",
+      "category": "Servers",
+      "description": "Wiki-backed Nginx web server setting",
+      "file": "bits/nginx.nix",
+      "wiki": [
+        "Nginx"
+      ]
+    },
+    {
+      "id": "apache",
+      "label": "Apache HTTP server",
+      "category": "Servers",
+      "description": "Wiki-backed Apache HTTP server setting",
+      "file": "bits/apache.nix",
+      "wiki": [
+        "Apache Httpd"
+      ]
+    },
+    {
+      "id": "caddy",
+      "label": "Caddy web server",
+      "category": "Servers",
+      "description": "Wiki-backed Caddy web server setting",
+      "file": "bits/caddy.nix",
+      "wiki": [
+        "Caddy"
+      ]
+    },
+    {
+      "id": "bind",
+      "label": "BIND DNS server",
+      "category": "Servers",
+      "description": "Wiki-backed BIND DNS server setting",
+      "file": "bits/bind.nix",
+      "wiki": [
+        "Bind"
+      ]
+    },
+    {
+      "id": "unbound",
+      "label": "Unbound validating DNS resolver",
+      "category": "Servers",
+      "description": "Wiki-backed Unbound validating DNS resolver setting",
+      "file": "bits/unbound.nix",
+      "wiki": [
+        "Unbound"
+      ]
+    },
+    {
+      "id": "prometheus",
+      "label": "Prometheus metrics server",
+      "category": "Servers",
+      "description": "Wiki-backed Prometheus metrics server setting",
+      "file": "bits/prometheus.nix",
+      "wiki": [
+        "Prometheus"
+      ]
+    },
+    {
+      "id": "grafana",
+      "label": "Grafana dashboards",
+      "category": "Servers",
+      "description": "Wiki-backed Grafana dashboards setting",
+      "file": "bits/grafana.nix",
+      "wiki": [
+        "Grafana"
+      ]
+    },
+    {
+      "id": "loki",
+      "label": "Grafana Loki logs",
+      "category": "Servers",
+      "description": "Wiki-backed Grafana Loki logs setting",
+      "file": "bits/loki.nix",
+      "wiki": [
+        "Grafana Loki"
+      ]
+    },
+    {
+      "id": "plex",
+      "label": "Plex media server",
+      "category": "Servers",
+      "description": "Wiki-backed Plex media server setting",
+      "file": "bits/plex.nix",
+      "wiki": [
+        "Plex"
+      ]
+    },
+    {
+      "id": "sonarr",
+      "label": "Sonarr media automation",
+      "category": "Servers",
+      "description": "Wiki-backed Sonarr media automation setting",
+      "file": "bits/sonarr.nix",
+      "wiki": [
+        "Sonarr"
+      ]
+    },
+    {
+      "id": "radarr",
+      "label": "Radarr movie automation",
+      "category": "Servers",
+      "description": "Wiki-backed Radarr movie automation setting",
+      "file": "bits/radarr.nix",
+      "wiki": [
+        "Radarr"
+      ]
+    },
+    {
+      "id": "transmission",
+      "label": "Transmission torrent client",
+      "category": "Servers",
+      "description": "Wiki-backed Transmission torrent client setting",
+      "file": "bits/transmission.nix",
+      "wiki": [
+        "Transmission"
+      ]
+    },
+    {
+      "id": "nextcloud",
+      "label": "Nextcloud server",
+      "category": "Servers",
+      "description": "Wiki-backed Nextcloud server setting",
+      "file": "bits/nextcloud.nix",
+      "wiki": [
+        "Nextcloud"
+      ]
+    },
+    {
+      "id": "vaultwarden",
+      "label": "Vaultwarden password server",
+      "category": "Servers",
+      "description": "Wiki-backed Vaultwarden password server setting",
+      "file": "bits/vaultwarden.nix",
+      "wiki": [
+        "Vaultwarden"
+      ]
+    },
+    {
+      "id": "mosquitto",
+      "label": "Mosquitto MQTT broker",
+      "category": "Servers",
+      "description": "Wiki-backed Mosquitto MQTT broker setting",
+      "file": "bits/mosquitto.nix",
+      "wiki": [
+        "Mosquitto"
+      ]
+    },
+    {
+      "id": "home-assistant",
+      "label": "Home Assistant",
+      "category": "Servers",
+      "description": "Wiki-backed Home Assistant setting",
+      "file": "bits/home-assistant.nix",
+      "wiki": [
+        "Home Assistant"
+      ]
+    },
+    {
+      "id": "k3s",
+      "label": "K3s Kubernetes distribution",
+      "category": "Servers",
+      "description": "Wiki-backed K3s Kubernetes distribution setting",
+      "file": "bits/k3s.nix",
+      "wiki": [
+        "K3s"
+      ]
+    },
+    {
+      "id": "kubernetes",
+      "label": "Kubernetes services",
+      "category": "Servers",
+      "description": "Wiki-backed Kubernetes services setting",
+      "file": "bits/kubernetes.nix",
+      "wiki": [
+        "Kubernetes"
+      ]
+    },
+    {
+      "id": "clamav",
+      "label": "ClamAV antivirus",
+      "category": "Security",
+      "description": "Wiki-backed ClamAV antivirus setting",
+      "file": "bits/clamav.nix",
+      "wiki": [
+        "Clamav"
+      ]
+    },
+    {
+      "id": "opensnitch",
+      "label": "OpenSnitch firewall UI",
+      "category": "Security",
+      "description": "Wiki-backed OpenSnitch firewall UI setting",
+      "file": "bits/opensnitch.nix",
+      "wiki": [
+        "OpenSnitch"
+      ]
+    },
+    {
+      "id": "openrgb",
+      "label": "OpenRGB hardware control",
+      "category": "Hardware",
+      "description": "Wiki-backed OpenRGB hardware control setting",
+      "file": "bits/openrgb.nix",
+      "wiki": [
+        "OpenRGB"
+      ]
+    },
+    {
+      "id": "steam-gamescope",
+      "label": "Steam Gamescope session",
+      "category": "Gaming",
+      "description": "Wiki-backed Steam Gamescope session setting",
+      "file": "bits/steam-gamescope.nix",
+      "wiki": [
+        "Steam/en"
+      ]
+    },
+    {
+      "id": "lutris",
+      "label": "Lutris game launcher",
+      "category": "Gaming",
+      "description": "Wiki-backed Lutris game launcher setting",
+      "file": "bits/lutris.nix",
+      "wiki": [
+        "Lutris"
+      ]
+    },
+    {
+      "id": "retroarch",
+      "label": "RetroArch emulator",
+      "category": "Gaming",
+      "description": "Wiki-backed RetroArch emulator setting",
+      "file": "bits/retroarch.nix",
+      "wiki": [
+        "RetroArch"
+      ]
+    },
+    {
+      "id": "dolphin",
+      "label": "Dolphin emulator",
+      "category": "Gaming",
+      "description": "Wiki-backed Dolphin emulator setting",
+      "file": "bits/dolphin.nix",
+      "wiki": [
+        "Dolphin Emulator"
+      ]
+    },
+    {
+      "id": "obs",
+      "label": "OBS Studio",
+      "category": "Media",
+      "description": "Wiki-backed OBS Studio setting",
+      "file": "bits/obs.nix",
+      "wiki": [
+        "OBS Studio"
+      ]
+    },
+    {
+      "id": "mpv",
+      "label": "MPV media player",
+      "category": "Media",
+      "description": "Wiki-backed MPV media player setting",
+      "file": "bits/mpv.nix",
+      "wiki": [
+        "MPV"
+      ]
+    },
+    {
+      "id": "kodi",
+      "label": "Kodi media center",
+      "category": "Media",
+      "description": "Wiki-backed Kodi media center setting",
+      "file": "bits/kodi.nix",
+      "wiki": [
+        "Kodi"
+      ]
+    },
+    {
+      "id": "gstreamer",
+      "label": "GStreamer multimedia stack",
+      "category": "Media",
+      "description": "Wiki-backed GStreamer multimedia stack setting",
+      "file": "bits/gstreamer.nix",
+      "wiki": [
+        "GStreamer"
+      ]
+    },
+    {
+      "id": "libreoffice",
+      "label": "LibreOffice suite",
+      "category": "Applications",
+      "description": "Wiki-backed LibreOffice suite setting",
+      "file": "bits/libreoffice.nix",
+      "wiki": [
+        "LibreOffice"
+      ]
+    },
+    {
+      "id": "thunderbird",
+      "label": "Thunderbird mail client",
+      "category": "Applications",
+      "description": "Wiki-backed Thunderbird mail client setting",
+      "file": "bits/thunderbird.nix",
+      "wiki": [
+        "Thunderbird"
+      ]
+    },
+    {
+      "id": "spotify",
+      "label": "Spotify client",
+      "category": "Applications",
+      "description": "Wiki-backed Spotify client setting",
+      "file": "bits/spotify.nix",
+      "wiki": [
+        "Spotify"
+      ]
+    },
+    {
+      "id": "telegram",
+      "label": "Telegram desktop client",
+      "category": "Applications",
+      "description": "Wiki-backed Telegram desktop client setting",
+      "file": "bits/telegram.nix",
+      "wiki": [
+        "Telegram"
+      ]
+    },
+    {
+      "id": "discord",
+      "label": "Discord client",
+      "category": "Applications",
+      "description": "Wiki-backed Discord client setting",
+      "file": "bits/discord.nix",
+      "wiki": [
+        "Discord"
+      ]
+    },
+    {
+      "id": "obsidian",
+      "label": "Obsidian notes",
+      "category": "Applications",
+      "description": "Wiki-backed Obsidian notes setting",
+      "file": "bits/obsidian.nix",
+      "wiki": [
+        "Obsidian"
+      ]
+    },
+    {
+      "id": "calibre",
+      "label": "Calibre ebook manager",
+      "category": "Applications",
+      "description": "Wiki-backed Calibre ebook manager setting",
+      "file": "bits/calibre.nix",
+      "wiki": [
+        "Calibre"
+      ]
+    },
+    {
+      "id": "impermanence",
+      "label": "Impermanence filesystem helper",
+      "category": "Storage",
+      "description": "Wiki-backed Impermanence filesystem helper setting",
+      "file": "bits/impermanence.nix",
+      "wiki": [
+        "Impermanence"
+      ]
+    },
+    {
+      "id": "agenix",
+      "label": "Agenix secret management tools",
+      "category": "Security",
+      "description": "Wiki-backed Agenix secret management tools setting",
+      "file": "bits/agenix.nix",
+      "wiki": [
+        "Agenix"
+      ]
+    },
+    {
+      "id": "restic",
+      "label": "Restic backup client",
+      "category": "Backup",
+      "description": "Wiki-backed Restic backup client setting",
+      "file": "bits/restic.nix",
+      "wiki": [
+        "Restic"
+      ]
+    },
+    {
+      "id": "borg",
+      "label": "Borg backup client",
+      "category": "Backup",
+      "description": "Wiki-backed Borg backup client setting",
+      "file": "bits/borg.nix",
+      "wiki": [
+        "Borg backup"
+      ]
+    },
+    {
+      "id": "rsync",
+      "label": "Rsync file synchronization",
+      "category": "Backup",
+      "description": "Wiki-backed Rsync file synchronization setting",
+      "file": "bits/rsync.nix",
+      "wiki": [
+        "Rsync"
+      ]
+    },
+    {
+      "id": "rclone",
+      "label": "Rclone cloud synchronization",
+      "category": "Backup",
+      "description": "Wiki-backed Rclone cloud synchronization setting",
+      "file": "bits/rclone.nix",
+      "wiki": [
+        "Rclone"
+      ]
+    },
+    {
+      "id": "smartmontools",
+      "label": "Smartmontools disk health",
+      "category": "Storage",
+      "description": "Wiki-backed Smartmontools disk health setting",
+      "file": "bits/smartmontools.nix",
+      "wiki": [
+        "Smartmontools"
+      ]
+    },
+    {
+      "id": "btrbk",
+      "label": "Btrfs snapshot backup",
+      "category": "Storage",
+      "description": "Wiki-backed Btrfs snapshot backup setting",
+      "file": "bits/btrbk.nix",
+      "wiki": [
+        "Btrbk"
+      ]
+    },
+    {
+      "id": "xserver",
+      "label": "Xorg server",
+      "category": "Desktop",
+      "description": "Wiki-backed Xorg server setting",
+      "file": "bits/xserver.nix",
+      "wiki": [
+        "Xorg"
+      ]
+    },
+    {
+      "id": "console-fonts",
+      "label": "Console fonts",
+      "category": "Appearance",
+      "description": "Wiki-backed Console fonts setting",
+      "file": "bits/console-fonts.nix",
+      "wiki": [
+        "Console Fonts"
+      ]
+    },
+    {
+      "id": "cursor-themes",
+      "label": "Cursor theme support",
+      "category": "Appearance",
+      "description": "Wiki-backed Cursor theme support setting",
+      "file": "bits/cursor-themes.nix",
+      "wiki": [
+        "Cursor Themes"
+      ]
+    },
+    {
+      "id": "plymouth-basic",
+      "label": "Plymouth boot splash",
+      "category": "Appearance",
+      "description": "Wiki-backed Plymouth boot splash setting",
+      "file": "bits/plymouth-basic.nix",
+      "wiki": [
+        "Plymouth"
+      ]
+    },
+    {
+      "id": "secure-boot",
+      "label": "Secure Boot tooling",
+      "category": "Boot",
+      "description": "Wiki-backed Secure Boot tooling setting",
+      "file": "bits/secure-boot.nix",
+      "wiki": [
+        "Secure Boot"
+      ]
+    },
+    {
+      "id": "u-boot",
+      "label": "U-Boot bootloader tools",
+      "category": "Boot",
+      "description": "Wiki-backed U-Boot bootloader tools setting",
+      "file": "bits/u-boot.nix",
+      "wiki": [
+        "U-Boot"
+      ]
+    },
+    {
+      "id": "refind",
+      "label": "rEFInd bootloader",
+      "category": "Boot",
+      "description": "Wiki-backed rEFInd bootloader setting",
+      "file": "bits/refind.nix",
+      "wiki": [
+        "REFInd"
+      ]
+    },
+    {
+      "id": "specialisations",
+      "label": "NixOS specialisations example",
+      "category": "Nix",
+      "description": "Wiki-backed NixOS specialisations example setting",
+      "file": "bits/specialisations.nix",
+      "wiki": [
+        "Specialisation"
       ]
     }
   ],

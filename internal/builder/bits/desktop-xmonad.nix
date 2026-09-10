@@ -1,0 +1,3 @@
+{ config, lib, pkgs, ... }: {
+services.xserver.windowManager.xmonad.enable = true;
+}
