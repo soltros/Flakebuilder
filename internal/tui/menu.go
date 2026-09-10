@@ -394,7 +394,7 @@ func (m Model) View() string {
 			}
 			b.WriteString("\n")
 		}
-		b.WriteString("\nEnter: open category · [g] Generate flake · /: search all bits · i: add input · q: cancel\n")
+		b.WriteString("\nEnter: open category · [g] Generate flake · n: NUR repositories · /: search all bits · i: add input · q: cancel\n")
 		return b.String()
 	}
 	if m.activeCategory != "" {
