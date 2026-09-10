@@ -423,7 +423,9 @@ func (c *Catalog) Render(cfg Config) (string, Plan, error) {
 		}
 	}
 	if len(cfg.NURRepos) > 0 {
-		out.WriteString("\n        # Selected NUR repositories are exposed through the NUR overlay.\n        ({ ... }: { nixpkgs.overlays = [ inputs.nur.overlay ]; })\n")
+		out.WriteString("\n        # Selected NUR repositories: ")
+		out.WriteString(strings.Join(cfg.NURRepos, ", "))
+		out.WriteString("\n        # They are available under pkgs.nur.repos.<repository>.<package>.\n        ({ ... }: { nixpkgs.overlays = [ inputs.nur.overlay ]; })\n")
 	}
 	out.WriteString("      ];\n    };\n  };\n}\n")
 	return out.String(), plan, nil
