@@ -73,6 +73,7 @@ type Config struct {
 	Bits         []string              `json:"bits"`
 	Hardware     string                `json:"hardware,omitempty"`
 	NURRepos     []string              `json:"nurRepos,omitempty"`
+	NURPackages  []string              `json:"nurPackages,omitempty"`
 }
 type Plan struct {
 	Bits   []Bit
@@ -183,7 +184,7 @@ func (c *Catalog) Preset(name string) (Preset, error) {
 }
 func (c *Catalog) Resolve(cfg Config) (Plan, error) {
 	p := Plan{Inputs: map[string]Input{}}
-	if len(cfg.NURRepos) > 0 {
+	if len(cfg.NURRepos) > 0 || len(cfg.NURPackages) > 0 {
 		known := map[string]bool{}
 		for _, repo := range c.NURRepos {
 			known[repo.Name] = true
@@ -193,6 +194,38 @@ func (c *Catalog) Resolve(cfg Config) (Plan, error) {
 				return p, fmt.Errorf("unknown NUR repository %q", name)
 			}
 		}
+		if nur, ok := c.Inputs["nur"]; ok {
+			p.Inputs["nur"] = nur
+		}
+	}
+	for _, spec := range cfg.NURPackages {
+		parts := strings.SplitN(spec, ".", 2)
+		if len(parts) != 2 || !regexp.MustCompile(`^[A-Za-z0-9_-]+$`).MatchString(parts[0]) || !regexp.MustCompile(`^[A-Za-z0-9_-]+$`).MatchString(parts[1]) {
+			return p, fmt.Errorf("invalid NUR package %q (expected repository.package)", spec)
+		}
+		known := false
+		for _, repo := range c.NURRepos {
+			if repo.Name == parts[0] {
+				known = true
+				found := false
+				for _, pkg := range repo.Packages {
+					if pkg == parts[1] {
+						found = true
+					}
+				}
+				if !found {
+					return p, fmt.Errorf("unknown package %q in NUR repository %q", parts[1], parts[0])
+				}
+			}
+		}
+		if !known {
+			return p, fmt.Errorf("unknown NUR repository %q", parts[0])
+		}
+		if !contains(cfg.NURRepos, parts[0]) {
+			cfg.NURRepos = append(cfg.NURRepos, parts[0])
+		}
+	}
+	if len(cfg.NURPackages) > 0 {
 		if nur, ok := c.Inputs["nur"]; ok {
 			p.Inputs["nur"] = nur
 		}
@@ -422,10 +455,20 @@ func (c *Catalog) Render(cfg Config) (string, Plan, error) {
 			}
 		}
 	}
-	if len(cfg.NURRepos) > 0 {
+	if len(cfg.NURRepos) > 0 || len(cfg.NURPackages) > 0 {
 		out.WriteString("\n        # Selected NUR repositories: ")
 		out.WriteString(strings.Join(cfg.NURRepos, ", "))
 		out.WriteString("\n        # They are available under pkgs.nur.repos.<repository>.<package>.\n        ({ ... }: { nixpkgs.overlays = [ inputs.nur.overlay ]; })\n")
+	}
+	if len(cfg.NURPackages) > 0 {
+		out.WriteString("\n        # Selected NUR packages\n        ({ pkgs, ... }: { environment.systemPackages = [\n")
+		for _, spec := range cfg.NURPackages {
+			parts := strings.SplitN(spec, ".", 2)
+			if len(parts) == 2 {
+				fmt.Fprintf(&out, "          pkgs.nur.repos.%s.%s\n", NixString(parts[0]), NixString(parts[1]))
+			}
+		}
+		out.WriteString("        ]; })\n")
 	}
 	out.WriteString("      ];\n    };\n  };\n}\n")
 	return out.String(), plan, nil

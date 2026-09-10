@@ -27,12 +27,13 @@ func run() error {
 	cfg := builder.DefaultConfig()
 	var dir, hardware, preset, selected, from, catalogDir string
 	var yes, stdout, list, force, lock, build bool
-	var inputs, uses, follows, remove, nurRepos repeatedFlag
+	var inputs, uses, follows, remove, nurRepos, nurPackages repeatedFlag
 	flag.Var(&inputs, "input", "Add/override NAME=URL (repeatable)")
 	flag.Var(&uses, "input-use", "Use NAME=overlay:ATTRIBUTE, NAME=module:ATTRIBUTE, or NAME=package:ATTRIBUTE (repeatable)")
 	flag.Var(&follows, "input-follows", "Make NAME.inputs.nixpkgs follow root nixpkgs (repeatable)")
 	flag.Var(&remove, "remove-input", "Remove a custom input loaded with --from (repeatable)")
 	flag.Var(&nurRepos, "nur-repo", "Subscribe to a NUR repository (repeatable)")
+	flag.Var(&nurPackages, "nur-package", "Add a NUR package as repository.package (repeatable)")
 	flag.StringVar(&dir, "dir", defaultOutputDirectory, "Output directory (the default keeps backups when generating again)")
 	flag.StringVar(&from, "from", "", "Load choices and embedded hardware from a generated flake")
 	flag.StringVar(&catalogDir, "catalog", "", "Use a trusted local directory containing catalog.json and bit templates")
@@ -139,6 +140,9 @@ func run() error {
 	}
 	if err = applyInputs(&cfg, cat, inputs, uses, follows, remove, nurRepos); err != nil {
 		return err
+	}
+	if len(nurPackages) > 0 {
+		cfg.NURPackages = append([]string{}, nurPackages...)
 	}
 	if err = cfg.Validate(); err != nil {
 		return err

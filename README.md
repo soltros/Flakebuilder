@@ -99,10 +99,13 @@ Preserve required follows mappings when overriding catalog inputs. Changing an i
 
 Press `n` in the selection menu to browse the scraped NUR repository index. Each entry shows the repository name, URL, package count, and a preview of its package attributes. Press Space to subscribe or unsubscribe, then `g` to generate. Subscriptions add the pinned `nix-community/NUR` input and its overlay to the generated flake.
 
+Press Enter on a repository to shop through its packages. Space adds or removes an individual package; selected packages are emitted as `pkgs.nur.repos.<repository>.<package>` in `environment.systemPackages`.
+
 The command line equivalent is repeatable:
 
 ```sh
 ./flakebuilder --state-version 26.05 --nur-repo micron --nur-repo novacat --yes
+./flakebuilder --state-version 26.05 --nur-package micron.somePackage --yes
 ```
 
 ## Generate, reopen, validate and build

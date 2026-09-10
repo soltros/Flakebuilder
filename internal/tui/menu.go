@@ -11,23 +11,25 @@ import (
 )
 
 type Model struct {
-	inputForm      *inputForm
-	Catalog        *builder.Catalog
-	Config         builder.Config
-	selected       map[string]bool
-	cursor         int
-	categoryCursor int
-	activeCategory string
-	nurMode        bool
-	nurCursor      int
-	filter         string
-	searching      bool
-	preview        string
-	offset         int
-	height         int
-	message        string
-	Confirmed      bool
-	Err            error
+	inputForm        *inputForm
+	Catalog          *builder.Catalog
+	Config           builder.Config
+	selected         map[string]bool
+	cursor           int
+	categoryCursor   int
+	activeCategory   string
+	nurMode          bool
+	nurCursor        int
+	nurPackageMode   bool
+	nurPackageCursor int
+	filter           string
+	searching        bool
+	preview          string
+	offset           int
+	height           int
+	message          string
+	Confirmed        bool
+	Err              error
 }
 
 func New(c *builder.Catalog, cfg builder.Config) Model {
@@ -111,6 +113,41 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 		if m.nurMode {
 			repos := m.Catalog.NURRepos
+			if m.nurPackageMode {
+				if len(repos) == 0 {
+					m.nurPackageMode = false
+					return m, nil
+				}
+				var repo *builder.NURRepo
+				for i := range repos {
+					if repos[i].Name == repos[m.nurCursor].Name {
+						repo = &repos[i]
+						break
+					}
+				}
+				packages := []string{}
+				if repo != nil {
+					packages = repo.Packages
+				}
+				switch key {
+				case "esc", "backspace":
+					m.nurPackageMode = false
+				case "up", "k":
+					if m.nurPackageCursor > 0 {
+						m.nurPackageCursor--
+					}
+				case "down", "j":
+					if m.nurPackageCursor+1 < len(packages) {
+						m.nurPackageCursor++
+					}
+				case " ":
+					if len(packages) > 0 {
+						m.Config.NURPackages = toggleString(m.Config.NURPackages, repo.Name+"."+packages[m.nurPackageCursor])
+						m.Config.NURRepos = toggleString(m.Config.NURRepos, repo.Name)
+					}
+				}
+				return m, nil
+			}
 			switch key {
 			case "esc", "backspace":
 				m.nurMode = false
@@ -125,6 +162,11 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			case " ":
 				if len(repos) > 0 {
 					m.Config.NURRepos = toggleString(m.Config.NURRepos, repos[m.nurCursor].Name)
+				}
+			case "enter":
+				if len(repos) > 0 {
+					m.nurPackageMode = true
+					m.nurPackageCursor = 0
 				}
 			}
 			return m, nil
@@ -253,7 +295,28 @@ func (m Model) View() string {
 	header := fmt.Sprintf("Flakebuilder — %s · %s · nixpkgs %s\n", m.Config.Host, m.Config.System, m.Config.Track)
 	if m.nurMode {
 		var b strings.Builder
-		b.WriteString(header + "\nNUR repositories — Space subscribes/unsubscribes\n\n")
+		if m.nurPackageMode {
+			r := m.Catalog.NURRepos[m.nurCursor]
+			b.WriteString(header + "\nNUR packages: " + r.Name + " — Space adds/removes packages\n\n")
+			limit := max(1, m.height-8)
+			start := max(0, m.nurPackageCursor-limit+1)
+			end := min(len(r.Packages), start+limit)
+			for i := start; i < end; i++ {
+				spec := r.Name + "." + r.Packages[i]
+				mark := " "
+				if containsString(m.Config.NURPackages, spec) {
+					mark = "x"
+				}
+				cur := " "
+				if i == m.nurPackageCursor {
+					cur = ">"
+				}
+				fmt.Fprintf(&b, "%s [%s] %s\n", cur, mark, r.Packages[i])
+			}
+			b.WriteString("\nEsc/Backspace: repositories · q: cancel\n")
+			return b.String()
+		}
+		b.WriteString(header + "\nNUR repositories — Enter browses packages; Space subscribes repository\n\n")
 		limit := max(1, m.height-8)
 		start := max(0, m.nurCursor-limit+1)
 		end := min(len(m.Catalog.NURRepos), start+limit)
