@@ -33,6 +33,10 @@ func TestPreviewFreezesSelection(t *testing.T) {
 		t.Fatal("selection changed in preview")
 	}
 	m = key(m, "y")
+	if m.confirming == false {
+		t.Fatal("preview did not request confirmation")
+	}
+	m = key(m, "y")
 	if !m.Confirmed {
 		t.Fatal("confirmation lost")
 	}
@@ -88,6 +92,7 @@ func TestGenerateFromPreview(t *testing.T) {
 			} else {
 				m = key(m, confirm)
 			}
+			m = key(m, "y")
 			if !m.Confirmed {
 				t.Fatal("generate key did not confirm output")
 			}
@@ -97,7 +102,15 @@ func TestGenerateFromPreview(t *testing.T) {
 
 func TestGenerateKeyConfirmsDirectly(t *testing.T) {
 	m := key(model(t), "g")
-	if !m.Confirmed || m.preview != "" {
-		t.Fatal("g should generate directly from the selection menu")
+	if m.Confirmed || m.preview == "" {
+		t.Fatal("g should open the generated flake review")
+	}
+	m = key(m, "y")
+	if !m.confirming {
+		t.Fatal("review should ask for confirmation")
+	}
+	m = key(m, "y")
+	if !m.Confirmed {
+		t.Fatal("confirmation should start generation")
 	}
 }

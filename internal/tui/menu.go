@@ -25,6 +25,7 @@ type Model struct {
 	filter           string
 	searching        bool
 	preview          string
+	confirming       bool
 	offset           int
 	height           int
 	message          string
@@ -172,11 +173,20 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, nil
 		}
 		if m.preview != "" {
+			if m.confirming {
+				switch key {
+				case "y":
+					m.Config = m.Selection()
+					m.Confirmed = true
+					return m, tea.Quit
+				case "n", "esc":
+					m.confirming = false
+				}
+				return m, nil
+			}
 			switch key {
-			case "y", "g", "enter":
-				m.Config = m.Selection()
-				m.Confirmed = true
-				return m, tea.Quit
+			case "y", "enter", "g":
+				m.confirming = true
 			case "esc", "n":
 				m.preview = ""
 				m.offset = 0
@@ -278,9 +288,13 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.offset = 0
 			}
 		case "g":
-			m.Config = m.Selection()
-			m.Confirmed = true
-			return m, tea.Quit
+			source, _, err := m.Catalog.Render(m.Selection())
+			if err != nil {
+				m.message = err.Error()
+			} else {
+				m.preview = source
+				m.offset = 0
+			}
 		}
 	}
 	return m, nil
@@ -350,7 +364,11 @@ func (m Model) View() string {
 			lines[1] = "# Saved selection metadata (embedded in the file)"
 		}
 		end := min(len(lines), m.offset+max(1, m.height-6))
-		return header + "\n" + strings.Join(lines[m.offset:end], "\n") + "\n\n↑/↓ PgUp/PgDn: scroll · Enter/g/y: generate this flake · n: edit · Ctrl+C: cancel\n"
+		prompt := "↑/↓ PgUp/PgDn: scroll · y: confirmation · n: edit · Ctrl+C: cancel"
+		if m.confirming {
+			prompt = "Generate this flake now? y: yes · n: no (return to review)"
+		}
+		return header + "\n" + strings.Join(lines[m.offset:end], "\n") + "\n\n" + prompt + "\n"
 	}
 	plan, err := m.Catalog.Resolve(m.Selection())
 	auto := map[string]bool{}
