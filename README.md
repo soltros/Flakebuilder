@@ -4,7 +4,7 @@ Build a NixOS `flake.nix` from a searchable menu of configuration bits and input
 
 Flakebuilder is a separate descendant of [ConfigBuilder](https://github.com/soltros/configbuilder)'s menu-based workflow. It embeds selected configuration directly into **one `flake.nix`**. It does not generate a `modules/` directory or import a local hardware file. Nix still generates its normal `flake.lock` when you lock or build. Upstream inputs such as nixpkgs, Hermes and Unity remain external dependencies, pinned by that lock.
 
-The catalog contains **239 bits and 12 presets**, covering desktops, hardware, power, storage, services, shell setup, appearance, applications, gaming, backup, security, networking, development and external package sources. Ten presets are based on the branches of `soltros/nixos-config`. They are starting points, not certified replacements for those machines.
+The catalog contains **1,739 bits and 12 presets**, covering desktops, hardware, power, storage, services, shell setup, appearance, applications, gaming, backup, security, networking, development, NUR repositories, NixOS options and packages. Ten presets are based on the branches of `soltros/nixos-config`. They are starting points, not certified replacements for those machines.
 
 ## Run
 
