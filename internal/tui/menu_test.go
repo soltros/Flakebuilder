@@ -48,6 +48,30 @@ func TestCancelAndEmptySearch(t *testing.T) {
 	}
 }
 
+func TestCategoryNavigationKeepsSelectionFocused(t *testing.T) {
+	m := model(t)
+	if len(m.categories()) < 2 {
+		t.Fatal("catalog should expose multiple categories")
+	}
+	// Enter opens the first category instead of placing the cursor in the full catalog.
+	m = key(m, "enter")
+	if m.activeCategory == "" {
+		t.Fatal("category menu did not open a category")
+	}
+	if len(m.choices()) == 0 {
+		t.Fatal("opened category has no bits")
+	}
+	first := m.choices()[0].ID
+	m = key(m, " ")
+	if !m.selected[first] {
+		t.Fatal("space did not select a bit inside the category")
+	}
+	m = key(m, "backspace")
+	if m.activeCategory != "" {
+		t.Fatal("backspace did not return to category menu")
+	}
+}
+
 func TestGenerateFromPreview(t *testing.T) {
 	for _, confirm := range []string{"enter", "g", "y"} {
 		t.Run(confirm, func(t *testing.T) {
