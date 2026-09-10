@@ -22,6 +22,9 @@ type Model struct {
 	nurCursor        int
 	nurPackageMode   bool
 	nurPackageCursor int
+	packageMode      bool
+	packageCursor    int
+	packageSearch    string
 	filter           string
 	searching        bool
 	preview          string
@@ -111,6 +114,43 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 		if m.inputForm != nil {
 			return m.updateInput(msg)
+		}
+		if m.packageMode {
+			if m.searching {
+				if key == "enter" || key == "esc" {
+					m.searching = false
+				} else if key == "backspace" {
+					r := []rune(m.packageSearch)
+					if len(r) > 0 {
+						m.packageSearch = string(r[:len(r)-1])
+					}
+				} else if msg.Type == tea.KeyRunes {
+					m.packageSearch += string(msg.Runes)
+				}
+				m.packageCursor = 0
+				return m, nil
+			}
+			items := m.packageChoices()
+			switch key {
+			case "esc":
+				m.packageMode = false
+			case "up", "k":
+				if m.packageCursor > 0 {
+					m.packageCursor--
+				}
+			case "down", "j":
+				if m.packageCursor+1 < len(items) {
+					m.packageCursor++
+				}
+			case " ":
+				if len(items) > 0 {
+					m.Config.Packages = toggleString(m.Config.Packages, items[m.packageCursor].Attr)
+				}
+			case "/":
+				m.packageSearch = ""
+				m.searching = true
+			}
+			return m, nil
 		}
 		if m.nurMode {
 			repos := m.Catalog.NURRepos
@@ -232,6 +272,9 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		case "n":
 			m.nurMode = true
 			m.nurCursor = 0
+		case "p":
+			m.packageMode = true
+			m.packageCursor = 0
 		case "/":
 			m.searching = true
 		case "esc":
@@ -307,6 +350,27 @@ func (m Model) View() string {
 		return "Selection confirmed. Saving generated flake…\n"
 	}
 	header := fmt.Sprintf("Flakebuilder — %s · %s · nixpkgs %s\n", m.Config.Host, m.Config.System, m.Config.Track)
+	if m.packageMode {
+		items := m.packageChoices()
+		var b strings.Builder
+		b.WriteString(header + "\nPackage shop — / search · Space add/remove · selected: " + fmt.Sprint(len(m.Config.Packages)) + "\n\n")
+		limit := max(1, m.height-8)
+		start := max(0, m.packageCursor-limit+1)
+		end := min(len(items), start+limit)
+		for i := start; i < end; i++ {
+			mark := " "
+			if containsString(m.Config.Packages, items[i].Attr) {
+				mark = "x"
+			}
+			cur := " "
+			if i == m.packageCursor {
+				cur = ">"
+			}
+			fmt.Fprintf(&b, "%s [%s] %-38s %s\n", cur, mark, items[i].Attr, items[i].Description)
+		}
+		b.WriteString("\nEsc: return · p: package shop · g: review flake\n")
+		return b.String()
+	}
 	if m.nurMode {
 		var b strings.Builder
 		if m.nurPackageMode {
@@ -412,7 +476,7 @@ func (m Model) View() string {
 			}
 			b.WriteString("\n")
 		}
-		b.WriteString("\nEnter: open category · [g] Generate flake · n: NUR repositories · /: search all bits · i: add input · q: cancel\n")
+		b.WriteString("\nEnter: open category · p: package shop · [g] Generate flake · n: NUR repositories · /: search all bits · i: add input · q: cancel\n")
 		return b.String()
 	}
 	if m.activeCategory != "" {
@@ -448,4 +512,17 @@ func (m Model) View() string {
 	}
 	b.WriteString("\nSpace: select · /: search · i: add input · n: NUR repositories · Enter: preview · g: Generate flake · Backspace: categories · q: cancel\n[x] selected · [+] required automatically (remove its dependents to omit it)\n")
 	return b.String()
+}
+func (m Model) packageChoices() []builder.Package {
+	q := strings.ToLower(m.packageSearch)
+	out := []builder.Package{}
+	for _, p := range m.Catalog.Packages {
+		if q == "" || strings.Contains(strings.ToLower(p.Attr+" "+p.Pname+" "+p.Description), q) {
+			out = append(out, p)
+			if len(out) >= 500 {
+				break
+			}
+		}
+	}
+	return out
 }

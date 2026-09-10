@@ -15,7 +15,7 @@ import (
 	"text/template"
 )
 
-//go:embed catalog.json nur_repos.json bits/*.nix
+//go:embed catalog.json nur_repos.json packages_index.json bits/*.nix
 var bundled embed.FS
 
 type Input struct {
@@ -46,6 +46,7 @@ type Catalog struct {
 	Bits     []Bit             `json:"bits"`
 	Presets  map[string]Preset `json:"presets"`
 	NURRepos []NURRepo         `json:"-"`
+	Packages []Package         `json:"-"`
 	files    fs.FS
 	byID     map[string]Bit
 }
@@ -54,6 +55,7 @@ type NURRepo struct {
 	URL      string   `json:"url"`
 	Packages []string `json:"packages"`
 }
+type Package struct{ Attr, Pname, Version, Description string }
 type Config struct {
 	ExtraInputs  map[string]ExtraInput `json:"extraInputs,omitempty"`
 	Version      int                   `json:"version"`
@@ -74,6 +76,7 @@ type Config struct {
 	Hardware     string                `json:"hardware,omitempty"`
 	NURRepos     []string              `json:"nurRepos,omitempty"`
 	NURPackages  []string              `json:"nurPackages,omitempty"`
+	Packages     []string              `json:"packages,omitempty"`
 }
 type Plan struct {
 	Bits   []Bit
@@ -110,6 +113,14 @@ func LoadFS(files fs.FS) (*Catalog, error) {
 		if err = json.Unmarshal(nur, &c.NURRepos); err != nil {
 			return nil, fmt.Errorf("invalid nur_repos.json: %w", err)
 		}
+	}
+	// Package index is optional for trusted minimal catalogs.
+	if raw, readErr := fs.ReadFile(files, "packages_index.json"); readErr == nil {
+		var packages []Package
+		if err = json.Unmarshal(raw, &packages); err != nil {
+			return nil, fmt.Errorf("invalid packages_index.json: %w", err)
+		}
+		c.Packages = packages
 	}
 	c.files = files
 	c.byID = map[string]Bit{}
@@ -184,6 +195,17 @@ func (c *Catalog) Preset(name string) (Preset, error) {
 }
 func (c *Catalog) Resolve(cfg Config) (Plan, error) {
 	p := Plan{Inputs: map[string]Input{}}
+	if len(cfg.Packages) > 0 && len(c.Packages) > 0 {
+		known := map[string]bool{}
+		for _, p := range c.Packages {
+			known[p.Attr] = true
+		}
+		for _, attr := range cfg.Packages {
+			if !known[attr] {
+				return p, fmt.Errorf("unknown nixpkgs package %q", attr)
+			}
+		}
+	}
 	if len(cfg.NURRepos) > 0 || len(cfg.NURPackages) > 0 {
 		known := map[string]bool{}
 		for _, repo := range c.NURRepos {
@@ -308,6 +330,14 @@ func (c *Catalog) Resolve(cfg Config) (Plan, error) {
 	}
 	sort.Strings(p.Auto)
 	return p, nil
+}
+func nixAttrPath(attr string) string {
+	parts := strings.Split(attr, ".")
+	out := make([]string, len(parts))
+	for i, p := range parts {
+		out[i] = NixString(p)
+	}
+	return strings.Join(out, ".")
 }
 func contains(xs []string, x string) bool {
 	for _, v := range xs {
@@ -467,6 +497,13 @@ func (c *Catalog) Render(cfg Config) (string, Plan, error) {
 			if len(parts) == 2 {
 				fmt.Fprintf(&out, "          pkgs.nur.repos.%s.%s\n", NixString(parts[0]), NixString(parts[1]))
 			}
+		}
+		out.WriteString("        ]; })\n")
+	}
+	if len(cfg.Packages) > 0 {
+		out.WriteString("\n        # Selected nixpkgs packages\n        ({ ... }: { environment.systemPackages = [\n")
+		for _, attr := range cfg.Packages {
+			fmt.Fprintf(&out, "          pkgs.%s\n", nixAttrPath(attr))
 		}
 		out.WriteString("        ]; })\n")
 	}

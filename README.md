@@ -54,6 +54,8 @@ Menu controls:
 
 ## Add an input, overlay, module or package
 
+Press `p` from the main menu to open the package shop. Search the scraped nixpkgs package index, inspect descriptions, and press Space to add packages to a selection basket. The full package index is kept separate from configuration bits so package browsing can scale without making the bit menu or catalog validation unwieldy.
+
 The input menu asks for a name, URL, usage, output attribute and whether its nixpkgs input should follow the root nixpkgs. It supports these usages:
 
 | Usage | Generated reference |
