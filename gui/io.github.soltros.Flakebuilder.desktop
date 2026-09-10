@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Flakebuilder
+Comment=Build a NixOS flake from selectable configuration bits
+Exec=flakebuilder-gui
+Icon=utilities-system-monitor
+Terminal=false
+Type=Application
+Categories=System;Settings;

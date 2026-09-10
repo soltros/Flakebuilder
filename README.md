@@ -37,6 +37,16 @@ Or from this checkout:
 nix run . -- --list
 ```
 
+### Pantheon desktop frontend
+
+Flakebuilder also ships an optional GTK4/Granite companion for Pantheon desktops. It keeps the generator's terminal selector, so package shopping, NUR subscriptions, review, dry-run validation and output handling remain identical:
+
+```sh
+nix run github:soltros/Flakebuilder#gui
+```
+
+Enter the installation's original NixOS release (the same value used with `--state-version`), then choose **Configure flake**. The frontend opens the selector in a terminal and **Open generated flakes** opens `~/generated_flakes`.
+
 Output defaults to `~/generated_flakes/flake.nix`. Generating again in this directory automatically backs up and replaces the previous file. Use `--dir` for another location; existing files outside the default directory still require `--force`.
 
 Use the installation's **original** `system.stateVersion`; selecting a newer nixpkgs track does not mean changing that value. Hostname, user, locale, timezone, keyboard and personal paths are CLI settings. Defaults use a generic user and UTC. Hardware comes from your own generated hardware configuration, never from a preset's original machine.

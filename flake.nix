@@ -33,9 +33,16 @@
           mainProgram = "flakebuilder";
         };
       };
+      gui = pkgs.stdenv.mkDerivation {
+        pname = "flakebuilder-gui"; version = "0.1.0"; src = ./gui;
+        nativeBuildInputs = with pkgs; [ meson ninja pkg-config vala wrapGAppsHook4 glib ];
+        buildInputs = [ pkgs.gtk4 pkgs.pantheon.granite7 ];
+        meta = { description = "Pantheon-style GTK frontend for Flakebuilder"; license = pkgs.lib.licenses.gpl3Only; mainProgram = "flakebuilder-gui"; };
+      };
     });
     apps = forAllSystems (system: {
       default = { type = "app"; program = "${self.packages.${system}.default}/bin/flakebuilder"; };
+      gui = { type = "app"; program = "${self.packages.${system}.gui}/bin/flakebuilder-gui"; };
     });
     checks = forAllSystems (system: { app = self.packages.${system}.default; });
     devShells = forAllSystems (system: let pkgs = import nixpkgs { inherit system; }; in {
