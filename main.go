@@ -168,7 +168,7 @@ func run() error {
 	}
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer cancel()
-	backup, err := builder.Write(ctx, source, cfg, builder.WriteOptions{Directory: dir, Force: force, Lock: lock, Build: build, Log: os.Stderr})
+	backup, err := builder.Write(ctx, source, cfg, builder.WriteOptions{Directory: dir, Force: force, Lock: lock, Build: build, DryRun: true, Log: os.Stderr})
 	var validation *builder.ValidationError
 	if err != nil && !errors.As(err, &validation) {
 		return err
@@ -185,7 +185,7 @@ func run() error {
 	} else if lock {
 		fmt.Println("Inputs locked and flake evaluation passed.")
 	} else {
-		fmt.Println("Nix syntax checked. Use --lock to evaluate or --build to build the system.")
+		fmt.Println("Nix dry-run passed. No activation was performed; use --lock or --build for deeper checks.")
 	}
 	if cfg.Hardware == "" {
 		fmt.Println("Hardware was omitted; embed it with --hardware before building for a real machine.")

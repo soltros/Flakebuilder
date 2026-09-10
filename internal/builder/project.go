@@ -86,6 +86,7 @@ type WriteOptions struct {
 	Force     bool
 	Lock      bool
 	Build     bool
+	DryRun    bool
 	Log       io.Writer
 }
 
@@ -169,6 +170,24 @@ func Write(ctx context.Context, source string, cfg Config, opt WriteOptions) (st
 	}
 	if opt.Build && strings.TrimSpace(cfg.Hardware) == "" {
 		return failed(fmt.Errorf("building requires embedded hardware; supply --hardware"))
+	}
+	if opt.DryRun && !opt.Lock && !opt.Build {
+		// publishFiles moves the staged flake into the destination; restore a
+		// staging copy so the Nix toolkit can evaluate it in isolation.
+		if err = os.WriteFile(stagedSource, []byte(source), 0644); err != nil {
+			return failed(err)
+		}
+		common := []string{"--extra-experimental-features", "nix-command flakes"}
+		checkArgs := []string{"flake", "check", "--no-build", "--no-write-lock-file", "path:" + stage}
+		// A full NixOS check requires a root file system declaration. New
+		// configurations commonly omit hardware until the operator supplies it,
+		// so use flake show as a structural dry-run in that case.
+		if strings.TrimSpace(cfg.Hardware) == "" {
+			checkArgs = []string{"flake", "show", "--no-write-lock-file", "path:" + stage}
+		}
+		if err = run(ctx, opt.Log, "nix", append(common, checkArgs...)...); err != nil {
+			return failed(err)
+		}
 	}
 	if !opt.Lock && !opt.Build {
 		return backup, nil

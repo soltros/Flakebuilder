@@ -47,7 +47,7 @@ Menu controls:
 - Backspace / Esc: return from a bit category to the category list.
 - `/`: search by name, category or ID; Esc: clear search.
 - `i`: add an external input or remove a custom input by name.
-- Enter: preview the single generated file; Enter / g / y: generate; n: return to editing.
+- Enter: preview the single generated file; `g`: generate immediately; Enter / y in the preview: generate; n: return to editing.
 - q / Ctrl+C: cancel without changing output files.
 
 `[+]` means a bit is needed by another selected bit. Dependency selections are calculated automatically. Remove the dependent selection to remove an automatically selected bit. Conflicting desktop, shell, bootloader, kernel or power choices must be resolved before generation.
@@ -111,7 +111,7 @@ Preserve required follows mappings when overriding catalog inputs. Changing an i
 ./flakebuilder --from ~/generated_flakes/flake.nix --yes --build
 ```
 
-Generation saves `flake.nix` first, then checks Nix syntax. `--lock` additionally locks inputs and runs `nix flake check --no-build`. `--build` also runs a non-activating `nix build` of the system toplevel. **Flakebuilder never runs switch, boot or nixos-install.** Parser, locking, evaluation and build failures are reported but leave the newly generated flake available to inspect, edit or reopen. Failed checks return a nonzero exit status, with the saved path in the error message. Replacements keep backups. A new lock file is published only when the requested checks succeed; a previous lock file remains unchanged on failure. Existing lock pins are reused when applicable; changing selections may add or remove inputs.
+Generation saves `flake.nix` first, then runs a Nix dry-run using `nix flake show`; when hardware is embedded, it runs the fuller `nix flake check --no-build`. `--lock` additionally locks inputs and runs `nix flake check --no-build`. `--build` also runs a non-activating `nix build` of the system toplevel. **Flakebuilder never runs switch, boot or nixos-install.** Parser, locking, evaluation and build failures are reported but leave the newly generated flake available to inspect, edit or reopen. Failed checks return a nonzero exit status, with the saved path in the error message. Replacements keep backups. A new lock file is published only when the requested checks succeed; a previous lock file remains unchanged on failure. Existing lock pins are reused when applicable; changing selections may add or remove inputs.
 
 `--from` reads selection metadata, not arbitrary hand edits to the Nix body. Hand edits remain usable by Nix, but reopening and regenerating produces code from the saved selections. Backups preserve the old file. The default `~/generated_flakes` directory automatically backs up repeated generations; other output directories require `--force` to replace files. Generation can omit hardware; a build attempt without hardware reports an error after saving the flake. Standard hardware files using `modulesPath` are supported; local file imports must first be inlined.
 

@@ -187,13 +187,9 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.offset = 0
 			}
 		case "g":
-			source, _, err := m.Catalog.Render(m.Selection())
-			if err != nil {
-				m.message = err.Error()
-			} else {
-				m.preview = source
-				m.offset = 0
-			}
+			m.Config = m.Selection()
+			m.Confirmed = true
+			return m, tea.Quit
 		}
 	}
 	return m, nil
@@ -291,6 +287,6 @@ func (m Model) View() string {
 	} else if m.message != "" {
 		b.WriteString("\n" + m.message + "\n")
 	}
-	b.WriteString("\nSpace: select · /: search · i: add input · Enter: preview · Backspace: categories · q: cancel\n[x] selected · [+] required automatically (remove its dependents to omit it)\n")
+	b.WriteString("\nSpace: select · /: search · i: add input · Enter: preview · g: Generate flake · Backspace: categories · q: cancel\n[x] selected · [+] required automatically (remove its dependents to omit it)\n")
 	return b.String()
 }

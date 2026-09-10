@@ -21,7 +21,9 @@ func key(m Model, k string) Model {
 }
 func TestPreviewFreezesSelection(t *testing.T) {
 	m := model(t)
-	m = key(m, "g")
+	// Open a category, then Enter previews the generated flake.
+	m = key(m, "enter")
+	m = key(m, "enter")
 	if m.preview == "" {
 		t.Fatal("no preview")
 	}
@@ -73,9 +75,10 @@ func TestCategoryNavigationKeepsSelectionFocused(t *testing.T) {
 }
 
 func TestGenerateFromPreview(t *testing.T) {
-	for _, confirm := range []string{"enter", "g", "y"} {
+	for _, confirm := range []string{"enter", "y"} {
 		t.Run(confirm, func(t *testing.T) {
-			m := key(model(t), "g")
+			m := key(model(t), "enter")
+			m = key(m, "enter")
 			if m.preview == "" {
 				t.Fatal("preview unavailable")
 			}
@@ -89,5 +92,12 @@ func TestGenerateFromPreview(t *testing.T) {
 				t.Fatal("generate key did not confirm output")
 			}
 		})
+	}
+}
+
+func TestGenerateKeyConfirmsDirectly(t *testing.T) {
+	m := key(model(t), "g")
+	if !m.Confirmed || m.preview != "" {
+		t.Fatal("g should generate directly from the selection menu")
 	}
 }
