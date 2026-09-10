@@ -128,6 +128,17 @@ Generation saves `flake.nix` first, then runs a Nix dry-run using `nix flake sho
 
 `--from` reads selection metadata, not arbitrary hand edits to the Nix body. Hand edits remain usable by Nix, but reopening and regenerating produces code from the saved selections. Backups preserve the old file. The default `~/generated_flakes` directory automatically backs up repeated generations; other output directories require `--force` to replace files. Generation can omit hardware; a build attempt without hardware reports an error after saving the flake. Standard hardware files using `modulesPath` are supported; local file imports must first be inlined.
 
+## Deploy the generated flake
+
+See the [deployment guide](https://github.com/soltros/Flakebuilder/wiki/Deploying) for the complete workflow. After reviewing and checking the generated file, deploy it with the normal NixOS tools:
+
+```sh
+sudo nixos-rebuild test --flake ~/generated_flakes#nixos
+sudo nixos-rebuild switch --flake ~/generated_flakes#nixos
+```
+
+Flakebuilder never activates a configuration automatically; choose `test`, `switch`, or `boot` yourself after reviewing the result.
+
 ## Add more bits
 
 See [catalog authoring](docs/CATALOG.md). The bundled catalog lives in `internal/builder/catalog.json`; each source bit is a complete NixOS module expression under `internal/builder/bits/`. Those source files are embedded into the executable and inlined into generated output. They are not runtime module files required by the generated flake.
