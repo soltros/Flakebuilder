@@ -335,7 +335,11 @@ func nixAttrPath(attr string) string {
 	parts := strings.Split(attr, ".")
 	out := make([]string, len(parts))
 	for i, p := range parts {
-		out[i] = NixString(p)
+		if regexp.MustCompile(`^[A-Za-z_][A-Za-z0-9_-]*$`).MatchString(p) {
+			out[i] = p
+		} else {
+			out[i] = NixString(p)
+		}
 	}
 	return strings.Join(out, ".")
 }
@@ -501,9 +505,9 @@ func (c *Catalog) Render(cfg Config) (string, Plan, error) {
 		out.WriteString("        ]; })\n")
 	}
 	if len(cfg.Packages) > 0 {
-		out.WriteString("\n        # Selected nixpkgs packages\n        ({ ... }: { environment.systemPackages = [\n")
+		out.WriteString("\n        # Selected nixpkgs packages\n        ({ pkgs, ... }: { environment.systemPackages = with pkgs; [\n")
 		for _, attr := range cfg.Packages {
-			fmt.Fprintf(&out, "          pkgs.%s\n", nixAttrPath(attr))
+			fmt.Fprintf(&out, "          %s\n", nixAttrPath(attr))
 		}
 		out.WriteString("        ]; })\n")
 	}
