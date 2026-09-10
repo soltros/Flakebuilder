@@ -4,7 +4,7 @@ Build a NixOS `flake.nix` from a searchable menu of configuration bits and input
 
 Flakebuilder is a separate descendant of [ConfigBuilder](https://github.com/soltros/configbuilder)'s menu-based workflow. It embeds selected configuration directly into **one `flake.nix`**. It does not generate a `modules/` directory or import a local hardware file. Nix still generates its normal `flake.lock` when you lock or build. Upstream inputs such as nixpkgs, Hermes and Unity remain external dependencies, pinned by that lock.
 
-The catalog contains **239 bits and 12 presets**, covering desktops, hardware, power, storage, services, shell setup, appearance, applications, gaming, backup, security, networking, development and external package sources. 156 of those bits are sourced from the complete NixOS Wiki scrape. Ten presets are based on the branches of `soltros/nixos-config`. They are starting points, not certified replacements for those machines.
+The catalog contains **239 bits and 12 presets**, covering desktops, hardware, power, storage, services, shell setup, appearance, applications, gaming, backup, security, networking, development and external package sources. Ten presets are based on the branches of `soltros/nixos-config`. They are starting points, not certified replacements for those machines.
 
 ## Run
 
@@ -103,8 +103,6 @@ Generation saves `flake.nix` first, then checks Nix syntax. `--lock` additionall
 ## Add more bits
 
 See [catalog authoring](docs/CATALOG.md). The bundled catalog lives in `internal/builder/catalog.json`; each source bit is a complete NixOS module expression under `internal/builder/bits/`. Those source files are embedded into the executable and inlined into generated output. They are not runtime module files required by the generated flake.
-
-The checked-in `tools/import_wiki_bits.py` reads `/home/derrik/nixos_wiki_rag` in full and refreshes the wiki-backed catalog entries plus `docs/WIKI_COVERAGE.md`. It validates that each evidence title exists in the scrape. Re-run it after replacing the scrape, review the generated diff, then run the full tests before publishing. The generated snippets intentionally leave installation procedures and machine-specific values for the operator to configure.
 
 A trusted local catalog can be used with `--catalog DIRECTORY`, without rebuilding the executable. Catalogs and hardware files are executable Nix code and should come from a trusted source. The manifest handles transitive requirements, input dependencies, conflicts, exclusive groups, supported platforms and selected nixpkgs tracks. Nix performs the actual option and package validation.
 

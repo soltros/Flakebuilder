@@ -3,7 +3,7 @@
   # Hermes tool installers sometimes fetch generic Linux binaries (uv-managed
   # Python tools, agent-browser/Chromium, cua-driver). NixOS needs nix-ld for
   # those ELF interpreters and envfs for hard-coded shebangs like /bin/bash.
-  # Sources: https://wiki.nixos.org/wiki/Nix-ld and https://wiki.nixos.org/wiki/Playwright
+  # Runtime support for Nix-ld and Playwright.
   services.envfs.enable = true;
 
   programs.nix-ld = {

@@ -58,7 +58,3 @@ External-input adapters may use `inputs`, supplied via `specialArgs`. Ordinary b
 Source catalogs are trusted code. The loader checks IDs, references and file paths; it is not a Nix sandbox or a full static dependency analyzer. Generated source is saved before syntax checks, so validation failures do not prevent export. Input fetching and module evaluation occur with --lock or --build.
 
 The user-input menu can declare a source and consume exported overlays/modules/packages without authoring a bit. Add a catalog adapter when a service also needs enable flags, user settings, dependencies or compatibility constraints.
-
-## Wiki-backed entries
-
-`tools/import_wiki_bits.py` reads both files in `/home/derrik/nixos_wiki_rag` completely and adds small, declarative entries whose `wiki` field names the evidence article. It deliberately does not translate every code block: installation commands, disk layouts, secrets, mutable downloads, machine-specific paths and examples containing placeholders need human parameterization before they can be safe single-file bits. Review the resulting catalog diff after each scrape refresh.
