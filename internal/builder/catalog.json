@@ -27,6 +27,12 @@
       "follows": {
         "nixpkgs": "nixpkgs"
       }
+    },
+    "nur": {
+      "url": "github:nix-community/NUR",
+      "follows": {
+        "nixpkgs": "nixpkgs"
+      }
     }
   },
   "bits": [

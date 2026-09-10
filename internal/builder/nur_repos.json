@@ -1,0 +1,3743 @@
+[
+  {
+    "name": "0x4A6F",
+    "url": "https://github.com/0x4A6F/nur-packages",
+    "packages": [
+      "alquitran",
+      "autorandr-rs",
+      "blflash",
+      "bouffalo-cli",
+      "check_mk-agent",
+      "conduit",
+      "deploy-rs",
+      "espflash",
+      "firejail",
+      "freenukum",
+      "gobi_loader",
+      "libcerror",
+      "mumble-web-proxy",
+      "photoview-api",
+      "pixelpwnr",
+      "routinator",
+      "wireguard-vanity-address"
+    ]
+  },
+  {
+    "name": "1235467",
+    "url": "https://github.com/1235467/nurpkgs",
+    "packages": []
+  },
+  {
+    "name": "12Boti",
+    "url": "https://github.com/12Boti/nur",
+    "packages": []
+  },
+  {
+    "name": "7mind",
+    "url": "https://github.com/7mind/7mind-nix",
+    "packages": []
+  },
+  {
+    "name": "999eagle",
+    "url": "https://git.catgirl.cloud/999eagle/nur-packages",
+    "packages": [
+      "cargo-vibe",
+      "github-linguist",
+      "make-gif",
+      "openmoji",
+      "pkcs11-provider.nix#L31",
+      "potacat",
+      "subwoofer",
+      "swayaudioidleinhibit.nix#L29",
+      "synapse-find-unreferenced-state-groups.nix#L20",
+      "what",
+      "wys"
+    ]
+  },
+  {
+    "name": "9glenda",
+    "url": "https://github.com/9glenda/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "Adamekka",
+    "url": "https://github.com/Adamekka/nur-packages",
+    "packages": [
+      "chatgpt",
+      "gdstash",
+      "linux-wallpaperengine-git",
+      "lsfg-vk-git",
+      "lunar-tear",
+      "rpcs3-git",
+      "wondershaper"
+    ]
+  },
+  {
+    "name": "AndrewKvalheim",
+    "url": "https://codeberg.org/AndrewKvalheim/configuration",
+    "packages": []
+  },
+  {
+    "name": "AsterisMono",
+    "url": "https://github.com/AsterisMono/nur-packages",
+    "packages": [
+      "sqlitestudio"
+    ]
+  },
+  {
+    "name": "DanNixon",
+    "url": "https://github.com/DanNixon/nur-packages",
+    "packages": [
+      "aprsgateway",
+      "dapnetgateway",
+      "dmrgateway",
+      "emfcamp-schedule-cli",
+      "git-collage",
+      "keyprs",
+      "metty",
+      "mmdvmhost",
+      "satorictl-unstable"
+    ]
+  },
+  {
+    "name": "Dev380",
+    "url": "https://github.com/Dev380/nur-repo",
+    "packages": [
+      "blobmoji",
+      "blue-screen-of-life-grub",
+      "clockface-font",
+      "example-package",
+      "ez",
+      "nohang",
+      "rbonsai",
+      "redlib",
+      "wisdom-tree"
+    ]
+  },
+  {
+    "name": "DimitarNestorov",
+    "url": "https://github.com/DimitarNestorov/Nix-user-repository-packages",
+    "packages": [
+      "daisydisk.nix#L35",
+      "eclectic-light",
+      "ghostty.nix#L65",
+      "sindre-sorhus"
+    ]
+  },
+  {
+    "name": "DzmingLi",
+    "url": "https://github.com/DzmingLi/nur-packages",
+    "packages": [
+      "Huiwen-mincho",
+      "KingHwaOldSong",
+      "TRWUDMincho",
+      "baidupcs-go",
+      "berkeley-mono-trial",
+      "blueprint-mcp",
+      "bodoni-lt-book",
+      "chuangyi-jianxingkai",
+      "cn-exam-fonts",
+      "cstar-toolchain",
+      "emacs-webkit",
+      "emskin",
+      "genryumin",
+      "hust-network-login",
+      "niri-empty",
+      "quarkpantool",
+      "racket-langserver",
+      "stzhongsong",
+      "urw-base35-fonts",
+      "waydroid-script",
+      "wechat",
+      "windows-fonts",
+      "wxwork",
+      "zju-connect"
+    ]
+  },
+  {
+    "name": "Educorreia932",
+    "url": "https://github.com/Educorreia932/nur-packages",
+    "packages": [
+      "slex"
+    ]
+  },
+  {
+    "name": "Emin017",
+    "url": "https://github.com/Emin017/nur-packages",
+    "packages": [
+      "git-commit-generator",
+      "gtkwave4",
+      "ieda",
+      "lceda-pro",
+      "rtl2gds",
+      "xfel",
+      "yosys-slang"
+    ]
+  },
+  {
+    "name": "Ex-32",
+    "url": "https://github.com/Ex-32/nur-packages",
+    "packages": [
+      "ccc",
+      "pokemon-colorscripts"
+    ]
+  },
+  {
+    "name": "Freed-Wu",
+    "url": "https://github.com/Freed-Wu/nur-packages",
+    "packages": [
+      "applications",
+      "data",
+      "development",
+      "shells",
+      "tools"
+    ]
+  },
+  {
+    "name": "GNUqb114514",
+    "url": "https://github.com/GNUqb114514/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "INFO4-19",
+    "url": "https://gricad-gitlab.univ-grenoble-alpes.fr/Projets-INFO4/18-19/19/code",
+    "packages": []
+  },
+  {
+    "name": "LuisChDev",
+    "url": "https://github.com/LuisChDev/nur-packages",
+    "packages": [
+      "nordvpn",
+      "whitesur-kde-theme"
+    ]
+  },
+  {
+    "name": "MH0386",
+    "url": "https://github.com/MH0386/nurpkgs",
+    "packages": [
+      "docker-sandboxes",
+      "gh-aw",
+      "multica",
+      "ntn",
+      "tinyfish"
+    ]
+  },
+  {
+    "name": "Nick1296",
+    "url": "https://github.com/Nick1296/nur-packages",
+    "packages": [
+      "ariang-bin",
+      "doomemacs-icons",
+      "mouse-tiler",
+      "pixel-flasher",
+      "tangent",
+      "vivado"
+    ]
+  },
+  {
+    "name": "NotBalds",
+    "url": "https://github.com/NotBalds/nurpkgs",
+    "packages": [
+      "bald"
+    ]
+  },
+  {
+    "name": "NotEvenANeko",
+    "url": "https://github.com/NotEvenANeko/nur-pkgs",
+    "packages": [
+      "atlas",
+      "lean-cli"
+    ]
+  },
+  {
+    "name": "ProducerMatt",
+    "url": "https://github.com/ProducerMatt/my-nur-pkgs",
+    "packages": []
+  },
+  {
+    "name": "Redrield",
+    "url": "https://github.com/Redrield/nurpkgs",
+    "packages": [
+      "adif-io.nix#L4",
+      "appdata.nix#L4",
+      "fonts",
+      "not1mm.nix#L4",
+      "notctyparser.nix#L4",
+      "pywinkeyer.nix#L5",
+      "wavelogstoat.nix#L4"
+    ]
+  },
+  {
+    "name": "Rhys-T",
+    "url": "https://github.com/Rhys-T/nur-packages",
+    "packages": [
+      "agent-safehouse",
+      "asciiportal",
+      "dc2dsk",
+      "drl",
+      "flatzebra",
+      "fpc-fixes_3_2",
+      "hfsutils",
+      "impluse",
+      "konify",
+      "libShake",
+      "lix-game",
+      "mame",
+      "man2html",
+      "minivmac",
+      "pacifi3d",
+      "pce",
+      "powder",
+      "qemu-screamer",
+      "resource_dasm",
+      "shapez-ce",
+      "tuxemon",
+      "xinvaders3d",
+      "xorcurses",
+      "xpenguins",
+      "xscorch"
+    ]
+  },
+  {
+    "name": "Samuel-Martineau",
+    "url": "https://github.com/Samuel-Martineau/nur-packages",
+    "packages": [
+      "alfred",
+      "latexit",
+      "nixos-wallpapers"
+    ]
+  },
+  {
+    "name": "Sittymin",
+    "url": "https://github.com/Sittymin/NUR",
+    "packages": [
+      "chatgpt",
+      "guile-lsp-server",
+      "libmks",
+      "muse-code",
+      "qoder-cli",
+      "qoder-cn",
+      "sysmon",
+      "tencent-docs",
+      "wechat",
+      "zcode"
+    ]
+  },
+  {
+    "name": "SuperKenVery",
+    "url": "https://github.com/SuperKenVery/nix-user-packages/",
+    "packages": [
+      "feishu"
+    ]
+  },
+  {
+    "name": "YisuiMilena",
+    "url": "https://github.com/YisuiDenghua/nur-apps",
+    "packages": [
+      "MoeKoeMusic"
+    ]
+  },
+  {
+    "name": "aaqaishtyaq",
+    "url": "https://github.com/aaqaishtyaq/nur-packages",
+    "packages": [
+      "iay"
+    ]
+  },
+  {
+    "name": "aasg",
+    "url": "https://git.sr.ht/~aasg/nixexprs",
+    "packages": []
+  },
+  {
+    "name": "abszero",
+    "url": "https://github.com/Weathercold/nixfiles",
+    "packages": [
+      "ca",
+      "co",
+      "fr",
+      "io",
+      "no",
+      "pa",
+      "sa",
+      "v2",
+      "wi"
+    ]
+  },
+  {
+    "name": "afreakk",
+    "url": "https://github.com/afreakk/mynixrepo",
+    "packages": [
+      "dcreemer-1pass",
+      "dmenu",
+      "dmenuhist",
+      "fish-history-merger",
+      "irc-link-informant",
+      "mongosh",
+      "pter",
+      "realm-cli",
+      "sdm",
+      "wowup"
+    ]
+  },
+  {
+    "name": "agaia",
+    "url": "https://github.com/adam-gaia/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "alanpearce",
+    "url": "https://git.alanpearce.eu/nix-packages",
+    "packages": []
+  },
+  {
+    "name": "alarsyo",
+    "url": "https://github.com/alarsyo/nixos-config",
+    "packages": [
+      "grafana-dashboards",
+      "kaleidoscope-udev-rules",
+      "sddm-sugar-candy",
+      "spot"
+    ]
+  },
+  {
+    "name": "aleksana",
+    "url": "https://github.com/Aleksanaa/NUR-Aleksana",
+    "packages": [
+      "fcitx5-pinyin-cedict",
+      "fcitx5-pinyin-chinese-idiom",
+      "fcitx5-pinyin-ff14",
+      "fcitx5-pinyin-moegirl",
+      "fcitx5-pinyin-zhwiki",
+      "my-grimblast",
+      "neovim-remote-go",
+      "yofi"
+    ]
+  },
+  {
+    "name": "alexnortung",
+    "url": "https://github.com/alexnortung/nur-alexnortung",
+    "packages": []
+  },
+  {
+    "name": "alwinb",
+    "url": "https://gitlab.com/AlwinB/nur-packages",
+    "packages": [
+      "sasm",
+      "sikulixIDE",
+      "tea"
+    ]
+  },
+  {
+    "name": "ambroisie",
+    "url": "https://github.com/ambroisie/nix-config",
+    "packages": [
+      "bw-pass",
+      "change-audio",
+      "change-backlight",
+      "comma",
+      "diff-flake",
+      "dragger",
+      "drone-rsync",
+      "i3-get-window-criteria",
+      "lohr",
+      "matrix-notifier",
+      "osc52",
+      "osc777",
+      "rbw-pass",
+      "unbound-zones-adblock",
+      "zsh-done"
+    ]
+  },
+  {
+    "name": "amesgen",
+    "url": "https://github.com/amesgen/nur-packages",
+    "packages": [
+      "default.nix#L121",
+      "default.nix#L158",
+      "default.nix#L186",
+      "default.nix#L222",
+      "default.nix#L255",
+      "default.nix#L37",
+      "default.nix#L65",
+      "default.nix#L94"
+    ]
+  },
+  {
+    "name": "andreasrid",
+    "url": "https://github.com/andreasrid/nur-packages",
+    "packages": [
+      "jlink-systemview",
+      "python-packages",
+      "stm32cubeide"
+    ]
+  },
+  {
+    "name": "angr",
+    "url": "https://github.com/angr/nixpkgs",
+    "packages": []
+  },
+  {
+    "name": "anntnzrb",
+    "url": "https://github.com/anntnzrb/nurpkgs",
+    "packages": [
+      "yashiki"
+    ]
+  },
+  {
+    "name": "anthonyroussel",
+    "url": "https://github.com/anthonyroussel/nur-packages",
+    "packages": [
+      "aws-cdk-local",
+      "awscli-local",
+      "shadow-client",
+      "terraform-local"
+    ]
+  },
+  {
+    "name": "aprilthepink",
+    "url": "https://github.com/CutestNekoAqua/nur-repo",
+    "packages": [
+      "stellwerksim-launcher",
+      "suyu",
+      "tennable-client-own"
+    ]
+  },
+  {
+    "name": "arc",
+    "url": "https://github.com/arcnmx/nixexprs",
+    "packages": []
+  },
+  {
+    "name": "armaria",
+    "url": "https://github.com/JonathanHope/nur-armaria",
+    "packages": [
+      "armaria"
+    ]
+  },
+  {
+    "name": "arteneko",
+    "url": "https://git.sr.ht/~artemis/artenekoverlay",
+    "packages": [
+      "cap.nix#L15",
+      "dolltags",
+      "todo-imap-to-html.nix#L19"
+    ]
+  },
+  {
+    "name": "artturin",
+    "url": "https://github.com/Artturin/artturin-nur",
+    "packages": [
+      "koneko"
+    ]
+  },
+  {
+    "name": "ataraxiasjel",
+    "url": "https://github.com/AtaraxiaSjel/nur",
+    "packages": [
+      "a2ln",
+      "arkenfox-userjs",
+      "bibata-cursors-tokyonight",
+      "cargo-doc-mcp",
+      "ceserver",
+      "endfield-daily",
+      "github-mcp-server",
+      "hoyolab-claim-bot",
+      "json-liquid-rs",
+      "kes",
+      "maki",
+      "mcp-server-searxng",
+      "mpris-ctl",
+      "nix-update-docker-image",
+      "ocis-bin",
+      "opencodex",
+      "prometheus",
+      "protonhax",
+      "prts-cursor",
+      "python3Packages",
+      "realrtcw",
+      "reshade-shaders",
+      "rosepine-gtk",
+      "seadrive-fuse",
+      "sing-box",
+      "stalker-gamma-cli",
+      "suwayomi-server",
+      "suwayomi-webui",
+      "syncyomi",
+      "telemt",
+      "tokyonight-gtk",
+      "voidrun",
+      "waydroid-script",
+      "whoogle-search",
+      "wopiserver"
+    ]
+  },
+  {
+    "name": "avrahambenaram",
+    "url": "https://github.com/avrahambenaram/nur-packages",
+    "packages": [
+      "hyprpicker",
+      "unimatrix"
+    ]
+  },
+  {
+    "name": "awl-fcarza",
+    "url": "https://github.com/francescocarzaniga/awl-fcarza",
+    "packages": []
+  },
+  {
+    "name": "aymanbagabas",
+    "url": "https://github.com/aymanbagabas/nur",
+    "packages": [
+      "drift",
+      "shcopy"
+    ]
+  },
+  {
+    "name": "babariviere",
+    "url": "https://github.com/babariviere/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "badele",
+    "url": "https://github.com/badele/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "balsoft",
+    "url": "https://github.com/balsoft/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "bandithedoge",
+    "url": "https://github.com/bandithedoge/nur-packages",
+    "packages": [
+      "actuate",
+      "aida-x",
+      "anyrun-qalculate",
+      "aporetic-nerd-font",
+      "audible-planets-bin",
+      "barlow",
+      "basiliskii-bin",
+      "bitdos",
+      "blender-radeon-prorender",
+      "blepfx",
+      "blocks",
+      "cade",
+      "cardinal",
+      "cchorus",
+      "chainner-bin",
+      "charlatan",
+      "cherry-doom",
+      "chorusexmachina-bin",
+      "clap-host",
+      "clap-info",
+      "clap-validator",
+      "cloudreverb",
+      "crepe-vamp-plugin-bin",
+      "csound6",
+      "curl-gnutls3",
+      "deemix-gui-bin",
+      "dmenu-flexipatch",
+      "dpf-plugins",
+      "dsp56300",
+      "dwm-flexipatch",
+      "element",
+      "emacsPackages",
+      "filt-r",
+      "firefly-synth",
+      "firefoxAddons",
+      "gate-12",
+      "ghidra-mcp",
+      "glide-bin-unwrapped",
+      "gnomedistort2",
+      "guitarix-vst-bin",
+      "guitarml",
+      "hamburger",
+      "harrison",
+      "helion-bin",
+      "helium-bin",
+      "hera",
+      "hise",
+      "hvcc",
+      "ildaeil",
+      "inshellah",
+      "ircam-vamp-plugins-bin",
+      "jdrummer",
+      "js80p",
+      "juceCmakeHook",
+      "k-whooms",
+      "keepmenu",
+      "lamb-bin",
+      "lazyusf",
+      "lv2vst",
+      "maim-bin",
+      "microbiome",
+      "misstrhortion",
+      "mod-desktop-bin",
+      "modstems",
+      "monique",
+      "morewaita",
+      "musique",
+      "mxtune-bin",
+      "ncro",
+      "niri-gtk",
+      "nixtopsy",
+      "npr",
+      "nyan-doom",
+      "octasine",
+      "oneknob-series",
+      "open-mbc",
+      "panacea-bin",
+      "partiels",
+      "peakeater-bin",
+      "perceptomap",
+      "pi-acp",
+      "plasma",
+      "plugalyzer",
+      "polarity-md",
+      "polarity-sc-dark",
+      "polycule",
+      "projucer",
+      "propertree",
+      "proton",
+      "protrekkr",
+      "psydoom-bin",
+      "punkott",
+      "radium",
+      "reev-r",
+      "resonarium-bin",
+      "reverse-camel",
+      "roomreverb",
+      "sapphire-plugins",
+      "schrammel-ojd",
+      "serena",
+      "sheepshaver-bin",
+      "showmidi-bin",
+      "slock-flexipatch",
+      "snd2acm",
+      "sofia-sans",
+      "some-sass-language-server",
+      "spectralsuite",
+      "squeezer-bin",
+      "st-flexipatch",
+      "terrain",
+      "time-12",
+      "tonez",
+      "two-filters",
+      "ultracomb-bin",
+      "ultramaster-kr-106",
+      "unplugred",
+      "valentine",
+      "vimPlugins",
+      "vitalium-verb-bin",
+      "wavetable-bin",
+      "whisper-vamp-plugin-bin",
+      "winegui",
+      "xplrPlugins",
+      "yabridge",
+      "yadaw-bin",
+      "yaziPlugins",
+      "zerostack",
+      "ziggy-bin",
+      "zine-bin"
+    ]
+  },
+  {
+    "name": "bb010g",
+    "url": "https://github.com/bb010g/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "bbjubjub",
+    "url": "https://github.com/bbjubjub2494/nur-expressions",
+    "packages": [
+      "garlicshare",
+      "mars-simulator",
+      "mnemonikey",
+      "rotki",
+      "teck-programmer",
+      "yaru-classic-theme"
+    ]
+  },
+  {
+    "name": "bd-g",
+    "url": "https://github.com/bd-g/nur-packages",
+    "packages": [
+      "noto-bw-emoji"
+    ]
+  },
+  {
+    "name": "beam",
+    "url": "https://github.com/jechol/nix-beam",
+    "packages": []
+  },
+  {
+    "name": "behoof4mind",
+    "url": "https://github.com/behoof4mind/packages",
+    "packages": [
+      "example-package"
+    ]
+  },
+  {
+    "name": "bendlas",
+    "url": "https://github.com/bendlas/nur-packages",
+    "packages": [
+      "gd32-dfu-utils.nix#L5",
+      "gitopolis.nix#L50",
+      "libgpiod1.nix#L28",
+      "lsd.nix#L22",
+      "mixxx-to-rekordbox.nix#L46",
+      "openocd-riscv.nix#L90",
+      "ueforth.nix#L41",
+      "zsh-capture-completion.nix#L24"
+    ]
+  },
+  {
+    "name": "berbiche",
+    "url": "https://github.com/berbiche/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "berryp",
+    "url": "https://github.com/berryp/nur-packages",
+    "packages": [
+      "lmt",
+      "obsidian-export",
+      "rancher-desktop",
+      "raycast",
+      "resilio-sync"
+    ]
+  },
+  {
+    "name": "bhasherbel",
+    "url": "https://github.com/bhasherbel/nur-packages",
+    "packages": [
+      "aw-awatcher",
+      "rofi"
+    ]
+  },
+  {
+    "name": "bhipple",
+    "url": "https://github.com/bhipple/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "binarycat",
+    "url": "https://github.com/lolbinarycat/nur-packages",
+    "packages": [
+      "by-name"
+    ]
+  },
+  {
+    "name": "blakat360",
+    "url": "https://github.com/blakat360/nur-packages",
+    "packages": [
+      "example-package",
+      "rzf"
+    ]
+  },
+  {
+    "name": "bot-wxt1221",
+    "url": "https://github.com/Bot-wxt1221/Bot-wxt1221-nur",
+    "packages": [
+      "ddz-py"
+    ]
+  },
+  {
+    "name": "breakingtv",
+    "url": "https://github.com/BreakingTV/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "brpaz",
+    "url": "https://github.com/brpaz/nur-packages",
+    "packages": [
+      "example-package"
+    ]
+  },
+  {
+    "name": "c0deaddict",
+    "url": "https://github.com/c0deaddict/nur-packages",
+    "packages": [
+      "acme-dns",
+      "cameractrls",
+      "emacs-i3",
+      "fira-code",
+      "gcfflasher",
+      "goreplay",
+      "helm-2to3",
+      "helm-mapkubeapis",
+      "helm-whatup",
+      "i3-balance-workspace",
+      "keyhub-cli",
+      "kube-burner",
+      "kubectl-cert-manager",
+      "lock-gnome-keyring",
+      "marble-marcher",
+      "nftables-exporter",
+      "rpi-imager",
+      "rpi_ws281x",
+      "solo2-cli",
+      "zsh-histdb",
+      "zsh-kubectl-prompt"
+    ]
+  },
+  {
+    "name": "c2vi",
+    "url": "https://github.com/c2vi/nixos",
+    "packages": []
+  },
+  {
+    "name": "caarlos0",
+    "url": "https://github.com/caarlos0/nur",
+    "packages": [
+      "clone-org",
+      "diffnav",
+      "discord-applemusic-rich-presence",
+      "envdoc",
+      "fork-cleaner",
+      "glyphs",
+      "gocovsh",
+      "golangci-lint",
+      "gopls",
+      "jsonfmt",
+      "mdtree",
+      "misspell",
+      "mkdocs-git-revision-date-localized-plugin",
+      "mkdocs-include-markdown-plugin",
+      "org-stats",
+      "svu",
+      "timer",
+      "xdg-open-svc"
+    ]
+  },
+  {
+    "name": "chagra",
+    "url": "https://github.com/ihebchagra/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "charmbracelet",
+    "url": "https://github.com/charmbracelet/nur",
+    "packages": [
+      "charm",
+      "confettysh",
+      "crush",
+      "freeze",
+      "glow",
+      "gum",
+      "markscribe",
+      "melt",
+      "mods",
+      "pop",
+      "sequin",
+      "skate",
+      "soft-serve",
+      "vhs",
+      "wishlist"
+    ]
+  },
+  {
+    "name": "chen",
+    "url": "https://github.com/cu1ch3n/nur-packages",
+    "packages": [
+      "abella-master",
+      "abella-modded",
+      "coqPackages",
+      "ott-sweirich"
+    ]
+  },
+  {
+    "name": "cherrypiejam",
+    "url": "https://github.com/cherrypiejam/nur-packages",
+    "packages": [
+      "protobuf.nix#L12"
+    ]
+  },
+  {
+    "name": "chigyutendies",
+    "url": "https://github.com/pillowtrucker/tooo000oooot",
+    "packages": []
+  },
+  {
+    "name": "chillcicada",
+    "url": "https://github.com/chillcicada/nurpkgs",
+    "packages": [
+      "by-name"
+    ]
+  },
+  {
+    "name": "chisui",
+    "url": "https://github.com/chisui/nur-pkgs",
+    "packages": [
+      "firefox-addons"
+    ]
+  },
+  {
+    "name": "chordtoll",
+    "url": "https://github.com/chordtoll/nur-packages",
+    "packages": [
+      "example-package"
+    ]
+  },
+  {
+    "name": "chrisoboe",
+    "url": "https://github.com/ChrisOboe/nurrepo",
+    "packages": []
+  },
+  {
+    "name": "clefru",
+    "url": "https://github.com/clefru/nur-packages",
+    "packages": [
+      "beam",
+      "grin",
+      "gtk-v4l",
+      "ib-tws",
+      "linux-sgx",
+      "minionpro",
+      "noise-suppression-for-voice",
+      "parsecgaming",
+      "python-pkgs",
+      "quantlib",
+      "rnnoise",
+      "scanbuttond",
+      "usbreset"
+    ]
+  },
+  {
+    "name": "codgician",
+    "url": "https://github.com/codgician/nur-packages",
+    "packages": [
+      "agent-browser",
+      "aiursoft-tracer",
+      "appmenu-gtk-module",
+      "ec-utils",
+      "edk2-cix",
+      "fcitx5-osk",
+      "gddr6",
+      "intune-portal",
+      "linux-entra-bridge",
+      "litellm-rust",
+      "mkcreds",
+      "ms213x-rename",
+      "nanokvm-usb",
+      "oh-my-pi-bin",
+      "rust-fp",
+      "samsung-dc-toolkit-3",
+      "sasl-xoauth2",
+      "secureboot-objects",
+      "servod",
+      "sst",
+      "waydroid-script",
+      "work-iq"
+    ]
+  },
+  {
+    "name": "colinsane",
+    "url": "https://git.uninsane.org/colin/nix-files",
+    "packages": [
+      "by-name"
+    ]
+  },
+  {
+    "name": "congee",
+    "url": "https://github.com/congee/nur",
+    "packages": [
+      "astrometry-net",
+      "engram",
+      "gh-image",
+      "llmster",
+      "rapid-mlx",
+      "rsql",
+      "sentry",
+      "siril",
+      "some-sass-language-server",
+      "whatcable"
+    ]
+  },
+  {
+    "name": "cransom",
+    "url": "https://github.com/cransom/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "crazazy",
+    "url": "https://github.com/crazazy/nixos-config",
+    "packages": [
+      "cakeml",
+      "enso",
+      "gen-node-env",
+      "seamonkey",
+      "wasmfxtime"
+    ]
+  },
+  {
+    "name": "crazedprogrammer",
+    "url": "https://github.com/CrazedProgrammer/nix",
+    "packages": []
+  },
+  {
+    "name": "crtified",
+    "url": "https://github.com/CRTified/nur-packages",
+    "packages": [
+      "hl_l2370dn",
+      "mfc_l2710dn",
+      "self-service-password",
+      "unflac"
+    ]
+  },
+  {
+    "name": "cryolitia",
+    "url": "https://github.com/Cryolitia/nur-packages",
+    "packages": [
+      "by-name"
+    ]
+  },
+  {
+    "name": "cvtx",
+    "url": "https://github.com/Cvtx/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "cwyc",
+    "url": "https://github.com/cwyc/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "dagger",
+    "url": "https://github.com/dagger/nix",
+    "packages": [
+      "container-use",
+      "dagger"
+    ]
+  },
+  {
+    "name": "dan4ik605743",
+    "url": "https://github.com/dan4ik605743/nur",
+    "packages": []
+  },
+  {
+    "name": "dandellion",
+    "url": "https://git.dodsorf.as/Dandellion/NUR",
+    "packages": []
+  },
+  {
+    "name": "darkkirb",
+    "url": "https://git.chir.rs/darkkirb/nix-packages",
+    "packages": []
+  },
+  {
+    "name": "dawidsowa",
+    "url": "https://github.com/dawidsowa/nur-packages",
+    "packages": [
+      "freshrss"
+    ]
+  },
+  {
+    "name": "dcsunset",
+    "url": "https://github.com/DCsunset/nur-packages",
+    "packages": [
+      "top-level"
+    ]
+  },
+  {
+    "name": "deeunderscore",
+    "url": "https://github.com/DeeUnderscore/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "definfo",
+    "url": "https://github.com/definfo/nur-packages",
+    "packages": [
+      "cli-proxy-api",
+      "dnsmasq-china-list_smartdns",
+      "nsub",
+      "sarasa-term-sc-nerd",
+      "waylrc"
+    ]
+  },
+  {
+    "name": "demivan",
+    "url": "https://github.com/demivan/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "demyanrogozhin",
+    "url": "https://github.com/demyanrogozhin/nur-packages",
+    "packages": [
+      "particl-core"
+    ]
+  },
+  {
+    "name": "detegr",
+    "url": "https://github.com/Detegr/nur",
+    "packages": []
+  },
+  {
+    "name": "devins2518",
+    "url": "https://github.com/devins2518/nur",
+    "packages": [
+      "bunnyfetch-rs",
+      "gyro",
+      "iosevka-serif",
+      "platformio",
+      "zig-stable"
+    ]
+  },
+  {
+    "name": "devmegablaster",
+    "url": "https://github.com/devmegablaster/nur",
+    "packages": [
+      "jatt"
+    ]
+  },
+  {
+    "name": "dezgeg",
+    "url": "https://github.com/dezgeg/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "dguibert",
+    "url": "https://github.com/dguibert/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "divanorama",
+    "url": "https://github.com/divanorama/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "dmayle",
+    "url": "https://github.com/dmayle/nur-packages",
+    "packages": [
+      "example-package",
+      "tbsm"
+    ]
+  },
+  {
+    "name": "draftea",
+    "url": "https://github.com/Drafteame/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "drewrisinger",
+    "url": "https://github.com/drewrisinger/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "dschrempf",
+    "url": "https://github.com/dschrempf/nur-packages",
+    "packages": [
+      "coding",
+      "evolution",
+      "misc"
+    ]
+  },
+  {
+    "name": "dsuetin",
+    "url": "https://github.com/dani0854/nur-packages",
+    "packages": [
+      "firefox"
+    ]
+  },
+  {
+    "name": "dtn7",
+    "url": "https://github.com/dtn7/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "dtz",
+    "url": "https://github.com/dtzWill/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "dukzcry",
+    "url": "https://gitlab.com/repos-holder/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "dur",
+    "url": "https://github.com/paladhammika/dur",
+    "packages": []
+  },
+  {
+    "name": "dustinblackman",
+    "url": "https://github.com/dustinblackman/nur-packages",
+    "packages": [
+      "languagetool-code-comments.nix#L5",
+      "oatmeal.nix#L51"
+    ]
+  },
+  {
+    "name": "dywedir",
+    "url": "https://github.com/dywedir/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "eeva",
+    "url": "https://git.marvid.fr/eeva/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "eggflaw",
+    "url": "https://github.com/Eggflaw/nur-packages",
+    "packages": [
+      "aftman",
+      "luau-lsp",
+      "wally",
+      "wally-package-types"
+    ]
+  },
+  {
+    "name": "eh5",
+    "url": "https://github.com/EHfive/flakes",
+    "packages": []
+  },
+  {
+    "name": "emiller88",
+    "url": "https://github.com/emiller88/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "endle",
+    "url": "https://github.com/Endle/nur-packages",
+    "packages": [
+      "xcodegen"
+    ]
+  },
+  {
+    "name": "eownerdead",
+    "url": "https://codeberg.org/eownerdead/flakes",
+    "packages": []
+  },
+  {
+    "name": "ethancedwards8",
+    "url": "https://github.com/ethancedwards8/ethancedwards8-nur",
+    "packages": [
+      "firefox-addons",
+      "firefox-addons-generator",
+      "sysfo"
+    ]
+  },
+  {
+    "name": "etu",
+    "url": "https://github.com/etu/nur-packages",
+    "packages": [
+      "chalet",
+      "font-etuvetica",
+      "font-talyznewroman",
+      "g90updatefw",
+      "github-markdown-toc",
+      "goprocmgr",
+      "llr",
+      "mkvcleaner"
+    ]
+  },
+  {
+    "name": "extends",
+    "url": "https://github.com/ImExtends/nur-packages-template",
+    "packages": []
+  },
+  {
+    "name": "falconprogrammer",
+    "url": "https://github.com/JonBoyleCoding/falconprogrammer-nur",
+    "packages": [
+      "alvr",
+      "cco",
+      "g13d",
+      "gitignore-template",
+      "hyuga",
+      "opencode",
+      "python-jwt",
+      "spec-kit",
+      "timew-sync-client",
+      "vpuppr-gd3",
+      "xgen"
+    ]
+  },
+  {
+    "name": "fanbb2333",
+    "url": "https://github.com/FanBB2333/nur-packages",
+    "packages": [
+      "mos"
+    ]
+  },
+  {
+    "name": "federicoschonborn",
+    "url": "https://codeberg.org/FedericoSchonborn/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "fedx",
+    "url": "https://github.com/FedX-sudo/Nixpkgs_testing_NUR",
+    "packages": []
+  },
+  {
+    "name": "fendse",
+    "url": "https://github.com/fendse/nur",
+    "packages": []
+  },
+  {
+    "name": "fgaz",
+    "url": "https://github.com/fgaz/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "fius",
+    "url": "https://github.com/Fius/nur-packages",
+    "packages": [
+      "drinklist-cli"
+    ]
+  },
+  {
+    "name": "fliegendewurst",
+    "url": "https://github.com/FliegendeWurst/nur-packages/",
+    "packages": [
+      "diskgraph",
+      "freqtop",
+      "map",
+      "microsoft-ergonomic-keyboard",
+      "openscad-snapshot",
+      "sddm-theme-utah",
+      "thumbs",
+      "tmux-thumbs"
+    ]
+  },
+  {
+    "name": "fooker",
+    "url": "https://github.com/fooker/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "foolnotion",
+    "url": "https://github.com/foolnotion/nur-pkg",
+    "packages": []
+  },
+  {
+    "name": "foresense",
+    "url": "https://github.com/foresense/nur-packages",
+    "packages": [
+      "convert-with-moss",
+      "gearmulator",
+      "id3edit",
+      "libmts",
+      "loomer",
+      "sektron",
+      "serialosc",
+      "signls",
+      "utu"
+    ]
+  },
+  {
+    "name": "fortuneteller2k",
+    "url": "https://github.com/fortuneteller2k/nur",
+    "packages": []
+  },
+  {
+    "name": "frankoslaw",
+    "url": "https://github.com/Frankoslaw/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "friedow",
+    "url": "https://github.com/friedow/nur-packages",
+    "packages": [
+      "rofi-lpass"
+    ]
+  },
+  {
+    "name": "friendsofshopware",
+    "url": "https://github.com/FriendsOfShopware/nur-packages/",
+    "packages": [
+      "shopware-cli"
+    ]
+  },
+  {
+    "name": "ftbwiki",
+    "url": "https://github.com/tomodachi94/nur-ftbwiki",
+    "packages": [
+      "mediawiki-plugins",
+      "software-libraries",
+      "utilities"
+    ]
+  },
+  {
+    "name": "fuyu-no-nur",
+    "url": "https://github.com/TahlonBrahic/fuyu-no-nur",
+    "packages": [
+      "powershell_es",
+      "samsung-galaxybook-extras",
+      "samsung-volatile"
+    ]
+  },
+  {
+    "name": "gabr1sr",
+    "url": "https://github.com/gabr1sr/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "gbytedev",
+    "url": "https://github.com/gbytedev/nur-packages",
+    "packages": [
+      "ddev"
+    ]
+  },
+  {
+    "name": "genesis",
+    "url": "https://github.com/bignaux/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "geonix",
+    "url": "https://github.com/imincik/geonix",
+    "packages": []
+  },
+  {
+    "name": "ggemre",
+    "url": "https://github.com/ggemre/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "gigamonster256",
+    "url": "https://github.com/gigamonster256/nur-packages",
+    "packages": [
+      "ghostty-darwin.nix#L38",
+      "nixfmt-wrapped.nix#L7",
+      "otcl.nix#L51"
+    ]
+  },
+  {
+    "name": "glostis",
+    "url": "https://github.com/glostis/nur-packages",
+    "packages": [
+      "kalamine"
+    ]
+  },
+  {
+    "name": "goreleaser",
+    "url": "https://github.com/goreleaser/nur",
+    "packages": [
+      "goreleaser",
+      "goreleaser-pro"
+    ]
+  },
+  {
+    "name": "grafcube",
+    "url": "https://github.com/Grafcube/nur-packages",
+    "packages": [
+      "antidot",
+      "doasedit"
+    ]
+  },
+  {
+    "name": "graham33",
+    "url": "https://github.com/graham33/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "gricad",
+    "url": "https://github.com/Gricad/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "guanran928",
+    "url": "https://github.com/Guanran928/nur-packages",
+    "packages": [
+      "hanyi-wenhei",
+      "hanyi-wenhei-genshin",
+      "harmonyos-sans",
+      "misans",
+      "telegram-swift-bin",
+      "v2ray-rules-dat"
+    ]
+  },
+  {
+    "name": "guoard",
+    "url": "https://github.com/guoard/nur",
+    "packages": [
+      "hiddify"
+    ]
+  },
+  {
+    "name": "harukafractus",
+    "url": "https://github.com/harukafractus/nix",
+    "packages": []
+  },
+  {
+    "name": "heph2",
+    "url": "https://github.com/heph2/nur-packages",
+    "packages": [
+      "ariel-dl",
+      "atlas",
+      "google-cloud-sdk-auth-plugin",
+      "logisim-evolution",
+      "ndpi",
+      "ndpid",
+      "telescope"
+    ]
+  },
+  {
+    "name": "hhr2020",
+    "url": "https://github.com/hhr2020/nur-packages",
+    "packages": [
+      "celechron",
+      "ez4connect",
+      "fiz",
+      "loko",
+      "nattypetester",
+      "q5go",
+      "qbittorrent-dual-boot",
+      "qbittorrent-dual-boot-py",
+      "soar",
+      "zju-connect",
+      "zju-learning-assistant"
+    ]
+  },
+  {
+    "name": "htr",
+    "url": "https://github.com/htr/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "hujw77",
+    "url": "https://github.com/hujw77/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "humxc",
+    "url": "https://github.com/HumXC/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "hutzdog",
+    "url": "https://git.sr.ht/~hutzdog/NUR",
+    "packages": []
+  },
+  {
+    "name": "iagocq",
+    "url": "https://github.com/iagocq/nix",
+    "packages": []
+  },
+  {
+    "name": "ianmurphy1",
+    "url": "https://github.com/ianmurphy1/nurpkgs",
+    "packages": [
+      "commafeed",
+      "r2-sync"
+    ]
+  },
+  {
+    "name": "ifd3f",
+    "url": "https://github.com/ifd3f/nur-packages",
+    "packages": [
+      "argen"
+    ]
+  },
+  {
+    "name": "ihaveamac",
+    "url": "https://github.com/ihaveamac/nur-packages",
+    "packages": [
+      "3beans",
+      "3dslink",
+      "3dstool",
+      "3dstools",
+      "3gxtool",
+      "azahar-master",
+      "bannertool",
+      "caesar",
+      "chlink",
+      "cleaninty",
+      "corgi3ds",
+      "ctr-gputextool",
+      "ctr-logobuilder",
+      "ctrtool",
+      "cxitool",
+      "darctool",
+      "darctool-yls8",
+      "discordwikibot",
+      "evi",
+      "ftpd",
+      "gmodpatchtool",
+      "kame-editor",
+      "kame-tools",
+      "kwin-move-window",
+      "linux-devmgmt",
+      "lnshot",
+      "makebax",
+      "makerom",
+      "mediawiki",
+      "mrpack-install",
+      "noods",
+      "otptool",
+      "qcma",
+      "retro-aim-server",
+      "roadgeek-fonts",
+      "rofs-dumper",
+      "rofs-extract",
+      "rofsc",
+      "rokuyon",
+      "rstmcpp",
+      "rsync-3.4.1",
+      "rvthtool",
+      "save3ds",
+      "sd-format-linux",
+      "switch-tools",
+      "tex3ds",
+      "themethod3",
+      "thextech",
+      "twlnandtool",
+      "twltool",
+      "vacuumtube",
+      "vanilla",
+      "wfs-tools",
+      "wheelwizard",
+      "wifiboot-host",
+      "xenonrecomp",
+      "yt-dlp-master",
+      "ytdl-nfo"
+    ]
+  },
+  {
+    "name": "ijohanne",
+    "url": "https://github.com/ijohanne/nur-packages",
+    "packages": [
+      "agent-skills-cli",
+      "firefox-addons-generator",
+      "hexokinase",
+      "multicast-relay",
+      "pg-exporter",
+      "prometheus-hue-exporter",
+      "prometheus-netatmo-exporter",
+      "prometheus-nftables-exporter",
+      "prometheus-teamspeak3-exporter",
+      "vim-plugins",
+      "zot"
+    ]
+  },
+  {
+    "name": "ilya-fedin",
+    "url": "https://github.com/ilya-fedin/nur-repository",
+    "packages": [
+      "airsane",
+      "silver"
+    ]
+  },
+  {
+    "name": "immae",
+    "url": "https://git.immae.eu/perso/Immae/Config/Nix/NUR.git",
+    "packages": []
+  },
+  {
+    "name": "instantos",
+    "url": "https://github.com/instantOS/nix",
+    "packages": []
+  },
+  {
+    "name": "ionutnechita",
+    "url": "https://github.com/ionutnechita/ionutnechita-nur-packages",
+    "packages": [
+      "sunlight-kernels"
+    ]
+  },
+  {
+    "name": "iopq",
+    "url": "https://github.com/iopq/nur-packages",
+    "packages": [
+      "xraya"
+    ]
+  },
+  {
+    "name": "iuricarras",
+    "url": "https://github.com/iuricarras/nur-packages",
+    "packages": [
+      "ciscoPacketTracer9",
+      "remixDesktop",
+      "truckersmp-cli"
+    ]
+  },
+  {
+    "name": "ivar",
+    "url": "https://github.com/IvarWithoutBones/NUR",
+    "packages": []
+  },
+  {
+    "name": "ixhbinphoenix",
+    "url": "https://github.com/ixhbinphoenix/nur-packages",
+    "packages": [
+      "localbooru-bin",
+      "todoit"
+    ]
+  },
+  {
+    "name": "izorkin",
+    "url": "https://github.com/Izorkin/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "j-k",
+    "url": "https://github.com/06kellyjac/nur-packages",
+    "packages": [
+      "by-name"
+    ]
+  },
+  {
+    "name": "j4ger",
+    "url": "https://github.com/j4ger/nix-packages",
+    "packages": []
+  },
+  {
+    "name": "jakobrs",
+    "url": "https://github.com/jakobrs/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "javimerino",
+    "url": "https://github.com/JaviMerino/nur-packages",
+    "packages": [
+      "ack-results-parser",
+      "mail_replyer",
+      "python-hwinfo",
+      "python-qpid-proton"
+    ]
+  },
+  {
+    "name": "jbarthelmes",
+    "url": "https://github.com/jbarthelmes/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "jcs090218",
+    "url": "https://github.com/jcs090218/nur",
+    "packages": [
+      "flx-rs",
+      "flxy-rs"
+    ]
+  },
+  {
+    "name": "jdpkgs",
+    "url": "https://github.com/jdev082/jdpkgs",
+    "packages": []
+  },
+  {
+    "name": "jeffguorg",
+    "url": "https://github.com/jeffguorg/nur-packages",
+    "packages": [
+      "agent-run.nix#L42",
+      "claude-code",
+      "codex",
+      "create-tauri-app",
+      "cursor-cli",
+      "dingtalk",
+      "garble",
+      "kagent",
+      "kimi-code",
+      "kwok",
+      "oh-my-pi",
+      "pi-agent",
+      "pi-agent-bin",
+      "vagrant-vmware-utility.nix#L3"
+    ]
+  },
+  {
+    "name": "jerrita",
+    "url": "https://github.com/jerrita/nur",
+    "packages": [
+      "kubeedge",
+      "wstunnel"
+    ]
+  },
+  {
+    "name": "jitterbug",
+    "url": "https://github.com/JuniorIsAJitterbug/nur-packages",
+    "packages": [
+      "amcdx-video-patcher-cli",
+      "binah",
+      "cc-decoder",
+      "cxadc",
+      "cxadc-vhs-server",
+      "cxadc-vhs-server-jitterbug",
+      "decode-orc",
+      "domesdayduplicator",
+      "ezpwd-reed-solomon",
+      "hsdaoh",
+      "hsdaoh-misrc",
+      "hsdaoh-misrc-unstable",
+      "ld-decode",
+      "ld-decode-tools",
+      "ltfs",
+      "misrc-tools",
+      "nodeeditor",
+      "qwt",
+      "stfs",
+      "tape-decode-rs",
+      "tbc-raw-stack",
+      "tbc-tools",
+      "tbc-video-export",
+      "vapoursynth-analog",
+      "vapoursynth-bwdif",
+      "vapoursynth-neofft3d",
+      "vapoursynth-vsrawsource",
+      "vhs-decode",
+      "vhs-decode-auto-audio-align",
+      "vhs-decode-legacy"
+    ]
+  },
+  {
+    "name": "jj",
+    "url": "https://gitlab.com/jjhr/nur",
+    "packages": [
+      "freefem"
+    ]
+  },
+  {
+    "name": "jjjollyjim",
+    "url": "https://github.com/jjjollyjim/nur-repo",
+    "packages": []
+  },
+  {
+    "name": "jleightcap",
+    "url": "https://git.sr.ht/~jleightcap/nur-packages",
+    "packages": [
+      "cpuid2cpuflags",
+      "romcc"
+    ]
+  },
+  {
+    "name": "jo1gi",
+    "url": "https://github.com/jo1gi/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "johnazoidberg",
+    "url": "https://github.com/JohnAZoidberg/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "jomik",
+    "url": "https://gitlab.com/jomik/nur-expressions",
+    "packages": []
+  },
+  {
+    "name": "jorsn",
+    "url": "https://github.com/jorsn/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "josh",
+    "url": "https://github.com/josh/nurpkgs",
+    "packages": [
+      "Mic92",
+      "Telmate",
+      "argoproj",
+      "backube",
+      "catppuccin",
+      "ceph",
+      "cert-manager",
+      "cilium",
+      "cloudnative-pg",
+      "edgard",
+      "fabioluciano",
+      "folke",
+      "gitea",
+      "github",
+      "gnachman",
+      "goharbor",
+      "grafana",
+      "home-operations",
+      "isindir",
+      "jasonlong",
+      "johnwarne",
+      "josh",
+      "kubernetes-csi",
+      "kubernetes-sigs",
+      "michaelbrusegard",
+      "mikluko",
+      "misuchiru03",
+      "mittelab",
+      "movetokube",
+      "nats-io",
+      "nicobailon",
+      "piraeusdatastore",
+      "prometheus-community",
+      "rancher",
+      "remko",
+      "rfmoz",
+      "rose-pine",
+      "shareup",
+      "tailscale",
+      "tobi",
+      "tox-dev",
+      "ubiquiti-community",
+      "unpoller",
+      "usgraphics",
+      "victoriametrics",
+      "zydepoint"
+    ]
+  },
+  {
+    "name": "jpts",
+    "url": "https://github.com/jpts/nur",
+    "packages": []
+  },
+  {
+    "name": "jpyke3",
+    "url": "https://github.com/JPyke3/JPyke3-Nur",
+    "packages": []
+  },
+  {
+    "name": "k0ral",
+    "url": "https://github.com/k0ral/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "k3a",
+    "url": "https://github.com/k3a/nurpkgs",
+    "packages": [
+      "ib-tws",
+      "steghide"
+    ]
+  },
+  {
+    "name": "kakkun61",
+    "url": "https://github.com/kakkun61/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "kalbasit",
+    "url": "https://github.com/kalbasit/nur-packages",
+    "packages": [
+      "chroot-enter",
+      "download-archiver",
+      "gpg-clean-up",
+      "ls-colors",
+      "nix-verify",
+      "nixify",
+      "rbrowser",
+      "shrinkpdf",
+      "swm"
+    ]
+  },
+  {
+    "name": "kapack",
+    "url": "https://github.com/oar-team/nur-kapack",
+    "packages": []
+  },
+  {
+    "name": "kf5grd",
+    "url": "https://github.com/kf5grd/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "kinzokudev",
+    "url": "https://github.com/kinzoku-dev/nur-kinzoku",
+    "packages": [
+      "example-package"
+    ]
+  },
+  {
+    "name": "kira-bruneau",
+    "url": "https://gitlab.com/kira-bruneau/nur-packages",
+    "packages": [
+      "applications",
+      "by-name",
+      "development",
+      "os-specific"
+    ]
+  },
+  {
+    "name": "kokakiwi",
+    "url": "https://github.com/KokaKiwi/nur-packages",
+    "packages": [
+      "applications",
+      "servers"
+    ]
+  },
+  {
+    "name": "kolloch",
+    "url": "https://github.com/kolloch/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "kongjian520",
+    "url": "https://github.com/KongJian520/NUR",
+    "packages": [
+      "aforg",
+      "sliver",
+      "trzsz",
+      "trzsz-ssh",
+      "yakit"
+    ]
+  },
+  {
+    "name": "krebs",
+    "url": "https://github.com/krebs/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "kreisys",
+    "url": "https://github.com/kreisys/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "kugland",
+    "url": "https://github.com/kugland/nur-packages",
+    "packages": [
+      "auditok",
+      "bip39",
+      "bop",
+      "cursor",
+      "ffsubsync",
+      "musescore",
+      "my-bookmarks-pl",
+      "neocities-deploy",
+      "pd-else",
+      "pysubs2"
+    ]
+  },
+  {
+    "name": "lambdadog",
+    "url": "https://github.com/lambdadog/nix-extra",
+    "packages": []
+  },
+  {
+    "name": "lcx12901",
+    "url": "https://github.com/lcx12901/nur-nixpkgs",
+    "packages": [
+      "corners-sddm-theme",
+      "maxmind-geoip"
+    ]
+  },
+  {
+    "name": "lheckemann",
+    "url": "https://github.com/lheckemann/nixwip",
+    "packages": []
+  },
+  {
+    "name": "lightquantum",
+    "url": "https://github.com/PhotonQuantum/nur-packages",
+    "packages": [
+      "universal-ctags-pcre2"
+    ]
+  },
+  {
+    "name": "linyinfeng",
+    "url": "https://github.com/linyinfeng/nur-packages",
+    "packages": [
+      "activate-dpt",
+      "aws-s3-reverse-proxy",
+      "aws-sigv4-proxy",
+      "baibot",
+      "canokey-udev-rules",
+      "cf-terraforming",
+      "codestable",
+      "dev-packages",
+      "dot-tar",
+      "dpt-rp1-py",
+      "easylpac",
+      "emacs-packages",
+      "fish-plugins",
+      "hexecute",
+      "libva-v4l2",
+      "llm-wiki-compiler",
+      "lpac",
+      "lxgw-neozhisong",
+      "ly2video",
+      "matrix-media-repo",
+      "matrix-qq",
+      "matrix-wechat",
+      "moe-koe-music",
+      "mstickereditor",
+      "niri-taskbar",
+      "otf2psf",
+      "plangothic",
+      "rcon-cli",
+      "rime-packages",
+      "rlt",
+      "ssl-handshake",
+      "telegram-send",
+      "tg-send",
+      "v86",
+      "vlmcsd",
+      "yacd",
+      "zeronsd"
+    ]
+  },
+  {
+    "name": "liyangau",
+    "url": "https://github.com/liyangau/nur-packages",
+    "packages": [
+      "case-cli",
+      "cloudflare-cli",
+      "hexo-cli",
+      "ingress2gateway",
+      "insomnia",
+      "kong-portal-cli"
+    ]
+  },
+  {
+    "name": "lschuermann",
+    "url": "https://github.com/lschuermann/nur-packages",
+    "packages": [
+      "vivado"
+    ]
+  },
+  {
+    "name": "lucasew",
+    "url": "https://github.com/lucasew/nixcfg",
+    "packages": []
+  },
+  {
+    "name": "lunik1",
+    "url": "https://github.com/lunik1/nur-packages",
+    "packages": [
+      "amazing-marvin",
+      "asap-condensed",
+      "bach",
+      "doukutsu-rs",
+      "efficient-compression-tool",
+      "ls-colors",
+      "mpv-shaders",
+      "myosevka",
+      "thelounge-theme-zenburn",
+      "trash-d",
+      "xcompose"
+    ]
+  },
+  {
+    "name": "lykos153",
+    "url": "https://github.com/Lykos153/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "m15a",
+    "url": "https://github.com/m15a/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "make-42",
+    "url": "https://github.com/make-42/NUR",
+    "packages": [
+      "akai-ito",
+      "assetripper",
+      "creality-print-cli",
+      "denise",
+      "hayai",
+      "himitsu",
+      "kuiper",
+      "meshroom",
+      "nezumi-p",
+      "ntsc-rs",
+      "xyosc"
+    ]
+  },
+  {
+    "name": "makefu",
+    "url": "https://github.com/makefu/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "marsupialgutz",
+    "url": "https://github.com/marsupialgutz/nur-pkgs",
+    "packages": []
+  },
+  {
+    "name": "marzipankaiser",
+    "url": "https://github.com/marzipankaiser/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "materus",
+    "url": "https://github.com/materusPL/Nixerus",
+    "packages": [
+      "apps",
+      "libs"
+    ]
+  },
+  {
+    "name": "matthewbauer",
+    "url": "https://github.com/matthewbauer/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "mbekkomo",
+    "url": "https://github.com/mbekkomo/nurpkgs",
+    "packages": []
+  },
+  {
+    "name": "mcaju",
+    "url": "https://github.com/CajuM/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "meain",
+    "url": "https://github.com/meain/nur-packages",
+    "packages": [
+      "chainlink",
+      "confluence-cli",
+      "defuddle",
+      "esa",
+      "firefox-addons",
+      "gh-issues-to-rss",
+      "gloc",
+      "html-to-markdown",
+      "kmonad",
+      "leaf",
+      "nn",
+      "probe",
+      "protodot",
+      "prr",
+      "sirus",
+      "stochos",
+      "toffee",
+      "tojson",
+      "traffic"
+    ]
+  },
+  {
+    "name": "mgord9518",
+    "url": "https://github.com/mgord9518/nur",
+    "packages": [
+      "mist"
+    ]
+  },
+  {
+    "name": "mhuesch",
+    "url": "https://github.com/mhuesch/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "mic92",
+    "url": "https://github.com/Mic92/nur-packages",
+    "packages": [
+      "goatcounter",
+      "hello-nur",
+      "ircsink",
+      "mastodon-hnbot",
+      "rspam-learn-spam-ham",
+      "vaultwarden_ldap"
+    ]
+  },
+  {
+    "name": "mich-adams",
+    "url": "https://github.com/mich-adams/nix-packages",
+    "packages": [
+      "afterglow-cursors.nix#L103",
+      "pyroveil.nix#L46",
+      "stardrop",
+      "vvmd.nix#L53",
+      "vvmplayer.nix#L59"
+    ]
+  },
+  {
+    "name": "michaelglass",
+    "url": "https://github.com/michaelglass/nur-packages",
+    "packages": [
+      "mydumper"
+    ]
+  },
+  {
+    "name": "mikaelfangel-nur",
+    "url": "https://github.com/MikaelFangel/NUR",
+    "packages": [
+      "ba",
+      "gi",
+      "rm"
+    ]
+  },
+  {
+    "name": "mikilio",
+    "url": "https://github.com/Mikilio/nur-packages",
+    "packages": [
+      "essentia",
+      "gaia",
+      "gateway-st",
+      "rclone_zus",
+      "rosec",
+      "snapshot-yazi",
+      "xdg-terminal-exec",
+      "xmclib"
+    ]
+  },
+  {
+    "name": "milahu",
+    "url": "https://github.com/milahu/nur-packages",
+    "packages": [
+      "applications",
+      "build-support",
+      "by-name",
+      "caramel",
+      "development",
+      "flutter-engine",
+      "gaupol",
+      "github-downloader",
+      "jaq",
+      "libalf",
+      "misc",
+      "mwdumper",
+      "node",
+      "node-pkgs",
+      "os-specific",
+      "perl",
+      "proftpd",
+      "python3",
+      "rasterview",
+      "recaf-bin",
+      "servers",
+      "spotify-adblock",
+      "svn2github",
+      "test",
+      "tools",
+      "yacy"
+    ]
+  },
+  {
+    "name": "minegameYTB",
+    "url": "https://github.com/minegameYTB/nurpkgs-repo",
+    "packages": [
+      "misc",
+      "tools"
+    ]
+  },
+  {
+    "name": "minion3665",
+    "url": "https://github.com/minion3665/nurpkgs",
+    "packages": []
+  },
+  {
+    "name": "misterio",
+    "url": "https://git.sr.ht/~misterio/nix-config",
+    "packages": []
+  },
+  {
+    "name": "mloeper",
+    "url": "https://github.com/MartinLoeper/nur",
+    "packages": []
+  },
+  {
+    "name": "mmilata",
+    "url": "https://github.com/mmilata/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "moaxcp",
+    "url": "https://github.com/moaxcp/nur",
+    "packages": []
+  },
+  {
+    "name": "moosingin3space",
+    "url": "https://github.com/moosingin3space/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "moraxyc",
+    "url": "https://github.com/moraxyc/nur-packages",
+    "packages": [
+      "by-name"
+    ]
+  },
+  {
+    "name": "moredhel",
+    "url": "https://github.com/moredhel/nur-packages",
+    "packages": [
+      "kubectx",
+      "shot"
+    ]
+  },
+  {
+    "name": "moredread",
+    "url": "https://github.com/Moredread/nur-packages",
+    "packages": [
+      "greaseweazel",
+      "hxcfloppyemulator",
+      "implicitcad",
+      "joplin-desktop",
+      "mididings"
+    ]
+  },
+  {
+    "name": "mozilla",
+    "url": "https://github.com/mozilla/nixpkgs-mozilla",
+    "packages": []
+  },
+  {
+    "name": "mpickering",
+    "url": "https://github.com/mpickering/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "mrVanDalo",
+    "url": "https://github.com/mrVanDalo/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "mrcpkgs",
+    "url": "https://github.com/mrcjkb/nur-packages",
+    "packages": [
+      "manix-fzf",
+      "nextcloud-no-de",
+      "yubikee-smartvpn"
+    ]
+  },
+  {
+    "name": "mrene",
+    "url": "https://github.com/mrene/nur-packages",
+    "packages": [
+      "clock-weather-card",
+      "connectlife-ha",
+      "fan-control",
+      "gnuradio-modules",
+      "ha-bambulab",
+      "hass-browser-mod",
+      "hctl",
+      "ice9-bluetooth-sniffer",
+      "ieee-802-15-4-sniffer",
+      "iproute2mac",
+      "irp-transmogrifier",
+      "jira-cli-go",
+      "lovelace-auto-entities",
+      "lovelace-big-slider-card",
+      "lovelace-mushroom",
+      "lovelace-slider-entity-row",
+      "narwal-ha",
+      "open-knowledge",
+      "pathfind",
+      "pyspinel",
+      "resterm",
+      "rx-tools",
+      "synp",
+      "timer-bar-card",
+      "trunk-recorder"
+    ]
+  },
+  {
+    "name": "mrtnvgr",
+    "url": "https://github.com/mrtnvgr/nurpkgs",
+    "packages": [
+      "audio",
+      "builders",
+      "convert-gig-file",
+      "games",
+      "soundfonts"
+    ]
+  },
+  {
+    "name": "mur",
+    "url": "https://github.com/duvetfall/mur",
+    "packages": []
+  },
+  {
+    "name": "mweinelt",
+    "url": "https://github.com/mweinelt/nur-packages",
+    "packages": [
+      "home-assistant",
+      "servers"
+    ]
+  },
+  {
+    "name": "n1kolasM",
+    "url": "https://github.com/n1kolasM/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "nagy",
+    "url": "https://github.com/nagy/nur-packages",
+    "packages": [
+      "by-name",
+      "emacs-packages",
+      "python3-packages",
+      "qemu-images"
+    ]
+  },
+  {
+    "name": "nasirhm",
+    "url": "https://github.com/nasirhm/nasirhmpkgs",
+    "packages": []
+  },
+  {
+    "name": "natsukium",
+    "url": "https://github.com/natsukium/nur-packages",
+    "packages": [
+      "data",
+      "emacs-plus",
+      "firefox-addons",
+      "google-japanese-input",
+      "hammerspoon",
+      "ligaturizer",
+      "paperwm-spoon",
+      "playwright-cli",
+      "psipred",
+      "qmk-toolbox",
+      "skills-ref",
+      "vim-plugins",
+      "zen-browser"
+    ]
+  },
+  {
+    "name": "nelonn",
+    "url": "https://github.com/Nelonn/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "neumantm",
+    "url": "https://github.com/neumantm/nur-packages",
+    "packages": [
+      "prettifyJsonLog"
+    ]
+  },
+  {
+    "name": "nexromancers",
+    "url": "https://github.com/neXromancers/nixromancers",
+    "packages": []
+  },
+  {
+    "name": "nginx",
+    "url": "https://github.com/nginxinc/nur",
+    "packages": [
+      "nginx-prometheus-exporter"
+    ]
+  },
+  {
+    "name": "nikolaizombie1",
+    "url": "https://github.com/nikolaizombie1/nur-packages",
+    "packages": [
+      "color-scheme-generator",
+      "waytrogen"
+    ]
+  },
+  {
+    "name": "nikpkgs",
+    "url": "https://github.com/nikp123/nur-packages",
+    "packages": [
+      "amdgpu-clocks",
+      "avahi2dns",
+      "cockpit-podman",
+      "inotify-consumers",
+      "libva-v4l2-request",
+      "llama-cpp-vulkan-prism",
+      "netsed",
+      "overlayfs-tools",
+      "plank-themes",
+      "pw_wp_bluetooth_rpi_speaker",
+      "qemu-3dfx"
+    ]
+  },
+  {
+    "name": "nim65s",
+    "url": "https://github.com/nim65s/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "nishimara",
+    "url": "https://github.com/Nishimara/nurpkgs",
+    "packages": [
+      "zapret"
+    ]
+  },
+  {
+    "name": "nix-data",
+    "url": "https://github.com/Jake-Gillberg/nix-data",
+    "packages": [
+      "example-package"
+    ]
+  },
+  {
+    "name": "nix-geht",
+    "url": "https://github.com/vifino/nix-geht",
+    "packages": [
+      "midimonster.nix#L45",
+      "open-vmdk.nix#L44",
+      "scsh3",
+      "shinyblink",
+      "troglobit",
+      "vifino.nix#L21"
+    ]
+  },
+  {
+    "name": "nix-swift-packages",
+    "url": "https://github.com/dduan/nix-swift-packages",
+    "packages": [
+      "swift-builders"
+    ]
+  },
+  {
+    "name": "nltch",
+    "url": "https://github.com/nl-tch/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "nnb",
+    "url": "https://github.com/NNBnh/nur-packages",
+    "packages": [
+      "bmono",
+      "pepper",
+      "pepper-lsp"
+    ]
+  },
+  {
+    "name": "noneucat",
+    "url": "https://git.sr.ht/~noneucat/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "nousefreak",
+    "url": "https://github.com/NoUseFreak/nix-packages",
+    "packages": [
+      "projecthelper"
+    ]
+  },
+  {
+    "name": "novafacing",
+    "url": "https://github.com/novafacing/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "novel2430",
+    "url": "https://github.com/novel2430/MyNUR",
+    "packages": [
+      "FuzzyMarks",
+      "baidunetdisk",
+      "hmcl",
+      "latex-chinese-fonts",
+      "mangowc",
+      "nvim-vscode-colorscheme",
+      "shotcut",
+      "wechat-appimage",
+      "wechat-universal-bwrap",
+      "wpsoffice",
+      "wpsoffice-365",
+      "zen-browser",
+      "zju-connect"
+    ]
+  },
+  {
+    "name": "npkgs",
+    "url": "https://github.com/nerdypepper/npkgs",
+    "packages": []
+  },
+  {
+    "name": "nprindle",
+    "url": "https://github.com/nprindle/nur-packages",
+    "packages": [
+      "games",
+      "tools"
+    ]
+  },
+  {
+    "name": "nuclear06",
+    "url": "https://github.com/nuclear06/NUR",
+    "packages": [
+      "rime-ice"
+    ]
+  },
+  {
+    "name": "nukdokplex",
+    "url": "https://github.com/nukdokplex/nix-packages",
+    "packages": []
+  },
+  {
+    "name": "nykma",
+    "url": "https://github.com/nykma/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "ocfox",
+    "url": "https://github.com/ocfox/nur-pkgs",
+    "packages": [
+      "showmethekey",
+      "swww"
+    ]
+  },
+  {
+    "name": "oluceps",
+    "url": "https://github.com/oluceps/nixos-config",
+    "packages": []
+  },
+  {
+    "name": "ondt",
+    "url": "https://github.com/ondt/nur-packages",
+    "packages": [
+      "csvlens",
+      "lemonade",
+      "xss-events",
+      "xvisbell"
+    ]
+  },
+  {
+    "name": "onemoresuza",
+    "url": "https://github.com/onemoresuza/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "onny",
+    "url": "https://git.project-insanity.org/onny/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "ossareh",
+    "url": "https://github.com/ossareh/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "otevrenamesta",
+    "url": "https://github.com/otevrenamesta/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "ouzu",
+    "url": "https://github.com/ouzu/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "p3psi",
+    "url": "https://github.com/p3psi-boo/p3psi-nur",
+    "packages": []
+  },
+  {
+    "name": "pascalthesing",
+    "url": "https://github.com/PascalThesing/NUR",
+    "packages": [
+      "mysql"
+    ]
+  },
+  {
+    "name": "pborzenkov",
+    "url": "https://github.com/pborzenkov/nur-packages",
+    "packages": [
+      "firefox-addons",
+      "koreader-syncd",
+      "osccopy",
+      "tg-bot-skyeng",
+      "transmission-exporter",
+      "vlmcsd"
+    ]
+  },
+  {
+    "name": "peel",
+    "url": "https://github.com/peel/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "petrichor",
+    "url": "https://tildegit.org/petrichor/nixexprs",
+    "packages": [
+      "dart-sass"
+    ]
+  },
+  {
+    "name": "phandox",
+    "url": "https://github.com/phandox/nur-packages",
+    "packages": [
+      "firefly-iii-data-importer"
+    ]
+  },
+  {
+    "name": "picokeys-nix",
+    "url": "https://github.com/ViZiD/picokeys-nix",
+    "packages": []
+  },
+  {
+    "name": "piegames",
+    "url": "https://github.com/piegamesde/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "piensa",
+    "url": "https://github.com/piensa/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "plabadens",
+    "url": "https://github.com/plabadens/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "pn",
+    "url": "https://github.com/pniedzwiedzinski/pnpkgs",
+    "packages": []
+  },
+  {
+    "name": "pokon548",
+    "url": "https://github.com/pokon548/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "presto8",
+    "url": "https://github.com/presto8/nur-packages",
+    "packages": [
+      "lxp-bridge",
+      "pscripts"
+    ]
+  },
+  {
+    "name": "priegger",
+    "url": "https://git.sr.ht/~priegger/nur-packages",
+    "packages": [
+      "go-hello-world",
+      "nanoc",
+      "rust-hello-world"
+    ]
+  },
+  {
+    "name": "progsyn",
+    "url": "https://github.com/mistzzt/program-synthesis-nur",
+    "packages": [
+      "AutoLifter",
+      "Synduce",
+      "eusolver",
+      "parsynt",
+      "reduce-algebra",
+      "sketch"
+    ]
+  },
+  {
+    "name": "propheci",
+    "url": "https://github.com/Propheci/NixUR",
+    "packages": []
+  },
+  {
+    "name": "pschuprikov",
+    "url": "https://github.com/pschuprikov/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "psiquo",
+    "url": "https://github.com/psiquo/nur-derivations",
+    "packages": []
+  },
+  {
+    "name": "ptival",
+    "url": "https://github.com/Ptival/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "qchem",
+    "url": "https://github.com/markuskowa/NixOS-QChem",
+    "packages": []
+  },
+  {
+    "name": "qenya",
+    "url": "https://github.com/qenya/nur-packages",
+    "packages": [
+      "digital-a-love-story",
+      "dont-take-it-personally-babe"
+    ]
+  },
+  {
+    "name": "qwbarch",
+    "url": "https://github.com/qwbarch/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "raizyr",
+    "url": "https://github.com/raizyr/nur-packages",
+    "packages": [
+      "packwiz"
+    ]
+  },
+  {
+    "name": "rconan",
+    "url": "https://gitlab.com/rconan/nix-packages",
+    "packages": []
+  },
+  {
+    "name": "redpz",
+    "url": "https://github.com/reDpz/nur-packages",
+    "packages": [
+      "adwaita-cross-icon-theme",
+      "frame0",
+      "harmonoid",
+      "kanagawa-yazi",
+      "nora",
+      "nushell",
+      "operator-mono-lig",
+      "printargs",
+      "sf-mono",
+      "sf-pro",
+      "symbols-nerd-font"
+    ]
+  },
+  {
+    "name": "reedrw",
+    "url": "https://github.com/reedrw/nur-packages",
+    "packages": [
+      "artwiz-lemon",
+      "bitwarden-rofi",
+      "shairport-sync-metadata-reader",
+      "toonmux"
+    ]
+  },
+  {
+    "name": "rencire",
+    "url": "https://github.com/rencire/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "renesat",
+    "url": "https://github.com/renesat/nur-renesat",
+    "packages": [
+      "age-edit",
+      "aiolinkding",
+      "arro3-core",
+      "daqp",
+      "dedoc",
+      "euporie",
+      "flatlatex",
+      "gosuki",
+      "hazelnut",
+      "hexhog",
+      "imap-backup",
+      "linkding-cli",
+      "llmfit",
+      "mal-cli",
+      "sixelcrop",
+      "superseedr",
+      "timg",
+      "toutui",
+      "tubefeed",
+      "tukai",
+      "typy",
+      "vegafusion",
+      "vl-convert",
+      "vl-convert-python",
+      "voyage",
+      "wwan-utils",
+      "yamusic-tui"
+    ]
+  },
+  {
+    "name": "reward",
+    "url": "https://github.com/rewardenv/nur",
+    "packages": [
+      "reward"
+    ]
+  },
+  {
+    "name": "rewine",
+    "url": "https://github.com/wineee/nur-packages",
+    "packages": [
+      "cmd-markdown",
+      "deepin-translation-utils",
+      "electron-netease-cloud-music",
+      "git-commit-helper",
+      "graphbuilder",
+      "lazycat-terminal",
+      "nowide",
+      "ttf-ms-win10",
+      "ttf-wps-fonts",
+      "wayland-debug",
+      "wlanalyze",
+      "wldbg",
+      "wlhax"
+    ]
+  },
+  {
+    "name": "robertodr",
+    "url": "https://github.com/robertodr/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "robinovitch61",
+    "url": "https://github.com/robinovitch61/nur-packages",
+    "packages": [
+      "goreleaser-testing",
+      "jeeves",
+      "kl",
+      "lore",
+      "wander"
+    ]
+  },
+  {
+    "name": "rseops",
+    "url": "https://github.com/rse-ops/nix",
+    "packages": [
+      "hpc"
+    ]
+  },
+  {
+    "name": "ruixi-rebirth",
+    "url": "https://github.com/Ruixi-rebirth/nur-packages",
+    "packages": [
+      "bilibili_live_tui",
+      "catppuccin-cursors",
+      "catppuccin-frappe-gtk",
+      "catppuccin-latte-gtk",
+      "fcitx5-pinyin-moegirl",
+      "fcitx5-pinyin-zhwiki"
+    ]
+  },
+  {
+    "name": "rummik",
+    "url": "https://gitlab.com/rummik/nixos/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "running-grass",
+    "url": "https://github.com/running-grass/nur-packages",
+    "packages": [
+      "anytype",
+      "idris2",
+      "idris2-pack",
+      "listen1",
+      "pinentry-rbw",
+      "postman"
+    ]
+  },
+  {
+    "name": "rutherther",
+    "url": "https://github.com/Rutherther/nur-pkgs",
+    "packages": []
+  },
+  {
+    "name": "ryan4yin",
+    "url": "https://github.com/ryan4yin/nur-packages",
+    "packages": [
+      "themes"
+    ]
+  },
+  {
+    "name": "rycee",
+    "url": "https://gitlab.com/rycee/nur-expressions",
+    "packages": [
+      "firefox-addons",
+      "materia-theme",
+      "mozilla-addons-to-nix",
+      "thunderbird-addons"
+    ]
+  },
+  {
+    "name": "sagikazarmark",
+    "url": "https://github.com/sagikazarmark/nur-packages",
+    "packages": [
+      "asdf-vm",
+      "node-packages",
+      "sf-pro",
+      "sunsama",
+      "tcld"
+    ]
+  },
+  {
+    "name": "schmittlauch",
+    "url": "https://github.com/schmittlauch/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "sebrut",
+    "url": "https://github.com/SebRut/personal-nix-packages-repository",
+    "packages": [
+      "autotheme",
+      "envmon",
+      "flathunter",
+      "go-hass-agent",
+      "hostman",
+      "kiot"
+    ]
+  },
+  {
+    "name": "sehqlr",
+    "url": "https://github.com/sehqlr/nur-packages",
+    "packages": [
+      "kakoune-ghwiki"
+    ]
+  },
+  {
+    "name": "setser",
+    "url": "https://github.com/SeTSeR/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "sgo",
+    "url": "https://github.com/stigtsp/nur",
+    "packages": []
+  },
+  {
+    "name": "shados",
+    "url": "https://github.com/Shados/nur-packages",
+    "packages": [
+      "arcconf",
+      "audio-async-loopback",
+      "bootloadhid",
+      "broadcast-box",
+      "chromium-launcher",
+      "dualsensectl",
+      "firefox-history-merger",
+      "gcc-lua",
+      "json-yaml",
+      "loudgain",
+      "sfutils",
+      "staticx",
+      "switch-dbibackend",
+      "systemd-lock-handler",
+      "tagsistant",
+      "tmm",
+      "urxvt-config-reload",
+      "urxvtconfig",
+      "yuescript"
+    ]
+  },
+  {
+    "name": "shadowrz",
+    "url": "https://github.com/ShadowRZ/nur-packages",
+    "packages": [
+      "hanekokoro-mono",
+      "hanekokoro-mono-e",
+      "hanekokoro-mono-k",
+      "hanekokoro-sans",
+      "kose-font",
+      "maoken-assorted-sans",
+      "mkxp-z",
+      "resource-han-rounded",
+      "rvpacker-ng"
+    ]
+  },
+  {
+    "name": "shamilton",
+    "url": "https://github.com/SCOTT-HAMILTON/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "sigprof",
+    "url": "https://github.com/sigprof/nur-packages",
+    "packages": [
+      "awesome",
+      "cosevka",
+      "mozilla-langpack",
+      "terminus-font-custom",
+      "virt-manager"
+    ]
+  },
+  {
+    "name": "sikmir",
+    "url": "https://github.com/sikmir/nur-packages",
+    "packages": [
+      "by-name",
+      "data",
+      "embedded",
+      "nakarte"
+    ]
+  },
+  {
+    "name": "skiletro",
+    "url": "https://github.com/skiletro/nur-repo",
+    "packages": [
+      "applet-darwinmenu",
+      "applet-kara",
+      "gabarito",
+      "mplus",
+      "urbanist",
+      "vacuumtube",
+      "wheelwizard"
+    ]
+  },
+  {
+    "name": "sky",
+    "url": "https://github.com/SkyLeite/nix-repository",
+    "packages": [
+      "example-package",
+      "lol-launchhelper",
+      "ncpamixer-git"
+    ]
+  },
+  {
+    "name": "slaier",
+    "url": "https://github.com/slaier/nixos-config",
+    "packages": []
+  },
+  {
+    "name": "smaret",
+    "url": "https://github.com/smaret/nur-packages",
+    "packages": [
+      "astrochem",
+      "gildas",
+      "imager",
+      "python-modules",
+      "radmc3d"
+    ]
+  },
+  {
+    "name": "sn0wm1x",
+    "url": "https://github.com/sn0wm1x/ur",
+    "packages": [
+      "by-name"
+    ]
+  },
+  {
+    "name": "some-pkgs",
+    "url": "https://github.com/SomeoneSerge/pkgs",
+    "packages": []
+  },
+  {
+    "name": "sondr3",
+    "url": "https://github.com/sondr3/nix-expressions",
+    "packages": []
+  },
+  {
+    "name": "souxd",
+    "url": "https://github.com/souxd/souxd-nur",
+    "packages": []
+  },
+  {
+    "name": "spitzeqc",
+    "url": "https://github.com/spitzeqc/nur-packages",
+    "packages": [
+      "velocity",
+      "xlink_kai",
+      "yacy"
+    ]
+  },
+  {
+    "name": "splintah",
+    "url": "https://github.com/splintah/nurpkgs",
+    "packages": []
+  },
+  {
+    "name": "stupremee",
+    "url": "https://github.com/Stupremee/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "suhr",
+    "url": "https://github.com/suhr/nur-packages",
+    "packages": [
+      "augr",
+      "gtoolkit",
+      "minimal-sddm-theme",
+      "octasine",
+      "pianoteq-stage",
+      "quake3-data",
+      "ripplerx",
+      "shortcircuit-xt",
+      "soapysdrplay",
+      "surge-xt"
+    ]
+  },
+  {
+    "name": "syberant",
+    "url": "https://github.com/syberant/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "tarantoj",
+    "url": "https://github.com/tarantoj/nur-packages",
+    "packages": [
+      "bigquery-emulator",
+      "dotnet-t4",
+      "jetbrains-resharper-cli",
+      "nudelta"
+    ]
+  },
+  {
+    "name": "tehplague",
+    "url": "https://github.com/tehplague/NUR",
+    "packages": []
+  },
+  {
+    "name": "thaumy",
+    "url": "https://github.com/Thaumy/nur-pkgs",
+    "packages": [
+      "bigsur-dyn",
+      "catalina-dyn",
+      "dup-img-finder",
+      "idbuilder",
+      "microsoft-todo-electron",
+      "mojave-dyn",
+      "sh-history-filter"
+    ]
+  },
+  {
+    "name": "tilpner",
+    "url": "https://github.com/tilpner/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "timsueberkrueb",
+    "url": "https://github.com/timsueberkrueb/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "tinybeachthor",
+    "url": "https://github.com/tinybeachthor/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "tokudan",
+    "url": "https://github.com/tokudan/nur",
+    "packages": []
+  },
+  {
+    "name": "tomberek",
+    "url": "https://github.com/tomberek/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "toonn",
+    "url": "https://github.com/toonn/nur-packages",
+    "packages": [
+      "sotp"
+    ]
+  },
+  {
+    "name": "tox",
+    "url": "https://github.com/tox-rs/nur-tox",
+    "packages": []
+  },
+  {
+    "name": "toyvo",
+    "url": "https://github.com/ToyVo/nur-packages",
+    "packages": [
+      "VintagestoryServers",
+      "fabricServers",
+      "jellyfin-plugin-ldap-authentication",
+      "libpcpnatpmp",
+      "neoforgeServers",
+      "network-inventory",
+      "odysseus",
+      "papermcServers",
+      "purpurServers",
+      "technitium-exporter"
+    ]
+  },
+  {
+    "name": "trevorriles",
+    "url": "https://github.com/trevorriles/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "tuckershea",
+    "url": "https://github.com/tuckershea/nur-packages",
+    "packages": [
+      "linux-bench"
+    ]
+  },
+  {
+    "name": "twistoy",
+    "url": "https://github.com/TwIStOy/nur-packages",
+    "packages": [
+      "distant",
+      "gersemi",
+      "ignore-python",
+      "rime-ls",
+      "vim-plugins"
+    ]
+  },
+  {
+    "name": "twogn",
+    "url": "https://github.com/2gn/nur-package",
+    "packages": []
+  },
+  {
+    "name": "uleenucks",
+    "url": "https://github.com/uleenucks/nurpkgs",
+    "packages": []
+  },
+  {
+    "name": "uniquepointer",
+    "url": "https://github.com/uniquepointer/nur-babies",
+    "packages": []
+  },
+  {
+    "name": "utybo",
+    "url": "https://github.com/utybo/NUR",
+    "packages": []
+  },
+  {
+    "name": "vanilla",
+    "url": "https://github.com/VergeDX/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "vdemeester",
+    "url": "https://gitlab.com/vdemeester/home",
+    "packages": []
+  },
+  {
+    "name": "vizqq",
+    "url": "https://github.com/ViZiD/nur-vizqq",
+    "packages": [
+      "gerber2pdf",
+      "huawei-password-tool",
+      "pa",
+      "sfp-master",
+      "thinkpad-uefi-sign"
+    ]
+  },
+  {
+    "name": "vojtechstep",
+    "url": "https://github.com/VojtechStep/vspkgs",
+    "packages": []
+  },
+  {
+    "name": "vroad",
+    "url": "https://github.com/vroad/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "vsoch",
+    "url": "https://github.com/vsoch/nix",
+    "packages": []
+  },
+  {
+    "name": "wamserma",
+    "url": "https://github.com/wamserma/nur-packages",
+    "packages": [
+      "applications",
+      "development",
+      "games",
+      "misc",
+      "tools"
+    ]
+  },
+  {
+    "name": "weirdpkgs",
+    "url": "https://github.com/weirdrock/weirdpkgs",
+    "packages": [
+      "MControlCenter",
+      "ficsit-cli"
+    ]
+  },
+  {
+    "name": "wenjinnn",
+    "url": "https://github.com/wenjinnn/nur-packages",
+    "packages": [
+      "lemminx-maven",
+      "pi-acp",
+      "pi-web",
+      "rofi-screenshot-wayland"
+    ]
+  },
+  {
+    "name": "whs",
+    "url": "https://github.com/whs/nix",
+    "packages": []
+  },
+  {
+    "name": "willbou1",
+    "url": "https://github.com/willbou1/nur-packages",
+    "packages": [
+      "element-desktop-nightly"
+    ]
+  },
+  {
+    "name": "willpower3309",
+    "url": "https://github.com/WillPower3309/nur-packages",
+    "packages": [
+      "ani-cli",
+      "hybridbar"
+    ]
+  },
+  {
+    "name": "wingej0",
+    "url": "https://github.com/wingej0/nur-packages",
+    "packages": [
+      "nordvpn"
+    ]
+  },
+  {
+    "name": "wolfangaukang",
+    "url": "https://codeberg.org/wolfangaukang/nix-agordoj.git",
+    "packages": []
+  },
+  {
+    "name": "wrvsrx",
+    "url": "https://github.com/wrvsrx/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "wwmoraes",
+    "url": "https://github.com/wwmoraes/nurpkgs",
+    "packages": []
+  },
+  {
+    "name": "wyzdwdz",
+    "url": "https://github.com/wyzdwdz/nur-pkgs",
+    "packages": [
+      "ab-download-manager",
+      "archon",
+      "assfonts",
+      "autoeq",
+      "mandarin-juice-cli",
+      "spl-token-cli",
+      "xivlauncher-rb"
+    ]
+  },
+  {
+    "name": "xddxdd",
+    "url": "https://github.com/xddxdd/nur-packages",
+    "packages": [
+      "_meta",
+      "kernel-modules",
+      "lantian-customized",
+      "openj9-ibm-semeru",
+      "openjdk-adoptium",
+      "python-packages",
+      "uncategorized"
+    ]
+  },
+  {
+    "name": "xe",
+    "url": "https://github.com/Xe/xepkgs",
+    "packages": []
+  },
+  {
+    "name": "xeals",
+    "url": "https://github.com/xeals/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "xfix",
+    "url": "https://github.com/xfix/nur-packages",
+    "packages": [
+      "asar"
+    ]
+  },
+  {
+    "name": "xonsh-xontribs",
+    "url": "https://github.com/drmikecrowe/nur-packages",
+    "packages": [
+      "backtrace",
+      "xonsh-direnv",
+      "xontrib-abbrevs",
+      "xontrib-bashisms",
+      "xontrib-broot",
+      "xontrib-chatgpt",
+      "xontrib-clp",
+      "xontrib-debug-tools",
+      "xontrib-distributed",
+      "xontrib-dot-dot",
+      "xontrib-fish-completer",
+      "xontrib-gitinfo",
+      "xontrib-jupyter",
+      "xontrib-prompt-starship",
+      "xontrib-readable-traceback",
+      "xontrib-sh",
+      "xontrib-superfile",
+      "xontrib-term-integrations",
+      "xontrib-vox",
+      "xontrib-whole-word-jumping",
+      "xontrib-zoxide"
+    ]
+  },
+  {
+    "name": "xyenon",
+    "url": "https://github.com/XYenon/nur-packages",
+    "packages": [
+      "anime4k",
+      "caddy",
+      "catp",
+      "catppuccin",
+      "cocoa-way",
+      "go-check",
+      "kazv",
+      "lazyrsync",
+      "libkazv",
+      "librime-qjs",
+      "lsp-ai",
+      "mpv",
+      "nix-package-versions",
+      "oli",
+      "pleroma",
+      "rime-ice",
+      "rime-moegirl",
+      "telemikiya",
+      "vodozemac-bindings-kazv",
+      "waypipe-darwin",
+      "xurl",
+      "yazi",
+      "zsh-smart-suggestion"
+    ]
+  },
+  {
+    "name": "yellowonion",
+    "url": "https://github.com/yellowonion/nur-bcachefs",
+    "packages": []
+  },
+  {
+    "name": "yes",
+    "url": "https://github.com/SamLukeYes/nix-custom-packages",
+    "packages": []
+  },
+  {
+    "name": "ymstnt",
+    "url": "https://github.com/ymstnt/nur-packages",
+    "packages": [
+      "beeper",
+      "brave-origin",
+      "deepdwn",
+      "equicord",
+      "how-to-convert",
+      "lifeograph",
+      "lunatask",
+      "minecraft-console-client",
+      "surf",
+      "trmnl-preview",
+      "uni-week-counter"
+    ]
+  },
+  {
+    "name": "ysndr",
+    "url": "https://github.com/ysndr/nur-packages",
+    "packages": []
+  },
+  {
+    "name": "yyy",
+    "url": "https://github.com/sinofp/nur",
+    "packages": [
+      "autobean",
+      "autobean-refactor",
+      "beets-filetote",
+      "beets-originquery",
+      "beets-summarize",
+      "beets-yearfixer",
+      "datasette-cluster-map",
+      "datasette-leaflet",
+      "fava-dashboards",
+      "stash"
+    ]
+  },
+  {
+    "name": "zachcoyle",
+    "url": "https://github.com/zachcoyle/nur-packages",
+    "packages": [
+      "kotlin-language-server",
+      "xcodeproj"
+    ]
+  },
+  {
+    "name": "zeratax",
+    "url": "https://github.com/ZerataX/nur-packages",
+    "packages": [
+      "bukkit-plugins",
+      "dmnd-bot"
+    ]
+  },
+  {
+    "name": "zimeg",
+    "url": "https://github.com/zimeg/nur-packages",
+    "packages": [
+      "changesets",
+      "etime",
+      "jtt-nvim",
+      "jurigged",
+      "llrt",
+      "newsflash-nvim",
+      "proximity-nvim",
+      "quill",
+      "recon",
+      "zsh-wd"
+    ]
+  },
+  {
+    "name": "zsien",
+    "url": "https://github.com/zsien/nur-packages",
+    "packages": [
+      "udp-over-tcp",
+      "udp2raw",
+      "udptunnel"
+    ]
+  },
+  {
+    "name": "zzzsy",
+    "url": "https://github.com/zzzsyyy/flakes",
+    "packages": []
+  }
+]

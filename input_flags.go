@@ -10,7 +10,10 @@ type repeatedFlag []string
 
 func (f *repeatedFlag) String() string     { return strings.Join(*f, ", ") }
 func (f *repeatedFlag) Set(s string) error { *f = append(*f, s); return nil }
-func applyInputs(cfg *builder.Config, c *builder.Catalog, inputs, uses, follows, remove []string) error {
+func applyInputs(cfg *builder.Config, c *builder.Catalog, inputs, uses, follows, remove, nurRepos []string) error {
+	if len(nurRepos) > 0 {
+		cfg.NURRepos = append([]string{}, nurRepos...)
+	}
 	if cfg.ExtraInputs == nil {
 		cfg.ExtraInputs = map[string]builder.ExtraInput{}
 	}

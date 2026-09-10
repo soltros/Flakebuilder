@@ -95,6 +95,16 @@ Explicit declarations can override a built-in input's URL, for example:
 
 Preserve required follows mappings when overriding catalog inputs. Changing an input version can change compatibility. Use either a built-in bit or a manual consumer for the same overlay to avoid applying it twice.
 
+## Subscribe to NUR repositories
+
+Press `n` in the selection menu to browse the scraped NUR repository index. Each entry shows the repository name, URL, package count, and a preview of its package attributes. Press Space to subscribe or unsubscribe, then `g` to generate. Subscriptions add the pinned `nix-community/NUR` input and its overlay to the generated flake.
+
+The command line equivalent is repeatable:
+
+```sh
+./flakebuilder --state-version 26.05 --nur-repo micron --nur-repo novacat --yes
+```
+
 ## Generate, reopen, validate and build
 
 ```sh

@@ -15,7 +15,7 @@ import (
 	"text/template"
 )
 
-//go:embed catalog.json bits/*.nix
+//go:embed catalog.json nur_repos.json bits/*.nix
 var bundled embed.FS
 
 type Input struct {
@@ -41,12 +41,18 @@ type Preset struct {
 	Bits  []string `json:"bits"`
 }
 type Catalog struct {
-	Version int               `json:"version"`
-	Inputs  map[string]Input  `json:"inputs"`
-	Bits    []Bit             `json:"bits"`
-	Presets map[string]Preset `json:"presets"`
-	files   fs.FS
-	byID    map[string]Bit
+	Version  int               `json:"version"`
+	Inputs   map[string]Input  `json:"inputs"`
+	Bits     []Bit             `json:"bits"`
+	Presets  map[string]Preset `json:"presets"`
+	NURRepos []NURRepo         `json:"-"`
+	files    fs.FS
+	byID     map[string]Bit
+}
+type NURRepo struct {
+	Name     string   `json:"name"`
+	URL      string   `json:"url"`
+	Packages []string `json:"packages"`
 }
 type Config struct {
 	ExtraInputs  map[string]ExtraInput `json:"extraInputs,omitempty"`
@@ -66,6 +72,7 @@ type Config struct {
 	HermesEnv    string                `json:"hermesEnv"`
 	Bits         []string              `json:"bits"`
 	Hardware     string                `json:"hardware,omitempty"`
+	NURRepos     []string              `json:"nurRepos,omitempty"`
 }
 type Plan struct {
 	Bits   []Bit
@@ -97,6 +104,11 @@ func LoadFS(files fs.FS) (*Catalog, error) {
 	}
 	if c.Version != 1 {
 		return nil, fmt.Errorf("unsupported catalog version %d", c.Version)
+	}
+	if nur, readErr := fs.ReadFile(files, "nur_repos.json"); readErr == nil {
+		if err = json.Unmarshal(nur, &c.NURRepos); err != nil {
+			return nil, fmt.Errorf("invalid nur_repos.json: %w", err)
+		}
 	}
 	c.files = files
 	c.byID = map[string]Bit{}
@@ -171,6 +183,20 @@ func (c *Catalog) Preset(name string) (Preset, error) {
 }
 func (c *Catalog) Resolve(cfg Config) (Plan, error) {
 	p := Plan{Inputs: map[string]Input{}}
+	if len(cfg.NURRepos) > 0 {
+		known := map[string]bool{}
+		for _, repo := range c.NURRepos {
+			known[repo.Name] = true
+		}
+		for _, name := range cfg.NURRepos {
+			if !known[name] {
+				return p, fmt.Errorf("unknown NUR repository %q", name)
+			}
+		}
+		if nur, ok := c.Inputs["nur"]; ok {
+			p.Inputs["nur"] = nur
+		}
+	}
 	state := map[string]int{}
 	explicit := map[string]bool{}
 	groups := map[string]string{}
@@ -395,6 +421,9 @@ func (c *Catalog) Render(cfg Config) (string, Plan, error) {
 				fmt.Fprintf(&out, "        ({ pkgs, ... }: { environment.systemPackages = [ %s ]; })\n", expr)
 			}
 		}
+	}
+	if len(cfg.NURRepos) > 0 {
+		out.WriteString("\n        # Selected NUR repositories are exposed through the NUR overlay.\n        ({ ... }: { nixpkgs.overlays = [ inputs.nur.overlay ]; })\n")
 	}
 	out.WriteString("      ];\n    };\n  };\n}\n")
 	return out.String(), plan, nil

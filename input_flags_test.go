@@ -11,7 +11,7 @@ func TestInputFlags(t *testing.T) {
 		t.Fatal(e)
 	}
 	cfg := builder.DefaultConfig()
-	e = applyInputs(&cfg, c, []string{"other=github:example/repo"}, []string{"other=overlay:default", "other=package:cli"}, []string{"other"}, nil)
+	e = applyInputs(&cfg, c, []string{"other=github:example/repo"}, []string{"other=overlay:default", "other=package:cli"}, []string{"other"}, nil, nil)
 	if e != nil {
 		t.Fatal(e)
 	}
@@ -19,7 +19,7 @@ func TestInputFlags(t *testing.T) {
 	if len(in.Uses) != 2 || in.Input.Follows["nixpkgs"] != "nixpkgs" {
 		t.Fatal(in)
 	}
-	if e = applyInputs(&cfg, c, nil, []string{"absent=overlay:default"}, nil, nil); e == nil {
+	if e = applyInputs(&cfg, c, nil, []string{"absent=overlay:default"}, nil, nil, nil); e == nil {
 		t.Fatal("accepted undeclared input")
 	}
 }

@@ -18,6 +18,8 @@ type Model struct {
 	cursor         int
 	categoryCursor int
 	activeCategory string
+	nurMode        bool
+	nurCursor      int
 	filter         string
 	searching      bool
 	preview        string
@@ -71,6 +73,30 @@ func (m Model) Selection() builder.Config {
 	sort.Strings(cfg.Bits)
 	return cfg
 }
+func containsString(xs []string, want string) bool {
+	for _, x := range xs {
+		if x == want {
+			return true
+		}
+	}
+	return false
+}
+func toggleString(xs []string, value string) []string {
+	out := make([]string, 0, len(xs)+1)
+	found := false
+	for _, x := range xs {
+		if x == value {
+			found = true
+			continue
+		}
+		out = append(out, x)
+	}
+	if !found {
+		out = append(out, value)
+	}
+	sort.Strings(out)
+	return out
+}
 func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.WindowSizeMsg:
@@ -82,6 +108,26 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 		if m.inputForm != nil {
 			return m.updateInput(msg)
+		}
+		if m.nurMode {
+			repos := m.Catalog.NURRepos
+			switch key {
+			case "esc", "backspace":
+				m.nurMode = false
+			case "up", "k":
+				if m.nurCursor > 0 {
+					m.nurCursor--
+				}
+			case "down", "j":
+				if m.nurCursor+1 < len(repos) {
+					m.nurCursor++
+				}
+			case " ":
+				if len(repos) > 0 {
+					m.Config.NURRepos = toggleString(m.Config.NURRepos, repos[m.nurCursor].Name)
+				}
+			}
+			return m, nil
 		}
 		if m.preview != "" {
 			switch key {
@@ -131,6 +177,9 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, tea.Quit
 		case "i":
 			m.inputForm = &inputForm{Values: [6]string{"", "", "input", "default", "no", ""}}
+		case "n":
+			m.nurMode = true
+			m.nurCursor = 0
 		case "/":
 			m.searching = true
 		case "esc":
@@ -202,6 +251,35 @@ func (m Model) View() string {
 		return "Selection confirmed. Saving generated flake…\n"
 	}
 	header := fmt.Sprintf("Flakebuilder — %s · %s · nixpkgs %s\n", m.Config.Host, m.Config.System, m.Config.Track)
+	if m.nurMode {
+		var b strings.Builder
+		b.WriteString(header + "\nNUR repositories — Space subscribes/unsubscribes\n\n")
+		limit := max(1, m.height-8)
+		start := max(0, m.nurCursor-limit+1)
+		end := min(len(m.Catalog.NURRepos), start+limit)
+		for i := start; i < end; i++ {
+			r := m.Catalog.NURRepos[i]
+			mark := " "
+			if containsString(m.Config.NURRepos, r.Name) {
+				mark = "x"
+			}
+			cur := " "
+			if i == m.nurCursor {
+				cur = ">"
+			}
+			fmt.Fprintf(&b, "%s [%s] %-22s %d packages\n", cur, mark, r.Name, len(r.Packages))
+		}
+		if len(m.Catalog.NURRepos) > 0 {
+			r := m.Catalog.NURRepos[m.nurCursor]
+			shown := r.Packages
+			if len(shown) > 18 {
+				shown = shown[:18]
+			}
+			fmt.Fprintf(&b, "\n%s: %s\n", r.Name, strings.Join(shown, ", "))
+		}
+		b.WriteString("\nEsc/Backspace: return · q: cancel\n")
+		return b.String()
+	}
 	if m.preview != "" {
 		lines := strings.Split(m.preview, "\n")
 		// The metadata line is intentionally long; show its purpose in the preview.
@@ -287,6 +365,6 @@ func (m Model) View() string {
 	} else if m.message != "" {
 		b.WriteString("\n" + m.message + "\n")
 	}
-	b.WriteString("\nSpace: select · /: search · i: add input · Enter: preview · g: Generate flake · Backspace: categories · q: cancel\n[x] selected · [+] required automatically (remove its dependents to omit it)\n")
+	b.WriteString("\nSpace: select · /: search · i: add input · n: NUR repositories · Enter: preview · g: Generate flake · Backspace: categories · q: cancel\n[x] selected · [+] required automatically (remove its dependents to omit it)\n")
 	return b.String()
 }
